@@ -19,7 +19,7 @@ export default function Hero() {
         className="absolute top-0 left-0 w-full h-full object-cover"
       >
         <source
-          src="/hero.mp4"
+          src="/hero (1).mp4"
           type="video/mp4"
         />
       </video>
