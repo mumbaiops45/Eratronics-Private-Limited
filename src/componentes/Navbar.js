@@ -7,6 +7,7 @@ import { useState } from "react";
 import {
   HiOutlineMenuAlt3,
   HiOutlineX,
+  HiChevronDown,
 } from "react-icons/hi";
 
 export default function Navbar() {
@@ -15,11 +16,53 @@ export default function Navbar() {
 
   const [mobileMenu, setMobileMenu] = useState(false);
 
+  const solutionsDropdown = [
+    {
+      name: "Turnkey Solutions",
+      href: "/turnkey-solutions",
+    },
+    {
+      name: "Engineering Services",
+      href: "/engineering-services",
+    },
+    {
+      name: "System Integration Services",
+      href: "/integration-excellence",
+    },
+    {
+      name: "Eratronics Through-Life Care Program",
+      href: "/through-life-care-program",
+    },
+  ];
+
+  const industriesDropdown = [
+    {
+      name: "Oil & Gas Industry",
+      href: "/industries-we-serve/oil-and-gas-industry",
+    },
+    {
+      name: "Power Sector",
+      href: "/industries-we-serve/power-sector",
+    },
+    {
+      name: "Metro Rail",
+      href: "/industries-we-serve/metro-rail",
+    },
+  ];
+
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about-us" },
-    { name: "Solutions", href: "/solutions" },
-    { name: "Industry We Serve", href: "/industries-we-serve" },
+    {
+      name: "Solutions",
+      href: "/solutions",
+      dropdown: solutionsDropdown,
+    },
+    {
+      name: "Industry We Serve",
+      href: "/industries-we-serve",
+      dropdown: industriesDropdown,
+    },
     { name: "Systems We Offer", href: "/systems-we-offer" },
     { name: "Our Presence", href: "/our-presence" },
     { name: "E-Waste", href: "/e-waste" },
@@ -52,20 +95,66 @@ export default function Navbar() {
 
             {navLinks.map((link, index) => {
 
-              const isActive = pathname === link.href;
+              const isActive =
+                pathname === link.href ||
+                pathname.startsWith(link.href + "/");
 
               return (
-                <Link
+                <div
                   key={index}
-                  href={link.href}
-                  className={`text-sm font-medium transition-all duration-300 ${
-                    isActive
-                      ? "text-[var(--primary)] underline underline-offset-4"
-                      : "text-black hover:text-[var(--primary)]"
-                  }`}
+                  className="relative group"
                 >
-                  {link.name}
-                </Link>
+
+                  {/* MAIN LINK */}
+                  <Link
+                    href={link.href}
+                    className={`flex items-center gap-1 text-sm font-medium transition-all duration-300 ${
+                      isActive
+                        ? "text-[var(--primary)] underline underline-offset-4"
+                        : "text-black hover:text-[var(--primary)]"
+                    }`}
+                  >
+                    {link.name}
+
+                    {link.dropdown && (
+                      <HiChevronDown
+                        className="text-base transition-transform duration-300 group-hover:rotate-180"
+                      />
+                    )}
+                  </Link>
+
+                  {/* DROPDOWN */}
+                  {link.dropdown && (
+                    <div className="absolute left-0 top-full pt-5 opacity-0 invisible translate-y-3 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300">
+
+                      <div className="w-[320px] overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-2xl">
+
+                        {link.dropdown.map((item, i) => {
+
+                          const isSubActive =
+                            pathname === item.href;
+
+                          return (
+                            <Link
+                              key={i}
+                              href={item.href}
+                              className={`block border-b border-gray-100 px-6 py-4 text-sm font-medium transition-all duration-300 last:border-b-0 ${
+                                isSubActive
+                                  ? "bg-[var(--primary)] text-white"
+                                  : "text-gray-700 hover:bg-gray-50 hover:text-[var(--primary)]"
+                              }`}
+                            >
+                              {item.name}
+                            </Link>
+                          );
+                        })}
+
+                      </div>
+
+                    </div>
+                  )}
+
+                </div>
               );
             })}
 
@@ -74,7 +163,7 @@ export default function Navbar() {
           {/* MOBILE MENU BUTTON */}
           <button
             onClick={() => setMobileMenu(!mobileMenu)}
-            className="lg:hidden text-3xl text-black"
+            className="lg:hidden text-3xl text-black pr-5"
           >
             {mobileMenu ? <HiOutlineX /> : <HiOutlineMenuAlt3 />}
           </button>
@@ -85,7 +174,7 @@ export default function Navbar() {
         <div
           className={`lg:hidden overflow-hidden transition-all duration-500 ${
             mobileMenu
-              ? "max-h-[700px] opacity-100 mt-5"
+              ? "max-h-[1200px] opacity-100"
               : "max-h-0 opacity-0"
           }`}
         >
@@ -94,21 +183,59 @@ export default function Navbar() {
 
             {navLinks.map((link, index) => {
 
-              const isActive = pathname === link.href;
+              const isActive =
+                pathname === link.href ||
+                pathname.startsWith(link.href + "/");
 
               return (
-                <Link
-                  key={index}
-                  href={link.href}
-                  onClick={() => setMobileMenu(false)}
-                  className={`font-medium transition-all duration-300 ${
-                    isActive
-                      ? "text-[var(--primary)]"
-                      : "text-black hover:text-[var(--primary)]"
-                  }`}
-                >
-                  {link.name}
-                </Link>
+                <div key={index}>
+
+                  {/* MAIN LINK */}
+                  <Link
+                    href={link.href}
+                    onClick={() => !link.dropdown && setMobileMenu(false)}
+                    className={`flex items-center justify-between font-medium transition-all duration-300 ${
+                      isActive
+                        ? "text-[var(--primary)]"
+                        : "text-black hover:text-[var(--primary)]"
+                    }`}
+                  >
+                    {link.name}
+
+                    {link.dropdown && (
+                      <HiChevronDown className="text-lg" />
+                    )}
+                  </Link>
+
+                  {/* MOBILE DROPDOWN */}
+                  {link.dropdown && (
+                    <div className="mt-4 ml-4 flex flex-col gap-3 border-l border-gray-200 pl-4">
+
+                      {link.dropdown.map((item, i) => {
+
+                        const isSubActive =
+                          pathname === item.href;
+
+                        return (
+                          <Link
+                            key={i}
+                            href={item.href}
+                            onClick={() => setMobileMenu(false)}
+                            className={`text-sm transition-all duration-300 ${
+                              isSubActive
+                                ? "text-[var(--primary)] font-semibold"
+                                : "text-gray-600 hover:text-[var(--primary)]"
+                            }`}
+                          >
+                            {item.name}
+                          </Link>
+                        );
+                      })}
+
+                    </div>
+                  )}
+
+                </div>
               );
             })}
 
