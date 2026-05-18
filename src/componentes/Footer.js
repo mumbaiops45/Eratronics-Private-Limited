@@ -144,7 +144,6 @@ export default function Footer() {
           </div>
 
           {/* CONTACT INFO */}
-<<<<<<< HEAD
         
 <div>
 
@@ -214,71 +213,6 @@ export default function Footer() {
   </div>
 
 </div>
-=======
-          <div>
-
-            <h3 className="text-xl font-semibold mb-5 text-white">
-              Contact Info
-            </h3>
-
-            <div className="flex flex-col gap-4 text-sm text-white/80">
-
-              <div className="flex items-start gap-3">
-                <HiOutlineLocationMarker className="text-white text-xl mt-1" />
-                <p>Mumbai, Maharashtra, India</p>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <HiOutlinePhone className="text-white text-xl" />
-                <a
-                  href="tel:+919876543210"
-                  className="hover:text-white transition-all duration-300"
-                >
-                  +91 98765 43210
-                </a>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <HiOutlineMail className="text-white text-xl" />
-                <a
-                  href="mailto:info@eratronics.com"
-                  className="hover:text-white transition-all duration-300"
-                >
-                  info@eratronics.com
-                </a>
-              </div>
-
-            </div>
-
-            {/* SOCIAL ICONS */}
-            <div className="flex items-center gap-3 mt-6 flex-wrap">
-
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="
-                    w-11 h-11
-                    rounded-full
-                    border border-white/30
-                    flex items-center justify-center
-                    text-white
-                    hover:bg-white
-                    hover:text-[var(--primary)]
-                    hover:border-white
-                    transition-all duration-300
-                  "
-                >
-                  {social.icon}
-                </a>
-              ))}
-
-            </div>
-
-          </div>
->>>>>>> ae90018c2ecf6d139db3e621b59084bbfb813187
 
         </div>
       </div>

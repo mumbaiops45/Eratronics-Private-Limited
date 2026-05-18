@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿"use client";
 
 import Image from "next/image";
@@ -11,41 +10,27 @@ import {
   FiShield,
   FiCpu,
 } from "react-icons/fi";
-=======
-"use client";
-
-import { motion } from "framer-motion";
->>>>>>> ae90018c2ecf6d139db3e621b59084bbfb813187
 
 const metroRailData = {
   smallText: "Metro Rail",
 
-<<<<<<< HEAD
   heading:
     "Advanced Communication Infrastructure for Modern Metro Rail Networks",
 
   intro:
     "We deliver reliable and secure communication systems that support safe, efficient, and uninterrupted metro rail operations. Our solutions are engineered to enable real-time coordination, passenger safety, and seamless connectivity across stations, tunnels, depots, and control centers.",
-=======
-  intro:
-    "We deliver reliable and secure communication systems that support safe, efficient, and uninterrupted metro rail operations. Our solutions are designed to enable real-time coordination, passenger safety, and seamless connectivity across stations, tunnels, depots, and control centers—ensuring high availability in demanding urban transit environments.",
->>>>>>> ae90018c2ecf6d139db3e621b59084bbfb813187
 
   solutions: [
     {
       title: "Station Systems",
 
-<<<<<<< HEAD
       image: "/Metro Rail/Station Systems.png",
 
-=======
->>>>>>> ae90018c2ecf6d139db3e621b59084bbfb813187
       paragraphs: [
         "At station level, we provide integrated communication and surveillance systems that enhance passenger safety and operational control. Our solutions include CCTV, Public Address (PA) systems, Passenger Information Systems (PIS), and structured network infrastructure.",
 
         "Designed for high footfall environments, these systems enable real-time monitoring, effective crowd management, and clear communication during both normal and emergency conditions.",
       ],
-<<<<<<< HEAD
 
       points: [
         "Passenger Information Systems",
@@ -53,14 +38,11 @@ const metroRailData = {
         "Station surveillance systems",
         "Real-time operational monitoring",
       ],
-=======
->>>>>>> ae90018c2ecf6d139db3e621b59084bbfb813187
     },
 
     {
       title: "Line & Tunnel Systems",
 
-<<<<<<< HEAD
       image: "/Metro Rail/Line & Tunnel Systems.png",
 
       paragraphs: [
@@ -77,21 +59,11 @@ const metroRailData = {
         "Intrusion detection systems",
         "Leaky coaxial communication",
       ],
-=======
-      paragraphs: [
-        "For trackside and tunnel environments, we deploy robust communication networks built on Optical Fiber Cable (OFC) backbones, ensuring high-speed, low-latency connectivity across the corridor.",
-
-        "Our solutions include OFC-based intrusion detection systems for trackside security and Distributed Temperature Sensing (DTS) applications for tunnel safety, enabling early detection of abnormal conditions such as unauthorized access or fire incidents.",
-
-        "We also implement leaky coaxial and wireless communication systems to ensure continuous connectivity between moving trains and control centers, even in confined underground environments.",
-      ],
->>>>>>> ae90018c2ecf6d139db3e621b59084bbfb813187
     },
 
     {
       title: "Control & Operations",
 
-<<<<<<< HEAD
       image: "/images/metro/control-room.jpg",
 
       paragraphs: [
@@ -105,29 +77,19 @@ const metroRailData = {
         "SCADA integration",
         "Centralized network management",
         "Real-time operational coordination",
-=======
-      paragraphs: [
-        "At the core of metro operations, we enable centralized monitoring and control through integrated communication platforms. Our solutions support Operations Control Centers (OCC), enabling real-time coordination across stations, trains, and field assets.",
-
-        "We provide OFC-based communication backbones for seamless integration with signaling systems, SCADA, and network management platforms—ensuring efficient operations, rapid incident response, and overall system reliability.",
->>>>>>> ae90018c2ecf6d139db3e621b59084bbfb813187
       ],
     },
 
     {
       title: "Depot & Support Infrastructure",
 
-<<<<<<< HEAD
       image: "/images/metro/depot-system.jpg",
 
-=======
->>>>>>> ae90018c2ecf6d139db3e621b59084bbfb813187
       paragraphs: [
         "For depots and maintenance facilities, we deliver communication systems that support operational efficiency, safety, and asset management. This includes surveillance systems, internal communication networks, and connectivity infrastructure aligned with the mainline network.",
 
         "Our solutions ensure seamless integration between depot operations and the broader metro ecosystem, enabling coordinated functioning and efficient maintenance workflows.",
       ],
-<<<<<<< HEAD
 
       points: [
         "Depot surveillance systems",
@@ -135,15 +97,12 @@ const metroRailData = {
         "Maintenance connectivity",
         "Integrated metro ecosystem",
       ],
-=======
->>>>>>> ae90018c2ecf6d139db3e621b59084bbfb813187
     },
   ],
 };
 
 export default function MetroRailSolutions() {
   return (
-<<<<<<< HEAD
     <section className="relative py-24 bg-white overflow-hidden">
 
       {/* Background glow */}
@@ -178,37 +137,11 @@ export default function MetroRailSolutions() {
 
           {/* Intro */}
           <p className="text-gray-500 text-base lg:text-lg leading-relaxed max-w-3xl">
-=======
-    <section className="py-24 bg-white overflow-hidden">
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-16">
-
-        {/* ── TOP SECTION ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 1,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          viewport={{ once: true, amount: 0.15 }}
-          className="mb-20"
-        >
-
-          {/* small text */}
-          <p className="text-[var(--primary)] text-sm font-semibold tracking-[4px] uppercase mb-5">
-            {metroRailData.smallText}
-          </p>
-
-          {/* intro */}
-          <p className="text-gray-600 text-base leading-relaxed">
->>>>>>> ae90018c2ecf6d139db3e621b59084bbfb813187
             {metroRailData.intro}
           </p>
 
         </motion.div>
 
-<<<<<<< HEAD
         {/* -- SOLUTIONS -- */}
         <div className="space-y-28">
 
@@ -327,68 +260,10 @@ export default function MetroRailSolutions() {
               </motion.div>
             );
           })}
-=======
-        {/* ── SOLUTIONS ── */}
-        <div className="space-y-20">
-
-          {metroRailData.solutions.map((item, index) => (
-
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 70 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.8,
-                delay: index * 0.12,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              viewport={{ once: true, amount: 0.1 }}
-            >
-
-              {/* heading */}
-              <div className="inline-block border-l-4 border-[var(--primary)] bg-gradient-to-r from-[var(--primary)]/20 to-transparent px-4 py-3 mb-6">
-
-                <h3 className="text-3xl font-bold text-gray-900">
-                  {item.title}
-                </h3>
-
-              </div>
-
-              {/* paragraphs */}
-              <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.7,
-                  delay: 0.15,
-                }}
-                viewport={{ once: true }}
-                className="space-y-6"
-              >
-
-                {item.paragraphs.map((para, i) => (
-                  <p
-                    key={i}
-                    className="text-gray-600 leading-relaxed"
-                  >
-                    {para}
-                  </p>
-                ))}
-
-              </motion.div>
-
-            </motion.div>
-
-          ))}
->>>>>>> ae90018c2ecf6d139db3e621b59084bbfb813187
 
         </div>
 
       </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> ae90018c2ecf6d139db3e621b59084bbfb813187
     </section>
   );
 }

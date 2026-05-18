@@ -55,20 +55,12 @@ export default function Navbar() {
     { name: "About Us", href: "/about-us" },
     {
       name: "Solutions",
-<<<<<<< HEAD
       href: "#",
-=======
-      href: "/solutions",
->>>>>>> ae90018c2ecf6d139db3e621b59084bbfb813187
       dropdown: solutionsDropdown,
     },
     {
       name: "Industry We Serve",
-<<<<<<< HEAD
       href: "#",
-=======
-      href: "/industries-we-serve",
->>>>>>> ae90018c2ecf6d139db3e621b59084bbfb813187
       dropdown: industriesDropdown,
     },
     { name: "Systems We Offer", href: "/systems-we-offer" },
