@@ -40,6 +40,7 @@ export default function Hero() {
             </span>
 
             {/* HEADING */}
+<<<<<<< HEAD
           <h1 className="text-white text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
   Reliable{" "}
   <span className="text-[var(--primary)]">
@@ -47,6 +48,11 @@ export default function Hero() {
   </span>{" "}
   Solutions
 </h1>
+=======
+            <h1 className="text-white text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+              Reliable Industrial Telecom Solutions
+            </h1>
+>>>>>>> ae90018c2ecf6d139db3e621b59084bbfb813187
 
             {/* DESCRIPTION */}
             <p className="text-gray-300 text-lg md:text-xl leading-relaxed mt-6 max-w-2xl">
