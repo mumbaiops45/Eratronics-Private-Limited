@@ -100,7 +100,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center">
 
             <div
-              className="bg-[var(--primary)] text-white pl-6 pr-14 h-[78px] flex items-center text-xl font-bold uppercase"
+              className="bg-[var(--primary)] text-white pl-6 pr-14 h-[78px] flex items-center text-md md:text-xl font-bold uppercase"
               style={{
                 clipPath: "polygon(0 0, 100% 0, 85% 100%, 0 100%)",
               }}

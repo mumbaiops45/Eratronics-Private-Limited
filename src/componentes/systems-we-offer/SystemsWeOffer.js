@@ -1,5 +1,5 @@
 ﻿"use client";
-
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   FiWifi, FiPhoneCall, FiVideo, FiRadio,
@@ -233,14 +233,20 @@ export default function SystemWeOffer() {
             </div>
 
             <div className="flex flex-wrap gap-3 shrink-0">
-              <button className="inline-flex items-center gap-2 bg-white text-[var(--primary)] font-semibold text-sm px-7 py-3.5 rounded-xl hover:bg-gray-50 transition-colors duration-200">
+              <Link
+                href="/contact-us"
+                className="inline-flex items-center gap-2 bg-white text-[var(--primary)] font-semibold text-sm px-7 py-3.5 rounded-xl hover:bg-gray-50 transition-colors duration-200"
+              >
                 Get in Touch
                 <FiArrowRight size={14} />
-              </button>
+              </Link>
 
-              <button className="inline-flex items-center gap-2 border border-white/20 text-white font-semibold text-sm px-7 py-3.5 rounded-xl hover:bg-white/8 hover:border-white/35 transition-all duration-200">
+              {/* <Link
+                href="/solutions"
+                className="inline-flex items-center gap-2 border border-white/20 text-white font-semibold text-sm px-7 py-3.5 rounded-xl hover:bg-white/8 hover:border-white/35 transition-all duration-200"
+              >
                 View All Solutions
-              </button>
+              </Link> */}
             </div>
           </div>
         </motion.div>

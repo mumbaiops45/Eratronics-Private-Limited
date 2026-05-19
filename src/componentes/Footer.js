@@ -67,12 +67,12 @@ export default function Footer() {
       {/* TOP FOOTER */}
       <div className="px-6 md:px-10 lg:px-16 pt-16 pb-12">
 
-       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1.5fr] gap-10">
+       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.8fr_1fr_1fr_1fr_1.5fr] gap-10">
 
           {/* COMPANY INFO */}
           <div>
 
-            <Link href="/" className="text-2xl font-bold">
+            <Link href="/" className="text-[22px] font-bold">
               Eratronics{" "}
               <span className="text-white/80">
                 Private Limited
@@ -168,7 +168,7 @@ export default function Footer() {
           <div>
 
             <h3 className="text-xl font-semibold mb-5 text-white">
-              Industry We Serve
+              Industry Serve
             </h3>
 
             <ul className="flex flex-col gap-2">

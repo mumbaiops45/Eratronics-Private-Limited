@@ -1,5 +1,5 @@
 ﻿"use client";
-
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   FiPackage, FiFilter, FiShield, FiTruck,
@@ -79,8 +79,8 @@ export default function EWaste() {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-3 mb-7">
-              <span className="w-8 h-px bg-[var(--seco)]" />
-              <span className="text-[9px] font-bold uppercase tracking-[5px] text-[var(--seco)]">
+              <span className="w-8 h-px bg-[var(--primary)]" />
+              <span className="text-[9px] font-bold uppercase tracking-[5px] text-[var(--primary)]">
                 Environmental Responsibility
               </span>
             </div>
@@ -124,7 +124,7 @@ export default function EWaste() {
               <div className="w-9 h-9 rounded-xl bg-[var(--primary)]/10 flex items-center justify-center mb-4">
                 <FiShield size={17} className="text-[var(--primary)]" />
               </div>
-              <p className="text-[11px] font-bold uppercase tracking-widest text-[var(--seco)] mb-1">
+              <p className="text-[11px] font-bold uppercase tracking-widest text-[var(--primary)] mb-1">
                 Government of India
               </p>
               <p className="text-sm font-semibold text-gray-800 leading-snug">
@@ -160,7 +160,7 @@ export default function EWaste() {
             viewport={{ once: true }}
             className="mb-14"
           >
-            <p className="text-[9px] font-bold uppercase tracking-[5px] text-[var(--seco)] mb-4">
+            <p className="text-[9px] font-bold uppercase tracking-[5px] text-[var(--primary)] mb-4">
               Policy Framework
             </p>
             <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-snug">
@@ -186,13 +186,13 @@ export default function EWaste() {
                   </span>
 
                   {/* Icon */}
-                  <div className="w-10 h-10 rounded-xl bg-white border border-gray-200 flex items-center justify-center shrink-0 group-hover:bg-[var(--seco)] group-hover:border-[var(--seco)] transition-all duration-250">
-                    <Icon size={16} className="text-gray-400 group-hover:text-white transition-colors duration-250" />
+                  <div className="w-10 h-10 rounded-xl  bg-white border group-hover:bg-[var(--primary)] border-gray-200 flex items-center justify-center shrink-0  group-hover:border-[var(--primary)] transition-all duration-250">
+                    <Icon size={16} className="text-gray-400 group-hover:text-white  transition-colors duration-250" />
                   </div>
 
                   {/* Content */}
                   <div className="flex-1 min-w-0">
-                    <p className="font-bold text-[15px] text-gray-900 mb-2 group-hover:text-[var(--seco)] transition-colors duration-200">
+                    <p className="font-bold text-[15px] text-gray-900 mb-2 group-hover:text-[var(--primary)] transition-colors duration-200">
                       {item.title}
                     </p>
                     <p className="text-sm text-gray-500 leading-relaxed max-w-3xl">
@@ -256,7 +256,7 @@ export default function EWaste() {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <p className="text-[9px] font-bold uppercase tracking-[5px] text-[var(--seco)] mb-4">
+          <p className="text-[9px] font-bold uppercase tracking-[5px] text-[var(--primary)] mb-4">
             Handling Guidelines
           </p>
           <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-snug">
@@ -341,7 +341,7 @@ export default function EWaste() {
             transition={{ duration: 0.55 }}
             viewport={{ once: true }}
           >
-            <p className="text-[9px] font-bold uppercase tracking-[5px] text-[var(--seco)] mb-4">
+            <p className="text-[9px] font-bold uppercase tracking-[5px] text-[var(--primary)] mb-4">
               Collection Network
             </p>
             <h3 className="text-3xl font-bold text-gray-900 mb-3">
@@ -363,8 +363,8 @@ export default function EWaste() {
                 Details of collection points along with address and contact information will be updated here shortly.
               </p>
               <div className="mt-7">
-                <span className="inline-flex items-center gap-2 text-[11px] font-semibold text-[var(--seco)] bg-[var(--seco)]/8 border border-[var(--seco)]/15 px-5 py-2.5 rounded-full">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--seco)] animate-pulse" />
+                <span className="inline-flex items-center gap-2 text-[11px] font-semibold text-[var(--primary)] bg-[var(--primary)]/8 border border-[var(--primary)]/15 px-5 py-2.5 rounded-full">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] animate-pulse" />
                   Information will be added soon
                 </span>
               </div>
@@ -403,9 +403,12 @@ export default function EWaste() {
               </p>
             </div>
             <div className="shrink-0">
-              <button className="inline-flex items-center gap-2 bg-white text-[var(--primary)] font-semibold text-sm px-8 py-3.5 rounded-xl hover:bg-gray-50 transition-colors duration-200">
+              <Link
+                href="/contact-us"
+                className="inline-flex items-center gap-2 bg-white text-[var(--primary)] font-semibold text-sm px-8 py-3.5 rounded-xl hover:bg-gray-50 transition-colors duration-200"
+              >
                 Contact Us
-              </button>
+              </Link>
             </div>
           </div>
         </motion.div>

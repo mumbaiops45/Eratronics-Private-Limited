@@ -57,13 +57,13 @@ export default function AboutCTA() {
               <FiPhoneCall size={15} />
               Contact Us Today
             </Link>
-            <Link
+            {/* <Link
               href="/solutions"
               className="group flex items-center justify-center gap-3 border border-white/30 text-white px-8 py-4 rounded-full font-semibold text-sm hover:bg-white/10 hover:border-white/60 transition-all duration-300"
             >
               Explore Solutions
               <FiArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-300" />
-            </Link>
+            </Link> */}
           </motion.div>
 
         </div>

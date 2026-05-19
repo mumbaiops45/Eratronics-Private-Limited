@@ -40,13 +40,13 @@ export default function Hero() {
             </span>
 
             {/* HEADING */}
-          <h1 className="text-white text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-  Reliable{" "}
-  <span className="text-[var(--primary)]">
-    Industrial Telecom
-  </span>{" "}
-  Solutions
-</h1>
+            <h1 className="text-white text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+              Reliable{" "}
+              <span className="text-[var(--primary)]">
+                Industrial Telecom
+              </span>{" "}
+              Solutions
+            </h1>
 
             {/* DESCRIPTION */}
             <p className="text-gray-300 text-lg md:text-xl leading-relaxed mt-6 max-w-2xl">
@@ -56,14 +56,6 @@ export default function Hero() {
 
             {/* BUTTONS */}
             <div className="flex flex-wrap gap-4 mt-10">
-
-              <Link
-                href="/solutions"
-                className="primary-btn inline-block px-6 py-3 rounded-md"
-              >
-                Explore Solutions
-              </Link>
-
               <Link
                 href="/contact-us"
                 className="primary-btn  px-6 py-3 rounded-md"

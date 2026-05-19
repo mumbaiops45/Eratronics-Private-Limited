@@ -157,9 +157,9 @@ export default function TurnkeySolutions() {
               <Link href="/contact-us" className="inline-flex items-center gap-2 bg-white text-[var(--primary)] px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-white/90 transition-all duration-300">
                 <FiPhoneCall size={15} /> Contact Us
               </Link>
-              <Link href="/solutions" className="inline-flex items-center gap-2 border border-white/30 text-white px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-white/10 hover:border-white/60 transition-all duration-300">
+              {/* <Link href="/solutions" className="inline-flex items-center gap-2 border border-white/30 text-white px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-white/10 hover:border-white/60 transition-all duration-300">
                 All Solutions <FiArrowRight size={13} />
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
