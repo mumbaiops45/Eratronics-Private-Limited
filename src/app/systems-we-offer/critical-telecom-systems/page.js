@@ -9,8 +9,6 @@ const SystemWeOfferPage = () => {
         <>
             <TopHeading title="Systems we Offer" />
             <SystemWeOffer />
-     
-            
         </>
     )
 }

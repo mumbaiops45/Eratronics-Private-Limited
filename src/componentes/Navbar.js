@@ -51,23 +51,43 @@ export default function Navbar() {
   ];
 
   const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "About Us", href: "/about-us" },
-    {
-      name: "Solutions",
-      href: "#",
-      dropdown: solutionsDropdown,
-    },
-    {
-      name: "Industry We Serve",
-      href: "#",
-      dropdown: industriesDropdown,
-    },
-    { name: "Systems We Offer", href: "/systems-we-offer" },
-    { name: "Our Presence", href: "/our-presence" },
-    { name: "E-Waste", href: "/e-waste" },
-    { name: "Contact Us", href: "/contact-us" },
-  ];
+  { name: "Home", href: "/" },
+
+  { name: "About Us", href: "/about-us" },
+
+  {
+    name: "Solutions",
+    href: "#",
+    dropdown: solutionsDropdown,
+  },
+
+  {
+    name: "Industry We Serve",
+    href: "#",
+    dropdown: industriesDropdown,
+  },
+
+  {
+    name: "Systems We Offer",
+    href: "#",
+    dropdown: [
+      {
+        name: "Telecom Systems",
+        href: "/systems-we-offer/critical-telecom-systems",
+      },
+      {
+        name: "Intrusion Security",
+        href: "/systems-we-offer/intrusion-protection",
+      },
+    ],
+  },
+
+  { name: "Our Presence", href: "/our-presence" },
+
+  { name: "E-Waste", href: "/e-waste" },
+
+  { name: "Contact Us", href: "/contact-us" },
+];
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">

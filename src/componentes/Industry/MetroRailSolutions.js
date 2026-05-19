@@ -64,7 +64,7 @@ const metroRailData = {
     {
       title: "Control & Operations",
 
-      image: "/images/metro/control-room.jpg",
+      image: "/Metro Rail/Control & Operations.jpg",
 
       paragraphs: [
         "At the core of metro operations, we enable centralized monitoring and control through integrated communication platforms. Our solutions support Operations Control Centers (OCC), enabling real-time coordination across stations, trains, and field assets.",
@@ -83,7 +83,7 @@ const metroRailData = {
     {
       title: "Depot & Support Infrastructure",
 
-      image: "/images/metro/depot-system.jpg",
+      image: "/Metro Rail/Depot & Support Infrastructure.jpg",
 
       paragraphs: [
         "For depots and maintenance facilities, we deliver communication systems that support operational efficiency, safety, and asset management. This includes surveillance systems, internal communication networks, and connectivity infrastructure aligned with the mainline network.",
