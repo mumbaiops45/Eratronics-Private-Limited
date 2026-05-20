@@ -25,11 +25,11 @@ const systems = [
         id: 1,
         icon: FiActivity,
         category: "DAS",
-        title: "Distributed Acoustic Sensing",
+        title: "Distributed Acoustic Sensing (DAS)",
         desc:
-            "Fiber-optic based acoustic sensing solution enabling real-time intrusion detection, leak monitoring, train tracking, and infrastructure protection across mission-critical environments.",
+            "DAS converts a standard fiber-optic cable into a continuous acoustic/vibration sensor, acting like thousands of virtual microphones along its length. It enables real-time detection of events, movement, and disturbances without installing discrete sensors.",
         features: [
-            "Pipeline Intrusion Detection",
+            "Pipeline Intrusion & TPI Detection",
             "Leak & Rupture Monitoring",
             "Train Tracking & Positioning",
         ],
@@ -38,28 +38,30 @@ const systems = [
     {
         id: 2,
         icon: FiShield,
-        category: "Security",
-        title: "Intrusion & Third-Party Interference Detection",
+        category: "DAS Applications",
+        title: "Oil & Gas Pipeline Monitoring",
         desc:
-            "Advanced sensing systems detect unauthorized excavation, tampering, and external interference activities before critical infrastructure is compromised.",
+            "DAS enables real-time protection of critical pipeline infrastructure by detecting intrusion, leakage, rupture, and external interference with high accuracy.",
         features: [
-            "Unauthorized Access Detection",
-            "Tampering Alerts",
-            "Perimeter Monitoring",
+            "Intrusion & Third-Party Interference (TPI)",
+            "Pipeline Leak & Rupture Detection",
+            "Heated Pipeline Temperature Monitoring",
+            "Pig Tracking",
         ],
     },
 
     {
         id: 3,
         icon: FiRadio,
-        category: "Rail Monitoring",
-        title: "Metro Rail Monitoring Systems",
+        category: "Metro Applications",
+        title: "Railway & Metro Infrastructure Monitoring",
         desc:
-            "Continuous monitoring of rail tracks, train movement, and tunnel conditions for improved operational safety and predictive maintenance.",
+            "Advanced DAS-based monitoring ensures safe metro operations through continuous tracking of trains, rails, tunnels, and underground infrastructure conditions.",
         features: [
-            "Train Speed Estimation",
-            "Rail Crack Detection",
-            "Tunnel Monitoring",
+            "Train Tracking & Speed Estimation",
+            "Rail Crack & Track Condition Monitoring",
+            "Tunnel Movement & Water Leakage Detection",
+            "Track Intrusion Detection",
         ],
     },
 
@@ -67,41 +69,43 @@ const systems = [
         id: 4,
         icon: FiThermometer,
         category: "DTS",
-        title: "Distributed Temperature Sensing",
+        title: "Distributed Temperature Sensing (DTS)",
         desc:
-            "Real-time thermal monitoring using Raman Scattering technology for detecting hotspots, fire risks, insulation failures, and thermal anomalies.",
+            "DTS uses Raman scattering in fiber-optic cables to monitor temperature along long distances in real-time, detecting hotspots, fire risks, and insulation failures.",
         features: [
             "Hotspot Detection",
-            "Dynamic Line Rating",
-            "Fire & Smoke Detection",
+            "Dynamic Line Rating (DLR)",
+            "Fire, Smoke & Arc Detection",
         ],
     },
 
     {
         id: 5,
         icon: FiMap,
-        category: "Infrastructure",
-        title: "Tunnel & Utility Monitoring",
+        category: "Power Sector Applications",
+        title: "Power Transmission Monitoring",
         desc:
-            "Smart sensing infrastructure designed for metro tunnels, utility corridors, and underground networks with continuous environmental monitoring.",
+            "DTS-based monitoring improves reliability of power networks by enabling real-time thermal visibility and fault detection across transmission systems.",
         features: [
-            "Water Leakage Detection",
-            "Ventilation Monitoring",
-            "Geotechnical Monitoring",
+            "Dynamic Line Rating (DLR)",
+            "Underground Cable Monitoring",
+            "Hotspot Detection",
+            "Fire & Arc Fault Monitoring",
         ],
     },
 
     {
         id: 6,
         icon: FiAlertTriangle,
-        category: "Safety",
-        title: "Critical Safety & Fault Detection",
+        category: "Tunnel & Safety",
+        title: "Metro & Tunnel Safety Systems",
         desc:
-            "Integrated safety systems providing early warning for fire, arc faults, cable overheating, and structural abnormalities in critical facilities.",
+            "Integrated DAS & DTS systems provide structural health monitoring, fire detection, and geotechnical safety for tunnels and underground infrastructure.",
         features: [
-            "Arc Detection",
-            "Cable Monitoring",
-            "Structural Health Analysis",
+            "Fire & Smoke Detection",
+            "Ventilation Monitoring",
+            "Structural Health Monitoring",
+            "Water Ingress Detection",
         ],
     },
 ];
@@ -125,20 +129,19 @@ export default function IntrusionProtectionSystems() {
 
                         <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-widest text-[var(--primary)] bg-[var(--primary)]/8 border border-[var(--primary)]/15 px-4 py-2 rounded-full mb-7">
                             <span className="w-1.5 h-1.5 rounded-full bg-[var(--primary)]" />
-                            Intrusion Protection Systems
+                            Intrusion & Sensing Systems
                         </span>
 
                         <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-[1.1] mb-6">
-                            Advanced Intrusion
+                            Advanced Fiber Optic
                             <span className="block text-[var(--primary)] mt-1">
-                                Detection Systems for Prevention & Protection
+                                DAS & DTS Monitoring Systems
                             </span>
                         </h2>
 
                         <p className="text-gray-500 text-base lg:text-lg leading-relaxed">
-                            Distributed Acoustic Sensing (DAS) and Distributed Temperature
-                            Sensing (DTS) solutions engineered for real-time monitoring,
-                            intrusion prevention, and infrastructure protection.
+                            Real-time distributed sensing technologies for intrusion detection,
+                            pipeline monitoring, railway safety, and critical infrastructure protection.
                         </p>
 
                     </motion.div>
@@ -163,15 +166,12 @@ export default function IntrusionProtectionSystems() {
                                 viewport={{ once: true }}
                                 className="px-8 py-8 text-center"
                             >
-
                                 <p className="text-3xl lg:text-4xl font-black text-gray-900 mb-1">
                                     {stat.value}
                                 </p>
-
                                 <p className="text-[11px] text-gray-400 font-medium uppercase tracking-widest">
                                     {stat.label}
                                 </p>
-
                             </motion.div>
                         ))}
 
@@ -202,14 +202,13 @@ export default function IntrusionProtectionSystems() {
 
                                 <span className="absolute top-0 left-6 right-6 h-[2px] bg-[var(--primary)] rounded-b-full scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left" />
 
-                                {/* ICON */}
                                 <div className="flex items-start justify-between mb-6">
 
                                     <div className="w-12 h-12 rounded-xl bg-[var(--primary)]/8 flex items-center justify-center group-hover:bg-[var(--primary)] transition-colors duration-300">
 
                                         <Icon
                                             size={20}
-                                            className="text-[var(--primary)] group-hover:text-white transition-colors duration-300"
+                                            className="text-[var(--primary)] group-hover:text-white"
                                         />
 
                                     </div>
@@ -220,29 +219,21 @@ export default function IntrusionProtectionSystems() {
 
                                 </div>
 
-                                {/* TITLE */}
-                                <h3 className="text-[15px] font-bold text-gray-900 mb-3 leading-snug group-hover:text-[var(--primary)] transition-colors duration-300">
+                                <h3 className="text-[15px] font-bold text-gray-900 mb-3 group-hover:text-[var(--primary)]">
                                     {sys.title}
                                 </h3>
 
-                                {/* DESC */}
                                 <p className="text-sm text-gray-500 leading-relaxed mb-6 flex-1">
                                     {sys.desc}
                                 </p>
 
-                                {/* FEATURES */}
                                 <ul className="space-y-2.5 mb-7">
 
                                     {sys.features.map((feat, fi) => (
                                         <li key={fi} className="flex items-center gap-2.5">
 
-                                            <span className="w-4 h-4 rounded-full bg-[var(--primary)]/10 flex items-center justify-center shrink-0">
-
-                                                <FiCheck
-                                                    size={10}
-                                                    className="text-[var(--primary)]"
-                                                />
-
+                                            <span className="w-4 h-4 rounded-full bg-[var(--primary)]/10 flex items-center justify-center">
+                                                <FiCheck size={10} className="text-[var(--primary)]" />
                                             </span>
 
                                             <span className="text-[13px] text-gray-600 font-medium">
@@ -254,8 +245,7 @@ export default function IntrusionProtectionSystems() {
 
                                 </ul>
 
-                                {/* FOOTER */}
-                                <div className="flex items-center gap-2 text-[13px] font-semibold text-[var(--primary)] group-hover:gap-3 transition-all duration-200 pt-5 border-t border-gray-100">
+                                <div className="flex items-center gap-2 text-[13px] font-semibold text-[var(--primary)] group-hover:gap-3 transition-all pt-5 border-t border-gray-100">
                                     Explore System
                                     <FiArrowRight size={13} />
                                 </div>
@@ -279,46 +269,34 @@ export default function IntrusionProtectionSystems() {
                     className="relative overflow-hidden rounded-2xl bg-[var(--primary)] px-8 lg:px-16 py-14 lg:py-16"
                 >
 
-                    <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-[var(--primary)]/30 blur-3xl pointer-events-none" />
-
-                    <div className="absolute -bottom-20 -left-20 w-56 h-56 rounded-full bg-[var(--primary)]/20 blur-3xl pointer-events-none" />
+                    <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-[var(--primary)]/30 blur-3xl" />
+                    <div className="absolute -bottom-20 -left-20 w-56 h-56 rounded-full bg-[var(--primary)]/20 blur-3xl" />
 
                     <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
 
                         <div className="max-w-xl">
 
-                            <p className="text-[11px] uppercase tracking-widest text-white/40 font-semibold mb-4">
-                                Infrastructure Protection
+                            <p className="text-[11px] uppercase tracking-widest text-white/40 mb-4">
+                                Smart Infrastructure Monitoring
                             </p>
 
-                            <h3 className="text-2xl lg:text-3xl font-bold text-white leading-snug mb-3">
-                                Secure your critical infrastructure with intelligent sensing systems.
+                            <h3 className="text-2xl lg:text-3xl font-bold text-white mb-3">
+                                Protect critical assets with real-time fiber sensing intelligence
                             </h3>
 
-                            <p className="text-white/50 text-sm leading-relaxed">
-                                Deploy advanced DAS & DTS technologies for proactive monitoring,
-                                real-time alerts, and predictive infrastructure protection.
+                            <p className="text-white/50 text-sm">
+                                Deploy DAS & DTS solutions for predictive monitoring, intrusion detection, and safety assurance.
                             </p>
 
                         </div>
 
-                        <div className="flex flex-wrap gap-3 shrink-0">
-
-                            <Link
-                                href="/contact-us"
-                                className="inline-flex items-center gap-2 bg-white text-[var(--primary)] font-semibold text-sm px-7 py-3.5 rounded-xl hover:bg-gray-50 transition-colors duration-200"
-                            >
-                                Get in Touch
-                                <FiArrowRight size={14} />
-                            </Link>
-
-                            {/* <Link
-                                href="/solutions"
-                                className="inline-flex items-center gap-2 border border-white/20 text-white font-semibold text-sm px-7 py-3.5 rounded-xl hover:bg-white/8 hover:border-white/35 transition-all duration-200"
-                            >
-                                Explore Solutions
-                            </Link> */}
-                        </div>
+                        <Link
+                            href="/contact-us"
+                            className="inline-flex items-center gap-2 bg-white text-[var(--primary)] font-semibold text-sm px-7 py-3.5 rounded-xl"
+                        >
+                            Get in Touch
+                            <FiArrowRight size={14} />
+                        </Link>
 
                     </div>
 

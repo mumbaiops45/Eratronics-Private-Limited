@@ -11,10 +11,10 @@ const lifecycleServices = [
   {
     number: "01",
     tag: "Early Life Phase",
-    title: "Stabilization & Warranty Support",
+    title: "Stabilization & Warranty Support (Early Life Phase)",
     icon: FiShield,
     description:
-      "Ensure system reliability and operational stability immediately after commissioning through structured hypercare and performance optimization.",
+      "Objective: Ensure system reliability post-commissioning.",
     points: [
       "Hypercare support (first 3–6 months)",
       "Performance tuning",
@@ -25,15 +25,15 @@ const lifecycleServices = [
   {
     number: "02",
     tag: "Mid-Life Phase",
-    title: "Operations & Managed Services",
+    title: "Operations & Managed Services (Mid-Life Phase)",
     icon: FiActivity,
     description:
-      "Maintain maximum uptime and predictable system performance through continuous monitoring and SLA-driven operational support.",
+      "Objective: Maintain uptime and predictable performance.",
     points: [
       "24×7 NOC monitoring",
       "SLA-driven incident & problem management",
       "Preventive & predictive maintenance",
-      "Spares lifecycle management",
+      "Spares lifecycle management (critical in remote O&G sites)",
     ],
     kpis: [
       "Network availability (≥99.95%)",
@@ -44,28 +44,28 @@ const lifecycleServices = [
   {
     number: "03",
     tag: "Maturity Phase",
-    title: "Optimization & Upgrade",
+    title: "Optimization & Upgrade (Maturity Phase)",
     icon: FiRefreshCw,
     description:
-      "Keep systems technologically relevant and operationally efficient across long infrastructure life cycles.",
+      "Objective: Keep systems relevant over long asset life.",
     points: [
-      "Technology refresh planning",
+      "Technology refresh planning (SDH → MPLS-TP / IP/MPLS)",
       "Capacity augmentation",
       "Software/firmware lifecycle management",
-      "Cybersecurity upgrades",
+      "Cybersecurity upgrades (patching, vulnerability management)",
     ],
   },
   {
     number: "04",
     tag: "End-of-Life Phase",
-    title: "Obsolescence & Replacement",
+    title: "Obsolescence & Replacement (End-of-Life Phase)",
     icon: FiAlertTriangle,
     description:
-      "Reduce operational risks caused by aging infrastructure through planned migrations and lifecycle replacement strategies.",
+      "Objective: Avoid operational risk due to aging systems.",
     points: [
       "OEM obsolescence tracking",
       "Last-time-buy planning",
-      "Migration roadmap",
+      "Migration roadmap (zero downtime transition)",
       "Decommissioning strategy",
     ],
   },

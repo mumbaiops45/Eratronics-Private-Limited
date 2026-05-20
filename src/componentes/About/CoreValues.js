@@ -10,7 +10,7 @@ const tabs = [
     tag: "Leadership & Ownership",
     title: "Empower Individuals",
     description:
-      "Empowerment is the best lubricant to the exercise of learning. We enable our employees to make more and bigger decisions, involve team members in taking important calls, and encourage everyone to play a more active, leadership-driven role.",
+      "Empowerment is the best lubricant to the exercise of learning. We enable our employees to make more and bigger decisions. Involve team members in taking important decisions. Encouraging employees to play a more active role.",
     keywords: ["Team Ownership", "Leadership", "Collaboration", "Growth"],
   },
   {
@@ -19,7 +19,7 @@ const tabs = [
     tag: "Continuous Improvement",
     title: "Constantly Improve",
     description:
-      "Our goals are aggressive and they demand improvement — it's in our nature. And it's the only way we're going to accomplish everything we set out to achieve. We build systems of learning into every team and every process.",
+      "Our goals are aggressive and they demand improvement. it's in our nature. And it's the only way we're going to accomplish everything.",
     keywords: ["Innovation", "Performance", "Improvement", "Efficiency"],
   },
   {
@@ -28,7 +28,7 @@ const tabs = [
     tag: "Positive Mindset",
     title: "Face Challenges With Optimism",
     description:
-      "We value challenges because they produce innovations. We commit to approaching every problem with enthusiasm and optimism — transforming obstacles into opportunities for better engineering and stronger outcomes.",
+      "We value challenges because they produce innovations. We commit to approaching problems with enthusiasm and optimism.",
     keywords: ["Optimism", "Problem Solving", "Innovation", "Confidence"],
   },
   {
@@ -37,7 +37,7 @@ const tabs = [
     tag: "Precision & Reliability",
     title: "Be Diligent — Get It Right",
     description:
-      "To be diligent means to be very thorough and accurate when deploying mission-critical network infrastructure. There is no shortcut to reliability. We engineer systems that perform when it matters most.",
+      "To be diligent means to be very thorough and accurate when it comes to deploying mission critical network. Hence to get it right.",
     keywords: ["Accuracy", "Quality", "Reliability", "Excellence"],
   },
 ];

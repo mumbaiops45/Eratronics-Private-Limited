@@ -1,5 +1,5 @@
 ﻿"use client";
-
+import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -85,44 +85,42 @@ export default function ContactUs() {
   };
 
   /* Submit handler — posts to FormSubmit.co AJAX endpoint */
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const errs = validate();
-    if (Object.keys(errs).length > 0) {
-      setErrors(errs);
-      return;
-    }
-    setErrors({});
-    setStatus("loading");
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    try {
-      const res = await fetch("https://formsubmit.co/ajax/sales@eratronics.in", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          Organization: form.organization,
-          "Mobile No": form.mobile,
-          message: form.message,
-          _subject: `Enquiry from ${form.name} — ${form.organization}`,
-          _captcha: "false",
-        }),
-      });
+  // validate form
+  const errs = validate();
 
-      if (res.ok) {
-        setStatus("success");
-        setForm(EMPTY);
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
-  };
+  if (Object.keys(errs).length > 0) {
+    setErrors(errs);
+    return;
+  }
+
+  setErrors({});
+  setStatus("loading");
+
+  try {
+    await emailjs.send(
+      "service_1qajjl8", // EmailJS SERVICE ID
+      "template_y3r7go5", // EmailJS TEMPLATE ID
+      {
+        from_name: form.name,
+        from_email: form.email,
+        organization: form.organization,
+        mobile: form.mobile,
+        message: form.message,
+      },
+      "tStv7JwZFWsbJU2Cf" // EmailJS PUBLIC KEY
+    );
+
+    setStatus("success");
+    setForm(EMPTY);
+
+  } catch (error) {
+    console.log(error);
+    setStatus("error");
+  }
+};
 
   const resetForm = () => {
     setStatus("idle");
@@ -320,7 +318,7 @@ export default function ContactUs() {
                       <button
                         type="submit"
                         disabled={status === "loading"}
-                        className="flex-shrink-0 inline-flex items-center gap-2.5 bg-[var(--seco)] text-white font-semibold text-sm px-8 py-3.5 rounded-xl hover:bg-[var(--primary)] transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
+                        className="flex-shrink-0 inline-flex items-center gap-2.5 bg-[var(--primary)] text-white font-semibold text-sm px-8 py-3.5 rounded-xl hover:bg-[var(--primary)] transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
                       >
                         {status === "loading" ? (
                           <>

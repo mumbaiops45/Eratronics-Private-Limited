@@ -9,14 +9,70 @@ import {
 } from "react-icons/fi";
 
 const services = [
-  { number: "01", tag: "Requirement Phase",  title: "Tender Requirement Analysis",              icon: FiSearch,      description: "Detailed evaluation of the customer's operational processes, technical requirements, site and environmental constraints, and applicable regulatory and compliance obligations." },
-  { number: "02", tag: "Design Phase",        title: "Detailed Design Engineering",              icon: FiPenTool,     description: "Our design team brings years of hands-on engineering experience, enabling precise project mapping and system planning. We specialize in translating customer functional requirements into detailed drawings and layouts with exceptional accuracy." },
-  { number: "03", tag: "Procurement Phase",   title: "Multi Vendor Supply Chain Management",    icon: FiPackage,     description: "We streamline multi-vendor supply chain management by coordinating sourcing, procurement, and logistics across multiple partners while ensuring timely availability of quality components." },
-  { number: "04", tag: "Integration Phase",   title: "System Integration and FAT",              icon: FiCpu,         description: "From voice and data to video surveillance and Ethernet networks across fibre, radio, or copper, we seamlessly bring technologies together into one cohesive system." },
-  { number: "05", tag: "Installation Phase",  title: "Site Installation and Commissioning",     icon: FiTool,        description: "Our Project team ensures precise on-site installation and efficient commissioning, aligning every component with the approved design and system requirements." },
-  { number: "06", tag: "Validation Phase",    title: "Site Acceptance & End-to-End Testing",    icon: FiCheckSquare, description: "Our Engineers rigorously validate every aspect of the deployed system through structured site acceptance and comprehensive end-to-end testing." },
-  { number: "07", tag: "Knowledge Transfer",  title: "Training",                                icon: FiBookOpen,    description: "Provision of structured, end-user training programs tailored to client requirements, covering operations, maintenance, troubleshooting, and emergency response procedures." },
-  { number: "08", tag: "Handover Phase",      title: "As-Built Documentation & Handover",      icon: FiFileText,    description: "We deliver comprehensive as-built documentation with a structured and transparent handover process for complete operational clarity and confidence." },
+  {
+    number: "01",
+    tag: "Requirement Phase",
+    title: "Tender Requirement Analysis",
+    icon: FiSearch,
+    description:
+      "Detailed evaluation of the customer’s operational processes, technical requirements, site and environmental constraints, and applicable regulatory and compliance obligations.",
+  },
+  {
+    number: "02",
+    tag: "Design Phase",
+    title: "Detailed Design Engineering",
+    icon: FiPenTool,
+    description:
+      "Our design team brings years of hands-on engineering experience, enabling precise project mapping and system planning. We specialize in translating customer functional requirements into detailed drawings and layouts with exceptional accuracy, ensuring clarity, efficiency, and seamless execution at every stage.",
+  },
+  {
+    number: "03",
+    tag: "Procurement Phase",
+    title: "Multi Vendor Supply Chain Management",
+    icon: FiPackage,
+    description:
+      "We streamline multi-vendor supply chain management by coordinating sourcing, procurement, and logistics across multiple partners. Our approach ensures timely availability of quality components, maintains consistency across systems, and enables smooth integration keeping projects on schedule and aligned with design and execution requirements.",
+  },
+  {
+    number: "04",
+    tag: "Integration Phase",
+    title: "System Integration and FAT",
+    icon: FiCpu,
+    description:
+      "We go beyond traditional telecom system integration we enable complete, high-performance communication ecosystems. From voice and data to video surveillance and Ethernet networks across fibre, radio, or copper, we seamlessly bring technologies together into one cohesive system. Every solution is rigorously validated through extensive pre-deployment checks at our integration centre, followed by thorough Factory Acceptance Tests (FAT) witnessed by the end user ensuring reliability, performance, and complete confidence before deployment.",
+  },
+  {
+    number: "05",
+    tag: "Installation Phase",
+    title: "Site Installation and Commissioning",
+    icon: FiTool,
+    description:
+      "Our Project team ensures precise on-site installation and efficient commissioning, aligning every component with the approved design and system requirements. With a focus on quality, safety, and coordination, we bring the integrated system to life ensuring smooth deployment, optimal performance, and readiness for seamless operation.",
+  },
+  {
+    number: "06",
+    tag: "Validation Phase",
+    title: "Site Acceptance and End-to-End System Testing",
+    icon: FiCheckSquare,
+    description:
+      "Our Engineers rigorously validate every aspect of the deployed system through structured site acceptance and comprehensive end-to-end testing. Each component is checked for performance, reliability, and seamless interoperability across the network. With a meticulous, no-compromise approach, we ensure the entire solution functions as a unified system—fully optimized, compliant, and ready for real-world operations.",
+  },
+  {
+    number: "07",
+    tag: "Knowledge Transfer",
+    title: "Training",
+    icon: FiBookOpen,
+    description:
+      "Provision of structured, end-user training programs tailored to client requirements, encompassing system operation, routine and preventive maintenance practices, fault diagnosis and troubleshooting methodologies, as well as defined emergency handling and response procedures.",
+  },
+  {
+    number: "08",
+    tag: "Handover Phase",
+    title: "As Built Documentation and Handover",
+    icon: FiFileText,
+    description:
+      "We deliver comprehensive as-built documentation that accurately reflects the final deployed system, capturing every detail for future reference and maintenance. With a structured and transparent handover process, we ensure clients have complete clarity, control, and confidence to operate and manage the system effectively from day one.",
+  },
 ];
 
 const highlights = [

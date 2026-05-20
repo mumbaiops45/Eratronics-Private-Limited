@@ -119,14 +119,10 @@ export default function DeliveryPhilosophy() {
               </span>
 
               {/* Number */}
-            
+
 
               {/* Icon */}
-              <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center mb-6 group-hover:bg-white/20 transition-all duration-300">
 
-                <Icon className="text-white" size={20} />
-
-              </div>
 
               {/* Letter badge */}
               <div className="flex items-center gap-3 mb-4">
@@ -136,7 +132,11 @@ export default function DeliveryPhilosophy() {
                 </span>
 
                 <div className="h-px flex-1 bg-white/10" />
+                <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center  group-hover:bg-white/20 transition-all duration-300">
 
+                  <Icon className="text-white" size={20} />
+
+                </div>
               </div>
 
               <h3 className="text-base font-bold text-white mb-4 leading-snug">

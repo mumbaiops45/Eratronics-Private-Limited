@@ -19,7 +19,7 @@ const integrationServices = [
     title: "Third-Party Procurement",
     icon: FiShoppingBag,
     description:
-      "For telecom projects, core network elements such as optical multiplexers, SDH, MPLS, DWDM, and Ethernet switches are typically supplied by the OEM or main contractor. Eratronics undertakes end-to-end procurement of all associated third-party components including cabinets, power and data cables, MCBs, power supplies, patch panels, and related accessories in line with the approved Bill of Materials.",
+      "For telecom projects, core network elements such as optical multiplexers (SDH / MPLS / DWDM / Ethernet Switches) are typically supplied by the OEM or main contractor. Eratronics undertakes end-to-end procurement of all associated third-party components—including cabinets, power and data cables, MCBs, power supplies, patch panels, and related accessories in line with the approved Bill of Materials (BoM).",
   },
   {
     number: "02",
@@ -41,7 +41,7 @@ const integrationServices = [
     title: "Factory Acceptance Testing (FAT)",
     icon: FiCheckSquare,
     description:
-      "Post-integration, each system undergoes rigorous validation through comprehensive pre-dispatch checks at our integration facility. Factory Acceptance Testing is conducted in the presence of the customer or their representatives to verify system performance, functionality, and compliance with project specifications.",
+      "Post-integration, each system undergoes rigorous validation through comprehensive pre-dispatch checks at our integration facility. This is followed by Factory Acceptance Testing (FAT), conducted in the presence of the end customer or their representatives, to verify system performance, functionality, and compliance with project specifications.",
   },
   {
     number: "04",
@@ -49,15 +49,15 @@ const integrationServices = [
     title: "Packing & Dispatch",
     icon: FiPackage,
     description:
-      "Upon receipt of dispatch clearance from the client, integrated systems are carefully dismantled where required and packed in accordance with export-grade standards to ensure safe transit. Standard scope includes handling up to loading of materials at the integration facility.",
+      "Upon receipt of dispatch clearance from the client, integrated systems are carefully dismantled (where required) and packed in accordance with export-grade standards to ensure safe transit. Eratronics’ standard scope includes handling up to loading of materials at our integration facility.",
   },
   {
     number: "05",
     tag: "Extended Scope",
-    title: "Additional Services",
+    title: "Additional Services (Under Separate Scope)",
     icon: FiSettings,
     description:
-      "Eratronics can also provide end-to-end logistics support including transit insurance, transportation to site, unloading, and complete on-site installation and commissioning services under a separate project scope.",
+      "Eratronics can also provide end-to-end logistics support, including transit insurance, transportation to site, unloading, and on-site installation & commissioning services.",
   },
 ];
 

@@ -13,7 +13,7 @@ const engineeringServices = [
     title: "Technical Consulting Services",
     icon: FiActivity,
     description:
-      "Telecommunication networks across Oil & Gas, Power, Transportation, and Defence sectors support mission-critical operations where system reliability and availability are essential. Eratronics develops highly resilient telecom architectures and delivers integrated solution frameworks including technology evaluation, design alternatives, and execution methodologies aligned with operational and business objectives.",
+      "Telecommunication networks across Oil & Gas, Power, Transportation, and Defence sectors support mission-critical operations, where system reliability and availability are non-negotiable. The foundation for achieving this lies in robust architecture design during the planning phase. Eratronics leverages its deep domain expertise to develop telecom system architectures that are inherently resilient and engineered for high availability. Our consulting services focus on delivering comprehensive solution frameworks for integrated telecommunications and surveillance systems. This includes detailed design alternatives, technology and product evaluations, and well-defined project execution methodologies ensuring optimal alignment with operational and business objectives.",
     tags: ["Architecture Design", "Technology Evaluation", "Risk Assessment"],
   },
   {
@@ -21,7 +21,7 @@ const engineeringServices = [
     title: "FEED Engineering Services",
     icon: FiLayers,
     description:
-      "Eratronics provides specialized Front-End Engineering Design (FEED) services for EPCs, PMCs, and end-users. Our engineering team prepares complete FEED packages covering network sizing, architecture definition, technology evaluations, and detailed technical specifications to create implementation-ready frameworks that reduce execution risks.",
+      "Eratronics offers specialized Front-End Engineering Design (FEED) services to support both end-users and project stakeholders such as EPCs and PMCs. These services form a critical input for turnkey project execution and detailed engineering phases. Our engineering team develops complete FEED packages covering telecommunications and associated systems. This includes network sizing and scoping, evaluation of technology alternatives, architecture definition tailored to client requirements, and preparation of detailed technical specifications. The outcome is a structured, implementation-ready design framework that minimizes project risks and enhances execution efficiency.",
     tags: ["Network Sizing", "Architecture Definition", "Technical Specifications"],
   },
   {
@@ -29,7 +29,7 @@ const engineeringServices = [
     title: "Technology Assessment Services",
     icon: FiCpu,
     description:
-      "We help customers evaluate emerging technologies and products before deployment through structured assessments including lab demonstrations, pilot implementations, and interoperability testing. Each evaluation program is tailored collaboratively to validate compatibility, operational suitability, and long-term performance.",
+      "Eratronics supports customers in evaluating emerging technologies and products prior to full-scale deployment, enabling informed and risk-mitigated decision-making. In scenarios where adoption is constrained by unfamiliarity or concerns around integration with existing systems, we conduct structured assessments under realistic operating conditions. These may include controlled lab demonstrations, pilot deployments, or interoperability testing with live systems. Each evaluation program is developed in close collaboration with the customer, ensuring that performance, compatibility, and operational suitability are thoroughly validated before investment decisions are made.",
     tags: ["Lab Demonstrations", "Pilot Implementations", "Interoperability Testing"],
   },
   {
@@ -37,11 +37,10 @@ const engineeringServices = [
     title: "Gap Analysis Services",
     icon: FiTrendingUp,
     description:
-      "Our gap analysis services assess existing telecom and voice/video infrastructure against current and future operational requirements. We deliver strategic upgrade road maps, optimization recommendations, and integration strategies that maximize infrastructure value while enabling future scalability and innovation.",
+      "Eratronics provides comprehensive gap analysis services to assess existing telecom and voice/video infrastructure against current and future operational requirements. Our approach involves an in-depth review of existing systems, aligned with functional needs and evolving technology standards. Based on this assessment, we deliver a detailed strategic road map outlining upgrade paths, optimization opportunities, and expansion strategies. With a strong focus on innovation and practicality, we identify opportunities to enhance network capabilities through optimized system design, technology upgrades, and efficient integration ensuring that existing infrastructure continues to deliver maximum value.",
     tags: ["Infrastructure Assessment", "Upgrade Roadmaps", "Scalability Planning"],
   },
 ];
-
 const capabilities = [
   "10+ years of domain expertise",
   "Collaborative execution models",
