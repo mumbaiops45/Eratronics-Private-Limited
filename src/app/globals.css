@@ -3,8 +3,8 @@
 @import "tailwindcss";
 
 :root {
-  --primary: #0B1D3A;
-
+ --primary: #0B1D3A;
+--secondary: #2196F3;
 }
 
 /* Global font */
@@ -17,7 +17,7 @@ body {
 }
 
 h1 {
-  font-size: 38px;
+  font-size: 46px;
   font-weight: 700;
   line-height: 1.2;
 }
@@ -70,9 +70,9 @@ strong {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 .seconadry-btn {
-  background-color:red;
+  background-color:var(--secondary);
   font-size: 13px;
-  color: var(--primary);
+  color:white;
   border: 1px solid var(--primary);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }

@@ -49,10 +49,9 @@ export default function ServicePillars() {
                 Service Framework
               </span>
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight max-w-2xl">
-              Positioned Around{" "}
-              <span className="text-(--primary)">3 Core Pillars</span>
-            </h2>
+<h2 className="text-4xl lg:text-5xl font-bold leading-tight max-w-2xl bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">
+  Positioned Around 3 Core Pillars
+</h2>
           </motion.div>
 
           <motion.p
@@ -76,7 +75,7 @@ export default function ServicePillars() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.12 }}
               viewport={{ once: true }}
-              className="group relative rounded-2xl border border-gray-100 bg-white p-8 hover:border-(--primary)/30 hover:shadow-xl hover:shadow-(--primary)/5 transition-all duration-500 overflow-hidden"
+              className="group relative rounded-2xl border border-gray-100 bg-[var(--secondary)]/10 p-8 hover:border-(--primary)/30 hover:shadow-xl hover:shadow-(--primary)/5 transition-all duration-500 overflow-hidden"
             >
               {/* Top accent */}
               <span className="absolute top-0 left-0 w-0 h-0.75 bg-(--primary) group-hover:w-full transition-all duration-700 ease-out" />
@@ -88,7 +87,7 @@ export default function ServicePillars() {
 
               {/* Icon */}
               <div className="w-14 h-14 rounded-xl bg-(--primary)/8 border border-(--primary)/15 flex items-center justify-center mb-6 group-hover:bg-(--primary) group-hover:border-(--primary) transition-all duration-300">
-                <Icon className="text-(--primary) group-hover:text-white transition-colors duration-300" size={22} />
+                <Icon className="text-[var(--primary)] group-hover:text-[var(--secondary)] transition-colors duration-300" size={22} />
               </div>
 
               <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-(--primary) transition-colors duration-300">

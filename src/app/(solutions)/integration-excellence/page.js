@@ -4,7 +4,16 @@ export default function TurnkeySolutionsPage() {
 
   return (
     <>
-      <TopHeading title="System Integration Services " />
+     <TopHeading
+  title={
+    <>
+      <span className="text-[var(--secondary)]">
+        System Integration
+      </span>{" "}
+      Services
+    </>
+  }
+/>
       <SystemIntegrationServices />
     </>
   );

@@ -64,7 +64,7 @@ export default function OilGasSolutions() {
       {/* Background glow */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[var(--primary)]/5 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16">
+      <div className="relative z-10  mx-auto px-6 lg:px-16">
 
         {/* -- TOP SECTION -- */}
         <motion.div
@@ -75,7 +75,7 @@ export default function OilGasSolutions() {
             ease: [0.22, 1, 0.36, 1],
           }}
           viewport={{ once: true }}
-          className="max-w-4xl mb-24"
+          className=" mb-24"
         >
 
           {/* Small text */}
@@ -87,9 +87,9 @@ export default function OilGasSolutions() {
           </div>
 
           {/* Heading */}
-          <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight mb-8">
-            {industryData.heading}
-          </h2>
+        <h2 className="text-4xl lg:text-6xl font-bold leading-tight mb-8 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">
+  {industryData.heading}
+</h2>
 
           {/* Intro */}
           <p className="text-gray-500 text-base lg:text-lg leading-relaxed max-w-3xl">
@@ -122,7 +122,7 @@ export default function OilGasSolutions() {
                 <div>
 
                   {/* Tag */}
-                  <div className="inline-flex items-center gap-2 bg-[var(--primary)]/8 border border-[var(--primary)]/15 px-4 py-2 rounded-full mb-6">
+                  <div className="inline-flex items-center gap-2 bg-[var(--secondary)]/10 border border-[var(--primary)]/15 px-4 py-2 rounded-full mb-6">
                     <span className="w-2 h-2 rounded-full bg-[var(--primary)]" />
                     <span className="text-[11px] font-semibold tracking-[3px] uppercase text-[var(--primary)]">
                       Energy Infrastructure

@@ -40,13 +40,17 @@ export default function Hero() {
             </span>
 
             {/* HEADING */}
-            <h1 className="text-white text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-              Reliable{" "}
-              <span className="text-[var(--primary)]">
-                Industrial Telecom
-              </span>{" "}
-              Solutions
-            </h1>
+         <h1 className="text-white font-bold">
+  Reliable{" "}
+  
+  <span className="inline-block bg-white/20 px-4 py-1 shadow-md">
+    <span className="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">
+      Industrial Telecom
+    </span>
+  </span>
+
+  {" "}Solutions
+</h1>
 
             {/* DESCRIPTION */}
             <p className="text-gray-300 text-lg md:text-xl leading-relaxed mt-6 max-w-2xl">
@@ -58,7 +62,7 @@ export default function Hero() {
             <div className="flex flex-wrap gap-4 mt-10">
               <Link
                 href="/contact-us"
-                className="primary-btn  px-6 py-3 rounded-md"
+                className="seconadry-btn  px-6 py-3 rounded-md"
               >
                 Contact Us
               </Link>

@@ -5,7 +5,16 @@ export default function TurnkeySolutionsPage() {
 
   return (
     <>
-      <TopHeading title="Turnkey Solutions" />
+      <TopHeading
+        title={
+          <>
+            <span className="text-[var(--secondary)]">
+              Turnkey
+            </span>{" "}
+            Solutions
+          </>
+        }
+      />
       <TurnkeySolutions />
     </>
   );

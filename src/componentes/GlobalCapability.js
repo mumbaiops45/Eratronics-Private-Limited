@@ -5,46 +5,220 @@ import { motion } from "framer-motion";
 
 const capabilities = [
   {
-    id: "01",
     tag: "End-to-End Delivery",
     title: "Turnkey Solutions",
     description:
-      "Experience seamless end-to-end project delivery with single point accountability — from requirements analysis and design engineering to supply chain management, system integration, FAT/SAT, commissioning, documentation handover, and go-live support. Our proven DARE model guarantees precision and reliability at every stage.",
-    keywords: ["Requirements Analysis", "Design Engineering", "FAT / SAT", "Commissioning", "DARE Model"],
+      "Experience seamless end-to-end project delivery with single point accountability — from requirements analysis and design engineering to supply chain management, system integration, FAT/SAT, commissioning, documentation handover, and go-live support.",
+    keywords: [
+      "Requirements Analysis",
+      "Design Engineering",
+      "FAT / SAT",
+      "Commissioning",
+    ],
     href: "/turnkey-solutions",
+    image: "/Turnkey Solutions.png",
+
+    svg: (
+      <svg width="130" height="130" viewBox="0 0 200 200" fill="none">
+        <rect
+          x="40"
+          y="40"
+          width="120"
+          height="120"
+          stroke="var(--secondary)"
+          strokeWidth="2"
+          opacity="0.5"
+        />
+
+        <path
+          d="M60 100H140"
+          stroke="white"
+          strokeWidth="2"
+          opacity="0.5"
+        />
+
+        <path
+          d="M100 60V140"
+          stroke="white"
+          strokeWidth="2"
+          opacity="0.5"
+        />
+
+        <circle
+          cx="100"
+          cy="100"
+          r="18"
+          fill="var(--secondary)"
+          opacity="0.5"
+        />
+      </svg>
+    ),
   },
+
   {
-    id: "02",
     tag: "Industrial Engineering",
     title: "Engineering Services",
     description:
-      "At Eratronics, we bring a structured end-to-end engineering approach spanning concept and design to integration and commissioning — ensuring every solution is aligned with operational criticality, regulatory requirements, and long-term performance. With deep domain expertise in Oil & Gas, we deliver telecom infrastructure that forms the backbone of mission-critical operations.",
-    keywords: ["Oil & Gas", "Cyber Security", "System Resilience", "Mission Critical", "Scalability"],
+      "We bring a structured engineering approach spanning concept and design to integration and commissioning ensuring operational reliability and long-term performance.",
+    keywords: [
+      "Oil & Gas",
+      "Cyber Security",
+      "Mission Critical",
+      "Scalability",
+    ],
     href: "/engineering-services",
+    image: "/Engineering Services.png",
+
+    svg: (
+      <svg width="130" height="130" viewBox="0 0 200 200" fill="none">
+        <circle
+          cx="100"
+          cy="100"
+          r="65"
+          stroke="var(--secondary)"
+          strokeWidth="2"
+          strokeDasharray="8 8"
+          opacity="0.5"
+        />
+
+        <circle
+          cx="100"
+          cy="100"
+          r="35"
+          stroke="white"
+          strokeWidth="2"
+          opacity="0.4"
+        />
+
+        <path
+          d="M100 35V165"
+          stroke="white"
+          strokeWidth="2"
+          opacity="0.4"
+        />
+
+        <path
+          d="M35 100H165"
+          stroke="var(--secondary)"
+          strokeWidth="2"
+          opacity="0.5"
+        />
+      </svg>
+    ),
   },
+
   {
-    id: "03",
     tag: "Advanced Communication",
     title: "Integration Excellence",
     description:
-      "We enable complex communication networks for voice, video surveillance, data, and Ethernet over fiber, radio, or copper. Custom solutions from past projects boost efficiency and minimize downtime. All systems undergo rigorous pre-deployment testing at our integration center, plus customer-witnessed FAT.",
-    keywords: ["Voice Networks", "Video Surveillance", "Fiber & Radio", "Pre-Deployment Testing", "Customer FAT"],
+      "We enable communication networks for voice, surveillance, data, and Ethernet over fiber, radio, or copper with rigorous deployment validation.",
+    keywords: [
+      "Voice Networks",
+      "Fiber & Radio",
+      "Testing",
+      "Customer FAT",
+    ],
     href: "/integration-excellence",
+    image: "/Integration Excellence.png",
+
+    svg: (
+      <svg width="130" height="130" viewBox="0 0 200 200" fill="none">
+        <circle
+          cx="100"
+          cy="100"
+          r="12"
+          fill="white"
+          opacity="0.5"
+        />
+
+        <circle
+          cx="100"
+          cy="100"
+          r="35"
+          stroke="var(--secondary)"
+          strokeWidth="2"
+          opacity="0.5"
+        />
+
+        <circle
+          cx="100"
+          cy="100"
+          r="60"
+          stroke="white"
+          strokeWidth="2"
+          opacity="0.3"
+        />
+
+        <path
+          d="M40 100C60 70 140 70 160 100"
+          stroke="var(--secondary)"
+          strokeWidth="2"
+          opacity="0.5"
+        />
+
+        <path
+          d="M55 125C75 105 125 105 145 125"
+          stroke="white"
+          strokeWidth="2"
+          opacity="0.4"
+        />
+      </svg>
+    ),
   },
+
   {
-    id: "04",
     tag: "Lifecycle Support",
-    title: "Through-Life Care Program",
+    title: "Through-Life Care",
     description:
-      "We deliver comprehensive operations support from routine troubleshooting to emergency response — across the full system lifecycle aligned with our CARE Model. Tailored SLA-based options meet your exact needs, while our resource-optimized approach handles unforeseen challenges and evolving goals with precision.",
-    keywords: ["CARE Model", "SLA Services", "Emergency Response", "Lifecycle Support", "Operations Support"],
+      "Comprehensive operations support from troubleshooting to emergency response across the full system lifecycle with SLA-driven support models.",
+    keywords: [
+      "CARE Model",
+      "SLA Services",
+      "Emergency Response",
+      "Lifecycle Support",
+    ],
     href: "/through-life-care-program",
+    image: "/Through-Life Care Program.png",
+
+    svg: (
+      <svg width="130" height="130" viewBox="0 0 200 200" fill="none">
+        <path
+          d="M100 30L160 70V130L100 170L40 130V70L100 30Z"
+          stroke="var(--secondary)"
+          strokeWidth="2"
+          opacity="0.5"
+        />
+
+        <circle
+          cx="100"
+          cy="100"
+          r="28"
+          stroke="white"
+          strokeWidth="2"
+          opacity="0.4"
+        />
+
+        <path
+          d="M100 82V118"
+          stroke="white"
+          strokeWidth="2"
+          opacity="0.4"
+        />
+
+        <path
+          d="M82 100H118"
+          stroke="var(--secondary)"
+          strokeWidth="2"
+          opacity="0.5"
+        />
+      </svg>
+    ),
   },
 ];
 
 export default function GlobalCapability() {
   return (
-    <section className="py-28 bg-white overflow-hidden">
+    <section className="py-24 bg-[var(--secondary)]/10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
 
         {/* Section Header */}
@@ -53,93 +227,142 @@ export default function GlobalCapability() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.3 }}
-          className="mb-20"
+          className="mb-20 flex items-center gap-12"
         >
           <div className="flex items-center gap-3 mb-6">
-            <span className="block w-10 h-px bg-(--primary)" />
-            <span className="text-(--primary) text-xs font-semibold tracking-[4px] uppercase">
+            <span className="block w-10 h-px bg-[var(--primary)]" />
+
+            <span className="text-[var(--primary)] text-xs font-semibold tracking-[4px] uppercase">
               Eratronics
             </span>
           </div>
-
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight max-w-3xl">
-            Global Capability &{" "}
-            <span className="text-[var(--primary)]">Mission Critical Engineering</span>
+ <span className="block w-px h-20 bg-[var(--primary)]" />
+ <div>
+     <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
+            <span className="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">
+              Global Capability & Mission Critical Engineering
+            </span>
           </h2>
 
-          <p className="mt-5 text-gray-500 text-sm leading-relaxed max-w-xl">
-            Four integrated service pillars delivering precision, resilience, and single-point accountability across every phase of your project lifecycle.
+          <p className="mt-5 text-gray-500 text-sm leading-relaxed max-w-3xl">
+            Four integrated service pillars delivering precision, resilience,
+            and single-point accountability across every phase of your project
+            lifecycle.
           </p>
+ </div>
+       
         </motion.div>
 
-        {/* Capabilities List */}
-        <div className="divide-y divide-gray-100">
-          {capabilities.map((cap, index) => (
-            <motion.div
-              key={cap.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.08, ease: "easeOut" }}
-              viewport={{ once: true, amount: 0.15 }}
-            >
-              <Link
-                href={cap.href}
-                className="group flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-20 py-12 transition-all duration-300"
+        <div className="space-y-0">
+          {capabilities.map((cap, index) => {
+            const isReverse = index % 2 !== 0;
+
+            return (
+              <motion.div
+                key={cap.title}
+                initial={{ opacity: 0, y: 70 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+                viewport={{ once: true, amount: 0.2 }}
               >
 
-                {/* Left: Number + Tag */}
-                <div className="lg:w-56 shrink-0">
-                  <span className="block text-7xl font-bold leading-none select-none text-gray-100 group-hover:text-(--primary)/20 transition-colors duration-500 mb-4">
-                    {cap.id}
-                  </span>
-                  <span className="inline-flex items-center gap-2 text-(--primary) text-xs font-semibold tracking-[3px] uppercase">
-                    <span className="block w-4 h-px bg-(--primary)" />
-                    {cap.tag}
-                  </span>
-                </div>
+                {index !== 0 && (
+                  <div className="h-px w-full bg-gradient-to-r from-transparent via-[var(--secondary)]/40 to-transparent" />
+                )}
 
-                {/* Right: Content */}
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-start justify-between gap-6">
-                    <h3 className="text-2xl font-bold text-gray-900 group-hover:text-(--primary) transition-colors duration-300 leading-snug">
-                      {cap.title}
-                    </h3>
+                <Link
+                  href={cap.href}
+                  className={`group grid grid-cols-1 lg:grid-cols-5 min-h-[560px]
+                  ${isReverse ? "lg:[&>*:first-child]:order-2" : ""}
+                  `}
+                >
 
-                    {/* Arrow Icon */}
-                    <span className="shrink-0 mt-1 w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center group-hover:bg-(--primary) group-hover:border-(--primary) transition-all duration-300">
-                      <svg
-                        className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors duration-300 -rotate-45"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M12 5l7 7-7 7" />
-                      </svg>
-                    </span>
+                  {/* IMAGE */}
+                  <div className="lg:col-span-2 relative overflow-hidden min-h-[320px] bg-gray-100">
+                    <img
+                      src={cap.image}
+                      alt={cap.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-500" />
                   </div>
 
-                  <p className="mt-4 text-sm text-gray-500 leading-relaxed max-w-2xl">
-                    {cap.description}
-                  </p>
+                  {/* CONTENT */}
+                  <div className="lg:col-span-3 bg-[var(--primary)] text-white relative flex flex-col justify-center p-8 lg:p-16 overflow-hidden">
 
-                  {/* Keywords */}
-                  <div className="flex flex-wrap gap-2 mt-6">
-                    {cap.keywords.map((keyword) => (
-                      <span
-                        key={keyword}
-                        className="px-3 py-1 text-xs font-medium text-(--primary) bg-(--primary)/5 border border-(--primary)/15 rounded-full group-hover:bg-(--primary)/10 transition-colors duration-300"
-                      >
-                        {keyword}
+                    {/* SVG */}
+                    <div className="absolute top-8 right-8 opacity-80">
+                      {cap.svg}
+                    </div>
+
+                    {/* TAG */}
+                    <div className="flex items-center gap-3 mb-6">
+                      <span className="w-10 h-px bg-white/40" />
+
+                      <span className="text-xs uppercase tracking-[4px] font-semibold text-white/70">
+                        {cap.tag}
                       </span>
-                    ))}
+                    </div>
+
+                    {/* TITLE */}
+                    <div className="inline-block w-fit">
+                      <h3 className="text-3xl lg:text-5xl font-bold leading-tight relative z-10">
+                        {cap.title}
+                      </h3>
+
+                      <div className="mt-4 h-[3px] w-[30%] group-hover:w-full transition-all duration-500 bg-[var(--secondary)]" />
+                    </div>
+
+                    {/* DESCRIPTION */}
+                    <p className="mt-10 text-white/70 leading-relaxed text-sm lg:text-base max-w-2xl">
+                      {cap.description}
+                    </p>
+
+                    {/* KEYWORDS */}
+                    <div className="flex flex-wrap gap-3 mt-8">
+                      {cap.keywords.map((keyword) => (
+                        <span
+                          key={keyword}
+                          className="px-4 py-2 border border-white/15 bg-[var(--secondary)] rounded-md text-xs uppercase tracking-wide"
+                        >
+                          {keyword}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* BUTTON */}
+                    <div className="mt-10 flex items-center gap-4">
+
+                      <span className="uppercase tracking-[3px] text-sm font-semibold text-white/80 group-hover:text-white transition-colors duration-300">
+                        Explore Service
+                      </span>
+
+                      <span className="w-11 h-11 border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-[var(--primary)] transition-all duration-300">
+
+                        <svg
+                          className="w-4 h-4 -rotate-45"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 12h14M12 5l7 7-7 7"
+                          />
+                        </svg>
+
+                      </span>
+                    </div>
+
                   </div>
-                </div>
-
-              </Link>
-            </motion.div>
-          ))}
+                </Link>
+              </motion.div>
+            );
+          })}
         </div>
-
       </div>
     </section>
   );

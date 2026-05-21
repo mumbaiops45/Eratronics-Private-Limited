@@ -62,21 +62,28 @@ export default function HomeWhyUs() {
           viewport={{ once: true }}
           className="mb-20 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8"
         >
-          <div>
+          <div className="flex items-center gap-10">
             <div className="flex items-center gap-3 mb-6">
               <span className="block w-10 h-px bg-[var(--primary)]" />
               <span className="text-[var(--primary)] text-xs font-semibold tracking-[4px] uppercase">
                 Why Eratronics
               </span>
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight max-w-2xl">
-              Built for the Demands of{" "}
-              <span className="text-[var(--primary)]">Critical Infrastructure</span>
-            </h2>
+            <span className="block w-px h-20 bg-[var(--primary)]" />
+            <div>
+
+             <h2 className="text-4xl lg:text-5xl font-bold leading-tight max-w-2xl">
+  <span className="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">
+    Built for the Demands of Critical Infrastructure
+  </span>
+</h2> 
+                   <p className="text-gray-500 text-sm leading-relaxed ">
+              We don't just deliver technology — we deliver outcomes that industrial operations depend on, every hour of every day.
+            </p>
+            </div>
+       
           </div>
-          <p className="text-gray-500 text-sm leading-relaxed max-w-sm lg:text-right">
-            We don't just deliver technology — we deliver outcomes that industrial operations depend on, every hour of every day.
-          </p>
+
         </motion.div>
 
         {/* Grid */}
@@ -93,7 +100,7 @@ export default function HomeWhyUs() {
                 className="group bg-white p-10 hover:bg-[var(--primary)] transition-colors duration-500"
               >
                 <div className="w-12 h-12 rounded-lg bg-[var(--primary)]/8 border border-[var(--primary)]/15 flex items-center justify-center mb-6 group-hover:bg-white/15 group-hover:border-white/25 transition-all duration-500">
-                  <Icon className="text-[var(--primary)] group-hover:text-white transition-colors duration-500" size={20} />
+                  <Icon className="text-[var(--primary)] group-hover:text-[var(--secondary)] transition-colors duration-500" size={20} />
                 </div>
                 <h3 className="text-base font-bold text-gray-900 mb-3 group-hover:text-white transition-colors duration-500">
                   {item.title}

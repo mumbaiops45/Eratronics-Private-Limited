@@ -90,10 +90,9 @@ export default function LifecycleSupportServices() {
                 Through-Life Support
               </span>
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight max-w-2xl">
-              Lifecycle Support Across{" "}
-              <span className="text-(--primary)">Every Phase</span>
-            </h2>
+      <h2 className="text-4xl lg:text-5xl font-bold leading-tight max-w-2xl bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">
+  Lifecycle Support Across Every Phase
+</h2>
           </motion.div>
 
           <motion.p
@@ -119,7 +118,7 @@ export default function LifecycleSupportServices() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="group relative bg-white rounded-2xl border border-gray-100 p-8 hover:border-(--primary)/25 hover:shadow-lg hover:shadow-(--primary)/5 transition-all duration-400 overflow-hidden"
+                className="group relative bg-[var(--secondary)]/10 rounded-2xl border border-gray-100 p-8 hover:border-(--primary)/25 hover:shadow-lg hover:shadow-(--primary)/5 transition-all duration-400 overflow-hidden"
               >
                 {/* Top accent */}
                 <span className="absolute top-0 left-0 w-0 h-0.75 bg-(--primary) group-hover:w-full transition-all duration-600 ease-out" />
@@ -132,7 +131,7 @@ export default function LifecycleSupportServices() {
                 {/* Header row */}
                 <div className="flex items-start gap-4 mb-5">
                   <div className="w-12 h-12 rounded-xl bg-(--primary)/8 border border-(--primary)/15 flex items-center justify-center shrink-0 group-hover:bg-(--primary) group-hover:border-(--primary) transition-all duration-300">
-                    <Icon className="text-(--primary) group-hover:text-white transition-colors duration-300" size={20} />
+                    <Icon className="text-[var(--primary)] group-hover:text-[var(--secondary)] transition-colors duration-300" size={20} />
                   </div>
                   <div>
                     <span className="block text-[10px] text-gray-400 font-semibold tracking-[3px] uppercase mb-1">
@@ -197,7 +196,7 @@ export default function LifecycleSupportServices() {
           <div className="flex flex-wrap gap-4 shrink-0">
             <Link
               href="/contact-us"
-              className="inline-flex items-center gap-2 bg-white text-(--primary) px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-white/90 transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-[var(--secondary)] text-[var(--primary)] px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-white/90 transition-all duration-300"
             >
               <FiPhoneCall size={15} /> Contact Us
             </Link>

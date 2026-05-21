@@ -122,7 +122,7 @@ export default function PowerSectorSolutions() {
                 <div>
 
                   {/* Tag */}
-                  <div className="inline-flex items-center gap-2 bg-[var(--primary)]/8 border border-[var(--primary)]/15 px-4 py-2 rounded-full mb-6">
+                  <div className="inline-flex items-center gap-2 bg-[var(--secondary)]/10 border border-[var(--primary)]/15 px-4 py-2 rounded-full mb-6">
                     <span className="w-2 h-2 rounded-full bg-[var(--primary)]" />
                     <span className="text-[11px] font-semibold tracking-[3px] uppercase text-[var(--primary)]">
                       Power Infrastructure

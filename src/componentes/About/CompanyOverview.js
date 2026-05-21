@@ -58,14 +58,14 @@ export default function CompanyOverview() {
               </span>
             </motion.div>
 
-            <motion.h2
-              variants={fadeUp}
-              className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-8"
-            >
-              A Decade of{" "}
-              <span className="text-[var(--primary)]">Mission-Critical</span>{" "}
-              Telecom Excellence
-            </motion.h2>
+           <motion.h2
+  variants={fadeUp}
+  className="text-4xl lg:text-5xl font-bold leading-tight mb-8"
+>
+  <span className="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">
+    A Decade of Mission-Critical Telecom Excellence
+  </span>
+</motion.h2>
 
             <motion.p variants={fadeUp} className="text-gray-500 text-sm leading-relaxed mb-5">
               Since inception, Eratronics Pvt. Ltd. has built over a decade of hands-on experience
@@ -85,7 +85,7 @@ export default function CompanyOverview() {
             <motion.div variants={fadeUp}>
               <Link
                 href="/contact-us"
-                className="group inline-flex items-center gap-2 bg-[var(--primary)] text-white text-sm font-semibold px-7 py-3.5 rounded-full hover:bg-[var(--primary)]/90 transition-all duration-300"
+                className="group inline-flex items-center gap-2 bg-[var(--secondary)] text-white text-sm font-semibold px-7 py-3.5 rounded-full hover:bg-[var(--primary)]/90 transition-all duration-300"
               >
                 Get In Touch
                 <FiArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -105,7 +105,7 @@ export default function CompanyOverview() {
               <motion.div
                 key={title}
                 variants={fadeUp}
-                className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-8 hover:border-[var(--primary)]/30 hover:shadow-xl hover:shadow-[var(--primary)]/5 transition-all duration-500"
+                className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-[var(--secondary)]/10 p-8 hover:border-[var(--primary)]/30 hover:shadow-xl hover:shadow-[var(--primary)]/5 transition-all duration-500"
               >
                 {/* Hover accent line */}
                 <span className="absolute top-0 left-0 w-0 h-[3px] bg-[var(--primary)] group-hover:w-full transition-all duration-700 ease-out" />

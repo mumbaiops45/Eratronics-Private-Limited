@@ -6,7 +6,13 @@ import PowerSectorSolutions from '@/componentes/Industry/PowerSectorSolutions'
 const PowerSectorSolutionsPage = () => {
     return (
         <>
-            <TopHeading title="Power Sector" />
+<TopHeading
+  title={
+    <span className="text-[var(--secondary)]">
+      Power Sector
+    </span>
+  }
+/>
             <PowerSectorSolutions />
         </>
     )

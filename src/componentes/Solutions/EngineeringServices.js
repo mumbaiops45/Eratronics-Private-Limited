@@ -69,10 +69,12 @@ export default function EngineeringServices() {
                   Engineering Excellence
                 </span>
               </div>
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
-                Engineering Services Built for{" "}
-                <span className="text-[var(--primary)]">Mission-Critical Infrastructure</span>
-              </h2>
+         <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
+  Engineering Services Built for{" "}
+  <span className="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">
+    Mission-Critical Infrastructure
+  </span>
+</h2>
               <p className="text-gray-500 text-sm leading-relaxed">
                 Over the past decade, Eratronics has developed deep technical expertise in
                 delivering telecom engineering solutions for mission-critical industries.
@@ -101,7 +103,7 @@ export default function EngineeringServices() {
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.4, delay: 0.2 + i * 0.08 }}
                       viewport={{ once: true }}
-                      className="flex items-center gap-3"
+                      className="flex items-center gap-3 "
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-[var(--seco)] shrink-0" />
                       <span className="text-sm text-white/80 font-medium">{cap}</span>
@@ -142,7 +144,7 @@ export default function EngineeringServices() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: i * 0.1 }}
                   viewport={{ once: true }}
-                  className="group relative bg-white rounded-2xl border border-gray-100 p-10 hover:border-(--primary)/25 hover:shadow-lg hover:shadow-(--primary)/5 transition-all duration-400 overflow-hidden"
+                  className="group relative bg-[var(--secondary)]/5 rounded-2xl border border-gray-100 p-10 hover:border-(--primary)/25 hover:shadow-lg hover:shadow-(--primary)/5 transition-all duration-400 overflow-hidden"
                 >
                   <span className="absolute top-0 left-0 w-0 h-[3px] bg-(--primary) group-hover:w-full transition-all duration-600 ease-out" />
                   <span className="absolute -bottom-4 -right-2 text-[110px] font-black leading-none text-gray-50 select-none pointer-events-none">
@@ -152,7 +154,7 @@ export default function EngineeringServices() {
                   {/* Icon + Number */}
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-12 h-12 rounded-xl bg-(--primary)/8 border border-(--primary)/15 flex items-center justify-center group-hover:bg-(--primary) group-hover:border-(--primary) transition-all duration-300">
-                      <Icon className="text-[var(--primary)] group-hover:text-white transition-colors duration-300" size={20} />
+                      <Icon className="text-[var(--primary)] group-hover:text-[var(--secondary)] transition-colors duration-300" size={20} />
                     </div>
                     <span className="text-xs font-semibold text-gray-400 tracking-[3px] uppercase">
                       {svc.number}
@@ -172,7 +174,7 @@ export default function EngineeringServices() {
                     {svc.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-[10px] font-semibold text-[var(--primary)]/70 bg-(--primary)/6 border border-(--primary)/15 px-3 py-1 rounded-full uppercase tracking-[2px]"
+                        className="text-[10px] font-semibold text-[var(--primary)]/70 bg-[var(--secondary)]/30 border border-(--primary)/15 px-3 py-1 rounded-full uppercase tracking-[2px]"
                       >
                         {tag}
                       </span>
@@ -198,7 +200,7 @@ export default function EngineeringServices() {
               </p>
             </div>
             <div className="flex flex-wrap gap-4 shrink-0">
-              <Link href="/contact-us" className="inline-flex items-center gap-2 bg-white text-[var(--primary)] px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-white/90 transition-all duration-300">
+              <Link href="/contact-us" className="inline-flex items-center gap-2 bg-[var(--secondary)] text-[var(--primary)] px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-white/90 transition-all duration-300">
                 <FiPhoneCall size={15} /> Get in Touch
               </Link>
               {/* <Link href="/solutions" className="inline-flex items-center gap-2 border border-white/30 text-white px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-white/10 hover:border-white/60 transition-all duration-300">

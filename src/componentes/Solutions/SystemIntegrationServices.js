@@ -90,12 +90,12 @@ export default function SystemIntegrationServices() {
                 </span>
               </div>
 
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
-                Integrated Telecom Solutions with{" "}
-                <span className="text-[var(--primary)]">
-                  Precision Execution
-                </span>
-              </h2>
+           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
+  Integrated Telecom Solutions with{" "}
+  <span className="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">
+    Precision Execution
+  </span>
+</h2>
 
               <p className="text-gray-500 text-sm leading-relaxed">
                 Eratronics delivers complete telecom integration services for
@@ -119,7 +119,7 @@ export default function SystemIntegrationServices() {
                   key={i}
                   className="bg-white px-8 py-6 text-center"
                 >
-                  <p className="text-3xl font-black text-[var(--primary)] mb-1">
+                  <p className="text-3xl font-black text-[var(--secondary)] mb-1">
                     {item.value}
                   </p>
                   <p className="text-[10px] text-gray-400 uppercase tracking-[2px] font-medium">
@@ -162,7 +162,7 @@ export default function SystemIntegrationServices() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.07 }}
                   viewport={{ once: true }}
-                  className="group relative bg-white rounded-2xl border border-gray-100 p-8 hover:border-[var(--primary)]/25 hover:shadow-lg hover:shadow-[var(--primary)]/5 transition-all duration-400 overflow-hidden"
+                  className="group relative bg-[var(--secondary)]/10 rounded-2xl border border-gray-100 p-8 hover:border-[var(--primary)]/25 hover:shadow-lg hover:shadow-[var(--primary)]/5 transition-all duration-400 overflow-hidden"
                 >
                   {/* Hover Accent */}
                   <span className="absolute top-0 left-0 w-0 h-[3px] bg-[var(--primary)] group-hover:w-full transition-all duration-600 ease-out" />
@@ -177,7 +177,7 @@ export default function SystemIntegrationServices() {
 
                     <div className="shrink-0 w-12 h-12 rounded-xl bg-[var(--primary)]/8 border border-[var(--primary)]/15 flex items-center justify-center group-hover:bg-[var(--primary)] group-hover:border-[var(--primary)] transition-all duration-300">
                       <Icon
-                        className="text-[var(--primary)] group-hover:text-white transition-colors duration-300"
+                        className="text-[var(--primary)] group-hover:text-[var(--secondary)] transition-colors duration-300"
                         size={18}
                       />
                     </div>
@@ -244,7 +244,7 @@ export default function SystemIntegrationServices() {
 
               <Link
                 href="/contact-us"
-                className="inline-flex items-center gap-2 bg-white text-[var(--primary)] px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-white/90 transition-all duration-300"
+                className="inline-flex items-center gap-2 bg-[var(--secondary)] text-[var(--primary)] px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-white/90 transition-all duration-300"
               >
                 <FiPhoneCall size={15} /> Contact Us
               </Link>

@@ -64,9 +64,11 @@ export default function CoreValues() {
               What We Stand For
             </span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-            Our <span className="text-[var(--primary)]">Core Values</span>
-          </h2>
+       <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
+  <span className="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">
+    Our Core Values
+  </span>
+</h2>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -133,7 +135,7 @@ export default function CoreValues() {
 
                 <div className="relative z-10">
                   {/* Tag */}
-                  <span className="inline-block text-[var(--primary)] text-xs font-semibold tracking-[3px] uppercase bg-[var(--primary)]/8 border border-[var(--primary)]/15 px-4 py-1.5 rounded-full mb-6">
+                  <span className="inline-block text-[var(--primary)] text-xs font-semibold tracking-[3px] uppercase bg-[var(--secondary)]/10 border border-[var(--primary)]/15 px-4 py-1.5 rounded-full mb-6">
                     {activeTab.tag}
                   </span>
 
@@ -158,7 +160,7 @@ export default function CoreValues() {
                         initial={{ opacity: 0, scale: 0.85 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.3, delay: i * 0.06 }}
-                        className="px-4 py-2 rounded-full border border-[var(--primary)]/20 bg-[var(--primary)]/5 text-xs text-[var(--primary)] font-semibold"
+                        className="px-4 py-2 rounded-full border border-[var(--primary)]/20 bg-[var(--secondary)]/40 text-xs text-[var(--primary)] font-semibold"
                       >
                         {keyword}
                       </motion.span>

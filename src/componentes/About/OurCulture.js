@@ -106,7 +106,7 @@ export default function OurCulture() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="group flex gap-6 bg-white rounded-2xl border border-gray-100 p-8 hover:border-[var(--primary)]/30 hover:shadow-lg hover:shadow-[var(--primary)]/5 transition-all duration-400"
+              className="group flex gap-6 bg-[var(--secondary)]/5 rounded-2xl border border-gray-100 p-8 hover:border-[var(--primary)]/30 hover:shadow-lg hover:shadow-[var(--primary)]/5 transition-all duration-400"
             >
               <div className="shrink-0 w-12 h-12 rounded-xl bg-[var(--primary)]/8 border border-[var(--primary)]/15 flex items-center justify-center group-hover:bg-[var(--primary)] group-hover:border-[var(--primary)] transition-all duration-300">
                 <Icon className="text-[var(--primary)] group-hover:text-white transition-colors duration-300" size={18} />

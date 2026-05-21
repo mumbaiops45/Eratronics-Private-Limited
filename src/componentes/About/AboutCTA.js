@@ -52,7 +52,7 @@ export default function AboutCTA() {
           >
             <Link
               href="/contact-us"
-              className="group flex items-center justify-center gap-3 bg-white text-[var(--primary)] px-8 py-4 rounded-full font-semibold text-sm hover:bg-white/90 transition-all duration-300"
+              className="group flex items-center justify-center gap-3 bg-[var(--secondary)] text-[var(--primary)] px-8 py-4 rounded-full font-semibold text-sm hover:bg-white/90 transition-all duration-300"
             >
               <FiPhoneCall size={15} />
               Contact Us Today

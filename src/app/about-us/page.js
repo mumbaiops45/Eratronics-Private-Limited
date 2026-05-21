@@ -9,7 +9,13 @@ import AboutCTA from "@/componentes/About/AboutCTA";
 export default function About() {
   return (
     <>
-      <TopHeading title="About Us" />
+      <TopHeading
+  title={
+    <>
+      <span className="text-[var(--secondary)]">About</span> Us
+    </>
+  }
+/>
       <CompanyOverview />
       <DeliveryPhilosophy />
       <CoreValues />

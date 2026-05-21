@@ -5,7 +5,13 @@ import OilGasSolutions from '@/componentes/Industry/OilGasSolutions'
 const OilAndGasIndustry = () => {
   return (
     <>
-   <TopHeading title="Oil & Gas Industry" />
+<TopHeading
+  title={
+    <>
+      <span className="text-[var(--secondary)]">Oil & Gas</span> Industry
+    </>
+  }
+/>
    <OilGasSolutions />
     </>
   )

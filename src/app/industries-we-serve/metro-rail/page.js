@@ -5,7 +5,13 @@ import MetroRailSolutions from '@/componentes/Industry/MetroRailSolutions'
 const MetroRailSolutionsPage = () => {
     return (
         <>
-            <TopHeading title="Metro Rail" />
+           <TopHeading
+  title={
+    <span className="text-[var(--secondary)]">
+      Metro Rail
+    </span>
+  }
+/>
      
             <MetroRailSolutions />
         </>

@@ -23,7 +23,7 @@ export default function HomeStats() {
               viewport={{ once: true }}
               className="bg-[var(--primary)] px-8 py-10 flex flex-col items-center text-center"
             >
-              <span className="text-4xl lg:text-5xl font-bold text-white mb-2">
+              <span className="text-4xl lg:text-5xl font-bold text-[var(--secondary)] mb-2">
                 {stat.value}
               </span>
               <span className="text-xs text-white/60 uppercase tracking-[3px] font-medium">

@@ -50,15 +50,15 @@ export default function TopHeading({ title }) {
         </h1>
 
         {/* Decorative Lines */}
-        <div className="mt-6 flex items-center justify-center gap-3">
+          <div className="mt-6 flex items-center justify-center gap-3">
 
-          <span className="block w-16 h-px bg-white/20" />
+            <span className="block w-16 h-px bg-white/20" />
 
-          <span className="block w-2 h-2 rounded-full bg-white" />
+            <span className="block w-2 h-2 rounded-full bg-white" />
 
-          <span className="block w-16 h-px bg-white/20" />
+            <span className="block w-16 h-px bg-white/20" />
 
-        </div>
+          </div>
 
       </motion.div>
     </div>

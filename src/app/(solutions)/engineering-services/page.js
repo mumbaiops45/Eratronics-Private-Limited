@@ -4,7 +4,16 @@ export default function TurnkeySolutionsPage() {
 
   return (
     <>
-      <TopHeading title="Engineering Services" />
+  <TopHeading
+  title={
+    <>
+      <span className="text-[var(--secondary)]">
+        Engineering
+      </span>{" "}
+      Services
+    </>
+  }
+/>
       <EngineeringServices />
     </>
   );

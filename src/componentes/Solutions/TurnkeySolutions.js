@@ -103,11 +103,11 @@ export default function TurnkeySolutions() {
                   End-to-End Delivery
                 </span>
               </div>
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
-                Your Partner in Building{" "}
-                <span className="text-[var(--primary)]">Critical Infrastructure</span>{" "}
-                Safely and Reliably
-              </h2>
+       <h2 className="text-4xl lg:text-5xl font-bold leading-tight mb-6">
+  <span className="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">
+    Your Partner in Building Critical Infrastructure Safely and Reliably
+  </span>
+</h2>
               <p className="text-gray-500 text-sm leading-relaxed">
                 From concept to commissioning, we deliver seamless turnkey solutions combining
                 design engineering, robust system integration, rigorous testing, and flawless
@@ -125,7 +125,7 @@ export default function TurnkeySolutions() {
             >
               {highlights.map((h, i) => (
                 <div key={i} className="bg-white px-8 py-6 text-center">
-                  <p className="text-3xl font-black text-[var(--primary)] mb-1">{h.value}</p>
+                  <p className="text-3xl font-black text-[var(--secondary)] mb-1">{h.value}</p>
                   <p className="text-[10px] text-gray-400 uppercase tracking-[2px] font-medium">{h.label}</p>
                 </div>
               ))}
@@ -162,7 +162,7 @@ export default function TurnkeySolutions() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.07 }}
                   viewport={{ once: true }}
-                  className="group relative bg-white rounded-2xl border border-gray-100 p-8 hover:border-[var(--primary)]/25 hover:shadow-lg hover:shadow-[var(--primary)]/5 transition-all duration-400 overflow-hidden"
+                  className="group relative bg-[var(--secondary)]/5 rounded-2xl border border-gray-100 p-8 hover:border-[var(--primary)]/25 hover:shadow-lg hover:shadow-[var(--primary)]/5 transition-all duration-400 overflow-hidden"
                 >
                   {/* Top accent on hover */}
                   <span className="absolute top-0 left-0 w-0 h-[3px] bg-[var(--primary)] group-hover:w-full transition-all duration-600 ease-out" />
@@ -210,7 +210,7 @@ export default function TurnkeySolutions() {
               </p>
             </div>
             <div className="flex flex-wrap gap-4 shrink-0">
-              <Link href="/contact-us" className="inline-flex items-center gap-2 bg-white text-[var(--primary)] px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-white/90 transition-all duration-300">
+              <Link href="/contact-us" className="inline-flex items-center gap-2 bg-[var(--secondary)] text-[var(--primary)] px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-white/90 transition-all duration-300">
                 <FiPhoneCall size={15} /> Contact Us
               </Link>
               {/* <Link href="/solutions" className="inline-flex items-center gap-2 border border-white/30 text-white px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-white/10 hover:border-white/60 transition-all duration-300">

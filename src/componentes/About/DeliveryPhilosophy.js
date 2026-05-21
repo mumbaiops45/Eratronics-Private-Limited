@@ -73,13 +73,11 @@ export default function DeliveryPhilosophy() {
               </span>
             </div>
 
-            <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight max-w-2xl">
-              The{" "}
-              <span className="text-white">
-                DARE
-              </span>{" "}
-              Delivery Model
-            </h2>
+          <h2 className="text-4xl lg:text-5xl font-bold leading-tight max-w-2xl">
+  <span className="bg-gradient-to-r from-white to-[var(--secondary)] bg-clip-text text-transparent">
+    The DARE Delivery Model
+  </span>
+</h2>
 
           </motion.div>
 
@@ -107,11 +105,11 @@ export default function DeliveryPhilosophy() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="group relative bg-white/10 backdrop-blur-md border border-white/10 rounded-3xl p-8 lg:p-10 hover:bg-white/15 transition-all duration-500 overflow-hidden"
+              className="group relative bg-white/10 hover:bg-[var(--secondary)]/15 backdrop-blur-md border border-white/10 rounded-3xl p-8 lg:p-10  transition-all duration-500 overflow-hidden"
             >
 
               {/* Top hover accent */}
-              <span className="absolute top-0 left-0 w-0 h-[2px] bg-white group-hover:w-full transition-all duration-700 ease-out" />
+              <span className="absolute top-0 left-0 w-0 h-[2px] bg-[var(--secondary)] group-hover:w-full transition-all duration-700 ease-out" />
 
               {/* Large letter watermark */}
               <span className="absolute -bottom-4 -right-2 text-[120px] font-black leading-none text-white/[0.05] select-none pointer-events-none">

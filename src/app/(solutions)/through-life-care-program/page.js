@@ -6,7 +6,16 @@ export default function TurnkeySolutionsPage() {
 
   return (
     <>
-      <TopHeading title="Eratronics Through-Life Care Program (ETCP)" />
+    <TopHeading
+  title={
+    <>
+      <span className="text-[var(--secondary)]">
+        Eratronics Through-Life Care
+      </span>{" "}
+      Program (ETCP)
+    </>
+  }
+/>
       <ServicePillars />
       <LifecycleSupportServices />
     </>
