@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 
 const capabilities = [
   {
-    tag: "End-to-End Delivery",
+    tag: "End to End Delivery",
     title: "Turnkey Solutions",
     description:
-      "Experience seamless end-to-end project delivery with single point accountability — from requirements analysis and design engineering to supply chain management, system integration, FAT/SAT, commissioning, documentation handover, and go-live support.",
+      "Experience seamless end-to-end project delivery with single point accountability , from requirements analysis and design engineering to supply chain management, system integration, FAT/SAT, commissioning, documentation handover, and go live support.",
     keywords: [
       "Requirements Analysis",
       "Design Engineering",
@@ -59,7 +59,7 @@ const capabilities = [
     tag: "Industrial Engineering",
     title: "Engineering Services",
     description:
-      "We bring a structured engineering approach spanning concept and design to integration and commissioning ensuring operational reliability and long-term performance.",
+      "We bring a structured engineering approach spanning concept and design to integration and commissioning ensuring operational reliability and long term performance.",
     keywords: [
       "Oil & Gas",
       "Cyber Security",
@@ -168,9 +168,9 @@ const capabilities = [
 
   {
     tag: "Lifecycle Support",
-    title: "Through-Life Care",
+    title: "Through Life Care",
     description:
-      "Comprehensive operations support from troubleshooting to emergency response across the full system lifecycle with SLA-driven support models.",
+      "Comprehensive operations support from troubleshooting to emergency response across the full system lifecycle with SLA driven support models.",
     keywords: [
       "CARE Model",
       "SLA Services",
@@ -227,16 +227,16 @@ export default function GlobalCapability() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.3 }}
-          className="mb-20 flex items-center gap-12"
+          className="mb-20 flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-12"
         >
-          <div className="flex items-center gap-3 mb-6">
+          <div className="flex items-center gap-3 mb-0">
             <span className="block w-10 h-px bg-[var(--primary)]" />
 
             <span className="text-[var(--primary)] text-xs font-semibold tracking-[4px] uppercase">
               Eratronics
             </span>
           </div>
- <span className="block w-px h-20 bg-[var(--primary)]" />
+ <span className="hidden lg:block w-px h-20 bg-[var(--primary)]" />
  <div>
      <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
             <span className="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">
@@ -246,7 +246,7 @@ export default function GlobalCapability() {
 
           <p className="mt-5 text-gray-500 text-sm leading-relaxed max-w-3xl">
             Four integrated service pillars delivering precision, resilience,
-            and single-point accountability across every phase of your project
+            and single point accountability across every phase of your project
             lifecycle.
           </p>
  </div>
@@ -272,13 +272,13 @@ export default function GlobalCapability() {
 
                 <Link
                   href={cap.href}
-                  className={`group grid grid-cols-1 lg:grid-cols-5 min-h-[560px]
+                  className={`group grid grid-cols-1 lg:grid-cols-5 min-h-[auto] lg:min-h-[560px]
                   ${isReverse ? "lg:[&>*:first-child]:order-2" : ""}
                   `}
                 >
 
                   {/* IMAGE */}
-                  <div className="lg:col-span-2 relative overflow-hidden min-h-[320px] bg-gray-100">
+                  <div className="lg:col-span-2 relative overflow-hidden min-h-[240px] lg:min-h-[320px] bg-gray-100">
                     <img
                       src={cap.image}
                       alt={cap.title}

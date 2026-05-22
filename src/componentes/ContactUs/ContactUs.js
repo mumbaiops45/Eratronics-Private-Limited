@@ -35,11 +35,10 @@ function Field({ label, name, type = "text", icon: Icon, placeholder, value, onC
           onChange={onChange}
           placeholder={placeholder}
           autoComplete="off"
-          className={`w-full ${Icon ? "pl-10" : "pl-4"} pr-4 py-3.5 rounded-xl border text-[13px] text-gray-800 bg-white transition-all duration-200 outline-none placeholder-gray-300 ${
-            error
-              ? "border-red-300 bg-red-50/30 focus:border-red-400 focus:ring-2 focus:ring-red-100"
-              : "border-gray-200 hover:border-gray-300 focus:border-[var(--seco)] focus:ring-2 focus:ring-[var(--seco)]/10"
-          }`}
+          className={`w-full ${Icon ? "pl-10" : "pl-4"} pr-4 py-3.5 rounded-xl border text-[13px] text-gray-800 bg-white transition-all duration-200 outline-none placeholder-gray-300 ${error
+            ? "border-red-300 bg-red-50/30 focus:border-red-400 focus:ring-2 focus:ring-red-100"
+            : "border-gray-200 hover:border-gray-300 focus:border-[var(--seco)] focus:ring-2 focus:ring-[var(--seco)]/10"
+            }`}
         />
       </div>
       {error && (
@@ -85,42 +84,42 @@ export default function ContactUs() {
   };
 
   /* Submit handler — posts to FormSubmit.co AJAX endpoint */
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  // validate form
-  const errs = validate();
+    // validate form
+    const errs = validate();
 
-  if (Object.keys(errs).length > 0) {
-    setErrors(errs);
-    return;
-  }
+    if (Object.keys(errs).length > 0) {
+      setErrors(errs);
+      return;
+    }
 
-  setErrors({});
-  setStatus("loading");
+    setErrors({});
+    setStatus("loading");
 
-  try {
-    await emailjs.send(
-      "service_1qajjl8", // EmailJS SERVICE ID
-      "template_y3r7go5", // EmailJS TEMPLATE ID
-      {
-        from_name: form.name,
-        from_email: form.email,
-        organization: form.organization,
-        mobile: form.mobile,
-        message: form.message,
-      },
-      "tStv7JwZFWsbJU2Cf" // EmailJS PUBLIC KEY
-    );
+    try {
+      await emailjs.send(
+        "service_1qajjl8", // EmailJS SERVICE ID
+        "template_y3r7go5", // EmailJS TEMPLATE ID
+        {
+          from_name: form.name,
+          from_email: form.email,
+          organization: form.organization,
+          mobile: form.mobile,
+          message: form.message,
+        },
+        "tStv7JwZFWsbJU2Cf" // EmailJS PUBLIC KEY
+      );
 
-    setStatus("success");
-    setForm(EMPTY);
+      setStatus("success");
+      setForm(EMPTY);
 
-  } catch (error) {
-    console.log(error);
-    setStatus("error");
-  }
-};
+    } catch (error) {
+      console.log(error);
+      setStatus("error");
+    }
+  };
 
   const resetForm = () => {
     setStatus("idle");
@@ -138,17 +137,18 @@ const handleSubmit = async (e) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55 }}
-            className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6"
+            className="flex flex-col lg:flex-row lg:items-center gap-20"
           >
             <div>
-              <p className="text-[9px] font-bold uppercase tracking-[5px] text-[var(--seco)] mb-4">
+              <p className="inline-block text-[9px] font-bold uppercase tracking-[5px] text-white px-4 py-2 bg-[var(--secondary)] rounded-full mb-4">
                 Get in Touch
               </p>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-snug">
+              <h2 className="text-3xl lg:text-4xl font-bold leading-snug bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">
                 Contact &amp; Enquiry
               </h2>
             </div>
-            <p className="text-sm text-gray-400 leading-relaxed max-w-sm lg:text-right">
+            <div className=" hidden md:block w-px h-20 bg-[var(--primary)]" />
+            <p className="text-sm text-gray-400 leading-relaxed max-w-sm">
               Fill in the form below and our team will get back to you within <strong className="text-gray-600 font-semibold">24 business hours</strong>.
             </p>
           </motion.div>
@@ -173,7 +173,7 @@ const handleSubmit = async (e) => {
                 <p className="text-[11px] text-gray-400 mt-0.5">All fields marked * are required</p>
               </div>
               <div className="w-9 h-9 rounded-xl bg-[var(--seco)]/8 flex items-center justify-center">
-                <FiMessageSquare size={16} className="text-[var(--seco)]" />
+                <FiMessageSquare size={16} className="text-[var(--secondary)]" />
               </div>
             </div>
 
@@ -284,11 +284,10 @@ const handleSubmit = async (e) => {
                           onChange={handleChange}
                           rows={5}
                           placeholder="Describe your requirement or enquiry in detail..."
-                          className={`w-full pl-10 pr-4 py-3.5 rounded-xl border text-[13px] text-gray-800 bg-white resize-none transition-all duration-200 outline-none placeholder-gray-300 ${
-                            errors.message
-                              ? "border-red-300 bg-red-50/30 focus:border-red-400 focus:ring-2 focus:ring-red-100"
-                              : "border-gray-200 hover:border-gray-300 focus:border-[var(--seco)] focus:ring-2 focus:ring-[var(--seco)]/10"
-                          }`}
+                          className={`w-full pl-10 pr-4 py-3.5 rounded-xl border text-[13px] text-gray-800 bg-white resize-none transition-all duration-200 outline-none placeholder-gray-300 ${errors.message
+                            ? "border-red-300 bg-red-50/30 focus:border-red-400 focus:ring-2 focus:ring-red-100"
+                            : "border-gray-200 hover:border-gray-300 focus:border-[var(--seco)] focus:ring-2 focus:ring-[var(--seco)]/10"
+                            }`}
                         />
                       </div>
                       {errors.message && (
@@ -352,11 +351,11 @@ const handleSubmit = async (e) => {
             {/* Office card */}
             <div className="relative bg-[var(--primary)] rounded-3xl overflow-hidden px-8 py-9">
               {/* Decorative glow */}
-              <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-[var(--seco)]/30 blur-3xl pointer-events-none" />
-              <div className="absolute -bottom-10 -left-10 w-36 h-36 rounded-full bg-[var(--seco)]/15 blur-2xl pointer-events-none" />
+              <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-[var(--secondary)]/30 blur-3xl pointer-events-none" />
+              <div className="absolute -bottom-10 -left-10 w-36 h-36 rounded-full bg-[var(--secondary)]/15 blur-2xl pointer-events-none" />
 
               <div className="relative z-10">
-                <p className="text-[9px] font-bold uppercase tracking-[5px] text-white/30 mb-5">
+                <p className="inline-block rounded-full text-[9px] font-bold px-4 py-2 bg-white/10 uppercase tracking-[5px] text-white/70 mb-5">
                   Our Office
                 </p>
                 <h4 className="text-lg font-bold text-white leading-snug mb-7">

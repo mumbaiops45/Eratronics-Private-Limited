@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FiArrowRight, FiPhoneCall } from "react-icons/fi";
+import { FiPhoneCall } from "react-icons/fi";
 
 export default function HomeCTA() {
   return (
@@ -35,12 +35,16 @@ export default function HomeCTA() {
             <span className="text-white/50 text-xs font-semibold tracking-[4px] uppercase block mb-6">
               Start Your Project
             </span>
+
             <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
-              Ready to Build Mission-Critical{" "}
-              <span className="text-white/70">Communication Infrastructure?</span>
+              Ready to Build Mission Critical{" "}
+              <span className="text-white/70">
+                Communication Infrastructure
+              </span>
             </h2>
+
             <p className="text-white/60 text-sm leading-relaxed">
-              Partner with Eratronics for end-to-end engineering, integration, and lifecycle support — engineered to the highest reliability standards.
+              Partner with Eratronics for end to end engineering, integration, and lifecycle support, engineered to the highest reliability standards.
             </p>
           </motion.div>
 
@@ -58,13 +62,6 @@ export default function HomeCTA() {
               <FiPhoneCall size={16} />
               Contact Us Today
             </Link>
-            {/* <Link
-              href="/solutions"
-              className="group flex items-center justify-center gap-3 border border-white/30 text-white px-8 py-4 rounded-full font-semibold text-sm hover:bg-white/10 hover:border-white/60 transition-all duration-300"
-            >
-              Explore Solutions
-              <FiArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
-            </Link> */}
           </motion.div>
 
         </div>

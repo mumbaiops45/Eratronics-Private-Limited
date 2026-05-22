@@ -110,7 +110,7 @@ export default function Footer() {
                         text-sm font-medium transition-all duration-300
                         ${
                           isActive
-                            ? "text-white underline decoration-white"
+                            ? "text-white underline underline-offset-4 decoration-white"
                             : "text-white/70 hover:text-white"
                         }
                       `}
@@ -148,7 +148,7 @@ export default function Footer() {
                         text-sm font-medium transition-all duration-300
                         ${
                           isActive
-                            ? "text-white underline"
+                            ? "text-white underline underline-offset-4"
                             : "text-white/70 hover:text-white"
                         }
                       `}
@@ -186,7 +186,7 @@ export default function Footer() {
                         text-sm font-medium transition-all duration-300
                         ${
                           isActive
-                            ? "text-white underline"
+                            ? "text-white underline underline-offset-4"
                             : "text-white/70 hover:text-white"
                         }
                       `}
@@ -214,7 +214,7 @@ export default function Footer() {
               {/* ADDRESS */}
               <div className="flex items-start gap-3">
 
-                <HiOutlineLocationMarker className="text-white text-xl mt-1 shrink-0" />
+                <HiOutlineLocationMarker className="text-[var(--secondary)] text-xl mt-1 shrink-0" />
 
                 <p>
                   Raheja Tesla Industrial, Juinagar,
@@ -227,7 +227,7 @@ export default function Footer() {
               {/* PHONE */}
               <div className="flex items-center gap-3">
 
-                <HiOutlinePhone className="text-white text-xl" />
+                <HiOutlinePhone className="text-[var(--secondary)] text-xl" />
 
                 <a
                   href="tel:+91222087774"
@@ -241,7 +241,7 @@ export default function Footer() {
               {/* EMAIL */}
               <div className="flex items-center gap-3">
 
-                <HiOutlineMail className="text-white text-xl" />
+                <HiOutlineMail className="text-[var(--secondary)] text-xl" />
 
                 <a
                   href="mailto:sales@eratronics.in"
@@ -269,7 +269,7 @@ export default function Footer() {
                     border border-white/30
                     flex items-center justify-center
                     text-white
-                    hover:bg-white
+                    hover:bg-[var(--secondary)]
                     hover:text-[var(--primary)]
                     hover:border-white
                     transition-all duration-300
@@ -304,7 +304,7 @@ export default function Footer() {
               href="https://www.nakshatranamahacreations.com/website-developers-in-mumbai"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:underline"
+              className="text-white hover:underline underline-offset-4"
             >
               Nakshatra Namaha Creations
             </a>

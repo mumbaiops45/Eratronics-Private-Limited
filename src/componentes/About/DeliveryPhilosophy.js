@@ -14,7 +14,7 @@ const dareData = [
     title: "Design Engineering",
     Icon: FiLayers,
     description:
-      "The core of our all-encompassing solution that meets even the most stringent customer requirements with precision, innovation, and reliability.",
+      "The core of our comprehensive solution that meets even the most stringent customer requirements with precision, innovation, and reliability.",
   },
   {
     letter: "A",
@@ -28,14 +28,14 @@ const dareData = [
     title: "Rigorous Testing",
     Icon: FiShield,
     description:
-      "It ensures that, along with optimum safety, rigorous testing, and faster delivery, we also provide our customers with complete peace of mind.",
+      "It ensures that along with optimum safety, rigorous testing, and faster delivery, we also provide our customers with complete peace of mind.",
   },
   {
     letter: "E",
     title: "Effective Maintenance",
     Icon: FiSettings,
     description:
-      "We deliver holistic solutions that go far beyond the conventional 'fit it and forget it' approach — through the full system lifecycle.",
+      "We deliver holistic solutions that go far beyond the conventional fit it and forget it approach, through the full system lifecycle.",
   },
 ];
 
@@ -66,18 +66,22 @@ export default function DeliveryPhilosophy() {
           >
 
             <div className="flex items-center gap-3 mb-6">
+
               <span className="block w-10 h-px bg-white/60" />
 
               <span className="text-white/70 text-xs font-semibold tracking-[4px] uppercase">
                 Our Framework
               </span>
+
             </div>
 
-          <h2 className="text-4xl lg:text-5xl font-bold leading-tight max-w-2xl">
-  <span className="bg-gradient-to-r from-white to-[var(--secondary)] bg-clip-text text-transparent">
-    The DARE Delivery Model
-  </span>
-</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold leading-tight max-w-2xl">
+
+              <span className="bg-gradient-to-r from-white to-[var(--secondary)] bg-clip-text text-transparent">
+                The DARE Delivery Model
+              </span>
+
+            </h2>
 
           </motion.div>
 
@@ -88,7 +92,7 @@ export default function DeliveryPhilosophy() {
             viewport={{ once: true }}
             className="text-white/70 text-sm leading-relaxed max-w-sm lg:text-right"
           >
-            Our project delivery framework ensures quality, reliability, and long-term
+            Our project delivery framework ensures quality, reliability, and long term
             system performance at every phase.
           </motion.p>
 
@@ -105,36 +109,32 @@ export default function DeliveryPhilosophy() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="group relative bg-white/10 hover:bg-[var(--secondary)]/15 backdrop-blur-md border border-white/10 rounded-3xl p-8 lg:p-10  transition-all duration-500 overflow-hidden"
+              className="group relative bg-white/10 hover:bg-[var(--secondary)]/15 backdrop-blur-md border border-white/10 rounded-3xl p-8 lg:p-10 transition-all duration-500 overflow-hidden"
             >
 
               {/* Top hover accent */}
               <span className="absolute top-0 left-0 w-0 h-[2px] bg-[var(--secondary)] group-hover:w-full transition-all duration-700 ease-out" />
 
               {/* Large letter watermark */}
-              <span className="absolute -bottom-4 -right-2 text-[120px] font-black leading-none text-white/[0.05] select-none pointer-events-none">
+              <span className="absolute bottom-4 right-2 text-[120px] font-black leading-none text-white/[0.05] select-none pointer-events-none">
                 {letter}
               </span>
-
-              {/* Number */}
-
-
-              {/* Icon */}
-
 
               {/* Letter badge */}
               <div className="flex items-center gap-3 mb-4">
 
-                <span className="text-4xl font-black text-white leading-none">
+                <span className="text-4xl font-black text-white group-hover:text-[var(--secondary)] leading-none">
                   {letter}
                 </span>
 
                 <div className="h-px flex-1 bg-white/10" />
-                <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center  group-hover:bg-white/20 transition-all duration-300">
+
+                <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all duration-300">
 
                   <Icon className="text-white" size={20} />
 
                 </div>
+
               </div>
 
               <h3 className="text-base font-bold text-white mb-4 leading-snug">
@@ -182,6 +182,7 @@ export default function DeliveryPhilosophy() {
         </motion.div>
 
       </div>
+
     </section>
   );
 }

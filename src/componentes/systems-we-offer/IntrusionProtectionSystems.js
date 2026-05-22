@@ -20,96 +20,160 @@ const stats = [
     { value: "AI", label: "Smart Event Detection" },
 ];
 
-const systems = [
-    {
-        id: 1,
-        icon: FiActivity,
-        category: "DAS",
-        title: "Distributed Acoustic Sensing (DAS)",
-        desc:
-            "DAS converts a standard fiber-optic cable into a continuous acoustic/vibration sensor, acting like thousands of virtual microphones along its length. It enables real-time detection of events, movement, and disturbances without installing discrete sensors.",
-        features: [
-            "Pipeline Intrusion & TPI Detection",
-            "Leak & Rupture Monitoring",
-            "Train Tracking & Positioning",
-        ],
-    },
+// const systems = [
+//     {
+//         id: 1,
+//         icon: FiActivity,
+//         category: "DAS",
+//         title: "Distributed Acoustic Sensing (DAS)",
+//         desc:
+//             "DAS converts a standard fiber-optic cable into a continuous acoustic/vibration sensor, acting like thousands of virtual microphones along its length. It enables real-time detection of events, movement, and disturbances without installing discrete sensors.",
+//         features: [
+//             "Pipeline Intrusion & TPI Detection",
+//             "Leak & Rupture Monitoring",
+//             "Train Tracking & Positioning",
+//         ],
+//     },
 
-    {
-        id: 2,
-        icon: FiShield,
-        category: "DAS Applications",
-        title: "Oil & Gas Pipeline Monitoring",
-        desc:
-            "DAS enables real-time protection of critical pipeline infrastructure by detecting intrusion, leakage, rupture, and external interference with high accuracy.",
-        features: [
-            "Intrusion & Third-Party Interference (TPI)",
-            "Pipeline Leak & Rupture Detection",
-            "Heated Pipeline Temperature Monitoring",
-            "Pig Tracking",
-        ],
-    },
+//     {
+//         id: 2,
+//         icon: FiShield,
+//         category: "DAS Applications",
+//         title: "Oil & Gas Pipeline Monitoring",
+//         desc:
+//             "DAS enables real-time protection of critical pipeline infrastructure by detecting intrusion, leakage, rupture, and external interference with high accuracy.",
+//         features: [
+//             "Intrusion & Third-Party Interference (TPI)",
+//             "Pipeline Leak & Rupture Detection",
+//             "Heated Pipeline Temperature Monitoring",
+//             "Pig Tracking",
+//         ],
+//     },
 
-    {
-        id: 3,
-        icon: FiRadio,
-        category: "Metro Applications",
-        title: "Railway & Metro Infrastructure Monitoring",
-        desc:
-            "Advanced DAS-based monitoring ensures safe metro operations through continuous tracking of trains, rails, tunnels, and underground infrastructure conditions.",
-        features: [
-            "Train Tracking & Speed Estimation",
-            "Rail Crack & Track Condition Monitoring",
-            "Tunnel Movement & Water Leakage Detection",
-            "Track Intrusion Detection",
-        ],
-    },
+//     {
+//         id: 3,
+//         icon: FiRadio,
+//         category: "Metro Applications",
+//         title: "Railway & Metro Infrastructure Monitoring",
+//         desc:
+//             "Advanced DAS-based monitoring ensures safe metro operations through continuous tracking of trains, rails, tunnels, and underground infrastructure conditions.",
+//         features: [
+//             "Train Tracking & Speed Estimation",
+//             "Rail Crack & Track Condition Monitoring",
+//             "Tunnel Movement & Water Leakage Detection",
+//             "Track Intrusion Detection",
+//         ],
+//     },
 
-    {
-        id: 4,
-        icon: FiThermometer,
-        category: "DTS",
-        title: "Distributed Temperature Sensing (DTS)",
-        desc:
-            "DTS uses Raman scattering in fiber-optic cables to monitor temperature along long distances in real-time, detecting hotspots, fire risks, and insulation failures.",
-        features: [
-            "Hotspot Detection",
-            "Dynamic Line Rating (DLR)",
-            "Fire, Smoke & Arc Detection",
-        ],
-    },
+//     {
+//         id: 4,
+//         icon: FiThermometer,
+//         category: "DTS",
+//         title: "Distributed Temperature Sensing (DTS)",
+//         desc:
+//             "DTS uses Raman scattering in fiber-optic cables to monitor temperature along long distances in real-time, detecting hotspots, fire risks, and insulation failures.",
+//         features: [
+//             "Hotspot Detection",
+//             "Dynamic Line Rating (DLR)",
+//             "Fire, Smoke & Arc Detection",
+//         ],
+//     },
 
-    {
-        id: 5,
-        icon: FiMap,
-        category: "Power Sector Applications",
-        title: "Power Transmission Monitoring",
-        desc:
-            "DTS-based monitoring improves reliability of power networks by enabling real-time thermal visibility and fault detection across transmission systems.",
-        features: [
-            "Dynamic Line Rating (DLR)",
-            "Underground Cable Monitoring",
-            "Hotspot Detection",
-            "Fire & Arc Fault Monitoring",
-        ],
-    },
+//     {
+//         id: 5,
+//         icon: FiMap,
+//         category: "Power Sector Applications",
+//         title: "Power Transmission Monitoring",
+//         desc:
+//             "DTS-based monitoring improves reliability of power networks by enabling real-time thermal visibility and fault detection across transmission systems.",
+//         features: [
+//             "Dynamic Line Rating (DLR)",
+//             "Underground Cable Monitoring",
+//             "Hotspot Detection",
+//             "Fire & Arc Fault Monitoring",
+//         ],
+//     },
 
-    {
-        id: 6,
-        icon: FiAlertTriangle,
-        category: "Tunnel & Safety",
-        title: "Metro & Tunnel Safety Systems",
-        desc:
-            "Integrated DAS & DTS systems provide structural health monitoring, fire detection, and geotechnical safety for tunnels and underground infrastructure.",
-        features: [
-            "Fire & Smoke Detection",
-            "Ventilation Monitoring",
-            "Structural Health Monitoring",
-            "Water Ingress Detection",
+//     {
+//         id: 6,
+//         icon: FiAlertTriangle,
+//         category: "Tunnel & Safety",
+//         title: "Metro & Tunnel Safety Systems",
+//         desc:
+//             "Integrated DAS & DTS systems provide structural health monitoring, fire detection, and geotechnical safety for tunnels and underground infrastructure.",
+//         features: [
+//             "Fire & Smoke Detection",
+//             "Ventilation Monitoring",
+//             "Structural Health Monitoring",
+//             "Water Ingress Detection",
+//         ],
+//     },
+// ];
+const sensingData = [
+  {
+    title: "Distributed Acoustic Sensing (DAS)",
+
+    description: [
+      "DAS converts a standard fiber-optic cable into a continuous acoustic / vibration sensor, acting like thousands of virtual microphones along its length. It enables real-time detection of events, movement, and disturbances without installing discrete sensors.",
+    ],
+
+    subSections: [
+      {
+        heading: "DAS Applications in O&G",
+
+        bullets: [
+          "Intrusion & Third-party Interference (TPI) prevents damage or theft to the pipeline",
+          "Pipeline rupture or leak detection",
+          "Temperature Monitoring of pipeline wall (Heated Pipelines)",
+          "Pig Tracking",
         ],
-    },
+      },
+
+      {
+        heading: "DAS Application in Metro System",
+
+        bullets: [
+          "Train Tracking & Positioning, Real-time train location, Train speed estimation.",
+          "Rail & Track condition monitoring, Wheel flats, Broken sleeper/ties, Rail cracks.",
+          "Tunnel & Infrastructure Monitoring, Ground movement & settlement detection, Water ingress or leakage in tunnel.",
+          "Security & Intrusion Detection, Unauthorized access to track, Tampering with cable duct.",
+        ],
+      },
+    ],
+  },
+
+  {
+    title: "Distributed Temperature Tensing (DTS)",
+
+    description: [
+      "DTS uses Raman Scattering in fiber-optic cables to continuously monitor temperature along power lines. It provides real-time thermal data for optimizing loading, improving reliability, and detecting faults early by identifying hotspots, insulation degradation, and temperature related issues.",
+    ],
+
+    subSections: [
+      {
+        heading: "DTS Application in Power Sector",
+
+        bullets: [
+          "Dynamic Line Rating (DLR)",
+          "Hot Spot Detection",
+          "Underground Cable Monitoring",
+          "Fire, Smoke, & Arc Detection",
+        ],
+      },
+
+      {
+        heading: "DTS Application in Metro / Highway Tunnel",
+
+        bullets: [
+          "Fire Detection & Safety Monitoring",
+          "Cable & Utility Tunnel monitoring",
+          "Ventilation Management",
+          "Structural health & Geotechnical Monitoring",
+        ],
+      },
+    ],
+  },
 ];
-
 export default function IntrusionProtectionSystems() {
     return (
         <section className="bg-white">
@@ -151,11 +215,11 @@ export default function IntrusionProtectionSystems() {
             </div>
 
             {/* STATS */}
-            <div className="border-b border-gray-100">
+            <div className="bg-[var(--primary)] border-b border-gray-100">
 
                 <div className="max-w-7xl mx-auto px-6 lg:px-16">
 
-                    <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-gray-100">
+                    <div className="grid grid-cols-2 lg:grid-cols-4">
 
                         {stats.map((stat, i) => (
                             <motion.div
@@ -166,7 +230,7 @@ export default function IntrusionProtectionSystems() {
                                 viewport={{ once: true }}
                                 className="px-8 py-8 text-center"
                             >
-                                <p className="text-3xl lg:text-4xl font-black text-gray-900 mb-1">
+                                <p className="text-3xl lg:text-4xl font-black text-[var(--secondary)] mb-1">
                                     {stat.value}
                                 </p>
                                 <p className="text-[11px] text-gray-400 font-medium uppercase tracking-widest">
@@ -182,7 +246,7 @@ export default function IntrusionProtectionSystems() {
             </div>
 
             {/* GRID */}
-            <div className="max-w-7xl mx-auto px-6 lg:px-16 py-20 lg:py-24">
+            {/* <div className="max-w-7xl mx-auto px-6 lg:px-16 py-20 lg:py-24">
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
@@ -256,7 +320,109 @@ export default function IntrusionProtectionSystems() {
 
                 </div>
 
-            </div>
+            </div> */}
+            <section className="bg-white py-14 lg:py-24">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20">
+
+    <div className="space-y-10 lg:space-y-14">
+
+      {sensingData.map((item, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="overflow-hidden"
+        >
+
+          {/* Heading */}
+          <div className="inline-block border-l-[5px] border-[var(--primary)] bg-gradient-to-r from-[var(--secondary)]/15 to-transparent px-5 sm:px-5 lg:px-5 py-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-snug bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">
+              {item.title}
+            </h2>
+          </div>
+
+          <div className="px-5 sm:px-7 lg:px-10 py-6 lg:py-8">
+
+            {/* Main Paragraphs */}
+            {item.description && (
+              <div className="space-y-5">
+                {item.description.map((para, i) => (
+                  <p
+                    key={i}
+                    className="text-[14px] sm:text-[15px] text-gray-600 leading-relaxed"
+                  >
+                    {para}
+                  </p>
+                ))}
+              </div>
+            )}
+
+            {/* Sub Sections */}
+            {item.subSections && (
+              <div className="mt-4 space-y-8">
+
+                {item.subSections.map((sub, idx) => (
+                  <div
+                    key={idx}
+                    className="pl-4 sm:pl-6 lg:pl-10 border-l border-gray-200"
+                  >
+
+                    {/* Sub Heading */}
+                    <h3 className="text-lg sm:text-xl font-bold text-[var(--secondary)] mb-4 leading-snug">
+                      {sub.heading}
+                    </h3>
+
+                    {/* Paragraphs */}
+                    {sub.paragraphs && (
+                      <div className="space-y-4">
+                        {sub.paragraphs.map((para, i) => (
+                          <p
+                            key={i}
+                            className="text-[14px] sm:text-[15px] text-gray-600 leading-relaxed"
+                          >
+                            {para}
+                          </p>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Bullet Points */}
+                    {sub.bullets && (
+                      <ul className="space-y-3">
+                        {sub.bullets.map((point, i) => (
+                          <li
+                            key={i}
+                            className="flex items-start gap-3 text-[14px] sm:text-[15px] text-gray-600 leading-relaxed"
+                          >
+                            <span className="w-2 h-2 rounded-full bg-[var(--secondary)] mt-2 shrink-0" />
+
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
+                    {/* Footer Text */}
+                    {sub.footer && (
+                      <p className="mt-5 text-[14px] sm:text-[15px] text-gray-600 leading-relaxed">
+                        {sub.footer}
+                      </p>
+                    )}
+                  </div>
+                ))}
+
+              </div>
+            )}
+
+          </div>
+        </motion.div>
+      ))}
+
+    </div>
+  </div>
+</section>
 
             {/* CTA */}
             <div className="max-w-7xl mx-auto px-6 lg:px-16 pb-20 lg:pb-24">
@@ -292,7 +458,7 @@ export default function IntrusionProtectionSystems() {
 
                         <Link
                             href="/contact-us"
-                            className="inline-flex items-center gap-2 bg-white text-[var(--primary)] font-semibold text-sm px-7 py-3.5 rounded-xl"
+                            className="inline-flex bg-[var(--secondary)] items-center gap-2 text-[var(--primary)] font-semibold text-sm px-7 py-3.5 rounded-xl"
                         >
                             Get in Touch
                             <FiArrowRight size={14} />

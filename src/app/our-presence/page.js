@@ -22,7 +22,13 @@ const OurPresencePage = () => {
     }, []);
     return (
         <>
-            <TopHeading title="Our Presence" />
+            <TopHeading
+  title={
+    <>
+      Our <span className="text-[var(--secondary)]">Presence</span>
+    </>
+  }
+/>
             <OurPresence />
             <PopupContact
                 open={openPopup}

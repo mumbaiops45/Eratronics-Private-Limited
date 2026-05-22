@@ -13,39 +13,39 @@ import {
 const reasons = [
   {
     icon: FiCheckCircle,
-    title: "Single-Point Accountability",
+    title: "Single Point Accountability",
     description:
-      "One partner for design, supply, integration, commissioning, and support — eliminating coordination gaps and reducing project risk.",
+      "One partner for design, supply, integration, commissioning, and support, eliminating coordination gaps and reducing project risk.",
   },
   {
     icon: FiLayers,
-    title: "DARE & CARE Models",
+    title: "DARE and CARE Models",
     description:
       "Our proprietary frameworks drive structured delivery and lifecycle support, ensuring every phase meets operational and regulatory standards.",
   },
   {
     icon: FiShield,
-    title: "Mission-Critical Reliability",
+    title: "Mission Critical Reliability",
     description:
-      "Systems engineered for zero-compromise environments — hazardous zones, remote sites, and 24×7 critical operations.",
+      "Systems engineered for zero compromise environments, hazardous zones, remote sites, and 24 7 critical operations.",
   },
   {
     icon: FiHeadphones,
-    title: "Through-Life Support",
+    title: "Through Life Support",
     description:
-      "SLA-based operations support from routine maintenance to emergency response, aligned with your availability requirements.",
+      "SLA based operations support from routine maintenance to emergency response, aligned with your availability requirements.",
   },
   {
     icon: FiTool,
-    title: "In-House Integration Center",
+    title: "In House Integration Center",
     description:
-      "All systems undergo rigorous pre-deployment testing and customer-witnessed FAT at our dedicated integration facility.",
+      "All systems undergo rigorous pre deployment testing and customer witnessed FAT at our dedicated integration facility.",
   },
   {
     icon: FiGlobe,
-    title: "Multi-Industry Expertise",
+    title: "Multi Industry Expertise",
     description:
-      "Proven track record across Oil & Gas, Power, and Metro Rail sectors — deep domain knowledge that generic integrators cannot replicate.",
+      "Proven track record across Oil and Gas, Power, and Metro Rail sectors, deep domain knowledge that generic integrators cannot replicate.",
   },
 ];
 
@@ -62,14 +62,14 @@ export default function HomeWhyUs() {
           viewport={{ once: true }}
           className="mb-20 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8"
         >
-          <div className="flex items-center gap-10">
-            <div className="flex items-center gap-3 mb-6">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-10">
+            <div className="flex items-center gap-3 mb-0">
               <span className="block w-10 h-px bg-[var(--primary)]" />
               <span className="text-[var(--primary)] text-xs font-semibold tracking-[4px] uppercase">
                 Why Eratronics
               </span>
             </div>
-            <span className="block w-px h-20 bg-[var(--primary)]" />
+            <span className="hidden lg:block w-px h-20 bg-[var(--primary)]" />
             <div>
 
              <h2 className="text-4xl lg:text-5xl font-bold leading-tight max-w-2xl">

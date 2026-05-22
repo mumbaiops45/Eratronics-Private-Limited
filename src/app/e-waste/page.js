@@ -4,7 +4,13 @@ import EWaste from '@/componentes/EWaste/EWaste'
 const EWastePage = () => {
     return (
         <>
-            <TopHeading title="E-Waste Management" />
+           <TopHeading
+  title={
+    <>
+      <span className="text-[var(--secondary)]">E Waste</span> Management
+    </>
+  }
+/>
             <EWaste />
         </>
     )

@@ -8,7 +8,6 @@ import {
   FiCheckSquare,
   FiPackage,
   FiSettings,
-  FiArrowRight,
   FiPhoneCall,
 } from "react-icons/fi";
 
@@ -16,10 +15,10 @@ const integrationServices = [
   {
     number: "01",
     tag: "Procurement Phase",
-    title: "Third-Party Procurement",
+    title: "Third Party Procurement",
     icon: FiShoppingBag,
     description:
-      "For telecom projects, core network elements such as optical multiplexers (SDH / MPLS / DWDM / Ethernet Switches) are typically supplied by the OEM or main contractor. Eratronics undertakes end-to-end procurement of all associated third-party components—including cabinets, power and data cables, MCBs, power supplies, patch panels, and related accessories in line with the approved Bill of Materials (BoM).",
+      "For telecom projects, core network elements such as optical multiplexers (SDH / MPLS / DWDM / Ethernet Switches) are typically supplied by the OEM or main contractor. Eratronics undertakes end to end procurement of all associated third party components, including cabinets, power and data cables, MCBs, power supplies, patch panels, and related accessories in line with the approved Bill of Materials (BoM).",
   },
   {
     number: "02",
@@ -41,7 +40,7 @@ const integrationServices = [
     title: "Factory Acceptance Testing (FAT)",
     icon: FiCheckSquare,
     description:
-      "Post-integration, each system undergoes rigorous validation through comprehensive pre-dispatch checks at our integration facility. This is followed by Factory Acceptance Testing (FAT), conducted in the presence of the end customer or their representatives, to verify system performance, functionality, and compliance with project specifications.",
+      "Post integration, each system undergoes rigorous validation through comprehensive pre dispatch checks at our integration facility. This is followed by Factory Acceptance Testing (FAT), conducted in the presence of the end customer or their representatives, to verify system performance, functionality, and compliance with project specifications.",
   },
   {
     number: "04",
@@ -49,15 +48,15 @@ const integrationServices = [
     title: "Packing & Dispatch",
     icon: FiPackage,
     description:
-      "Upon receipt of dispatch clearance from the client, integrated systems are carefully dismantled (where required) and packed in accordance with export-grade standards to ensure safe transit. Eratronics’ standard scope includes handling up to loading of materials at our integration facility.",
+      "Upon receipt of dispatch clearance from the client, integrated systems are carefully dismantled, where required, and packed in accordance with export grade standards to ensure safe transit. Eratronics standard scope includes handling up to loading of materials at our integration facility.",
   },
   {
     number: "05",
     tag: "Extended Scope",
-    title: "Additional Services (Under Separate Scope)",
+    title: "Additional Services, Under Separate Scope",
     icon: FiSettings,
     description:
-      "Eratronics can also provide end-to-end logistics support, including transit insurance, transportation to site, unloading, and on-site installation & commissioning services.",
+      "Eratronics can also provide end to end logistics support, including transit insurance, transportation to site, unloading, and on site installation & commissioning services.",
   },
 ];
 
@@ -71,7 +70,7 @@ const highlights = [
 export default function SystemIntegrationServices() {
   return (
     <>
-      {/* -- HERO INTRO -- */}
+      {/* HERO INTRO */}
       <section className="py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-16">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-12">
@@ -85,21 +84,22 @@ export default function SystemIntegrationServices() {
             >
               <div className="flex items-center gap-3 mb-7">
                 <span className="block w-10 h-px bg-[var(--primary)]" />
+
                 <span className="text-[var(--primary)] text-xs font-semibold tracking-[4px] uppercase">
                   System Integration Services
                 </span>
               </div>
 
-           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
-  Integrated Telecom Solutions with{" "}
-  <span className="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">
-    Precision Execution
-  </span>
-</h2>
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
+                Integrated Telecom Solutions with{" "}
+                <span className="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">
+                  Precision Execution
+                </span>
+              </h2>
 
               <p className="text-gray-500 text-sm leading-relaxed">
                 Eratronics delivers complete telecom integration services for
-                mission-critical infrastructure projects. From procurement and
+                mission critical infrastructure projects. From procurement and
                 cabinet integration to FAT validation and deployment support,
                 we ensure every subsystem is engineered, integrated, tested,
                 and delivered with complete operational reliability.
@@ -122,6 +122,7 @@ export default function SystemIntegrationServices() {
                   <p className="text-3xl font-black text-[var(--secondary)] mb-1">
                     {item.value}
                   </p>
+
                   <p className="text-[10px] text-gray-400 uppercase tracking-[2px] font-medium">
                     {item.label}
                   </p>
@@ -133,7 +134,7 @@ export default function SystemIntegrationServices() {
         </div>
       </section>
 
-      {/* -- SERVICE CARDS -- */}
+      {/* SERVICE CARDS */}
       <section className="pb-0 bg-gray-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-16 pt-20">
 
@@ -145,6 +146,7 @@ export default function SystemIntegrationServices() {
             className="flex items-center gap-3 mb-16"
           >
             <span className="block w-10 h-px bg-[var(--primary)]" />
+
             <span className="text-[var(--primary)] text-xs font-semibold tracking-[4px] uppercase">
               Integration Workflow
             </span>
@@ -162,15 +164,15 @@ export default function SystemIntegrationServices() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.07 }}
                   viewport={{ once: true }}
-                  className="group relative bg-[var(--secondary)]/10 rounded-2xl border border-gray-100 p-8 hover:border-[var(--primary)]/25 hover:shadow-lg hover:shadow-[var(--primary)]/5 transition-all duration-400 overflow-hidden"
+                  className="group relative bg-[var(--secondary)]/5 hover:bg-[var(--secondary)]/10 rounded-2xl border border-gray-100 p-8 hover:border-[var(--primary)]/25 hover:shadow-lg hover:shadow-[var(--primary)]/5 transition-all duration-400 overflow-hidden"
                 >
                   {/* Hover Accent */}
                   <span className="absolute top-0 left-0 w-0 h-[3px] bg-[var(--primary)] group-hover:w-full transition-all duration-600 ease-out" />
 
                   {/* Watermark */}
-                  <span className="absolute -bottom-3 -right-2 text-[100px] font-black leading-none text-gray-50 select-none pointer-events-none">
+                  {/* <span className="absolute -bottom-3 -right-2 text-[100px] font-black leading-none text-gray-50 select-none pointer-events-none">
                     {svc.number}
-                  </span>
+                  </span> */}
 
                   {/* Header */}
                   <div className="flex items-start gap-5 mb-5">
@@ -208,6 +210,7 @@ export default function SystemIntegrationServices() {
                           className="flex items-start gap-2.5"
                         >
                           <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[var(--primary)]/50 shrink-0" />
+
                           <span className="text-sm text-gray-500 leading-relaxed">
                             {point}
                           </span>
@@ -221,8 +224,8 @@ export default function SystemIntegrationServices() {
           </div>
         </div>
 
-        {/* -- CTA -- */}
-        <div className="relative mt-16 mx-6 lg:mx-16 mb-16 rounded-2xl bg-[var(--primary)] px-10 py-14 overflow-hidden">
+        {/* CTA */}
+        <div className="relative mt-16 mx-4 sm:mx-6 lg:mx-16 mb-16 rounded-2xl bg-[var(--primary)] px-6 sm:px-10 py-10 sm:py-14 overflow-hidden">
 
           <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-white/5 pointer-events-none" />
           <div className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-white/5 pointer-events-none" />
@@ -246,15 +249,9 @@ export default function SystemIntegrationServices() {
                 href="/contact-us"
                 className="inline-flex items-center gap-2 bg-[var(--secondary)] text-[var(--primary)] px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-white/90 transition-all duration-300"
               >
-                <FiPhoneCall size={15} /> Contact Us
+                <FiPhoneCall size={15} />
+                Contact Us
               </Link>
-
-              {/* <Link
-                href="/solutions"
-                className="inline-flex items-center gap-2 border border-white/30 text-white px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-white/10 hover:border-white/60 transition-all duration-300"
-              >
-                All Solutions <FiArrowRight size={13} />
-              </Link> */}
 
             </div>
 

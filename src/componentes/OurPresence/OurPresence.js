@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-/* --- Client badge styles ----------------------------------- */
+/* Client badge styles */
 const clientStyles = {
   GAIL: "bg-blue-50 text-blue-700 border-blue-100",
   BPCL: "bg-emerald-50 text-emerald-700 border-emerald-100",
@@ -11,9 +11,9 @@ const clientStyles = {
   HPCL: "bg-violet-50 text-violet-700 border-violet-100",
 };
 
-/* --- Telecom project columns ------------------------------- */
+/* Telecom project columns */
 const TELECOM_COLS = [
-  "MPLS-TP / SDH + NMS",
+  "MPLS TP / SDH + NMS",
   "Network Firewall",
   "CCTV",
   "ACS",
@@ -22,11 +22,11 @@ const TELECOM_COLS = [
   "VHF/UHF",
 ];
 
-/* --- Telecom project data --------------------------------- */
+/* Telecom project data */
 const telecomProjects = [
   {
     id: 1,
-    project: "Upgradation of SDH to MPLS-TP at 101 Locations",
+    project: "Upgradation of SDH to MPLS TP at 101 Locations",
     client: "GAIL",
     sys: [1, 1, 0, 0, 0, 0, 0],
     distance: 3196,
@@ -59,7 +59,7 @@ const telecomProjects = [
 
   {
     id: 5,
-    project: "Bina - Panki Pipeline Project",
+    project: "Bina Panki Pipeline Project",
     client: "BPCL",
     sys: [1, 1, 1, 1, 0, 0, 1],
     distance: 355,
@@ -67,7 +67,7 @@ const telecomProjects = [
 
   {
     id: 6,
-    project: "Tundla – Gawaria Pipeline",
+    project: "Tundla Gawaria Pipeline",
     client: "IOCL",
     sys: [1, 0, 1, 0, 0, 1, 0],
     distance: 253,
@@ -75,21 +75,21 @@ const telecomProjects = [
 
   {
     id: 7,
-    project: "Vijayapur – Dadri – Bawana Pipeline Project",
+    project: "Vijayapur Dadri Bawana Pipeline Project",
     client: "GAIL",
     sys: [1, 0, 0, 0, 0, 0, 0],
     distance: 146,
   },
 ];
 
-/* --- PIDS project columns --------------------------------- */
+/* PIDS project columns */
 const PIDS_COLS = [
   "Pipeline Intrusion",
   "Leak Detection",
   "Fence Intrusion",
 ];
 
-/* --- PIDS project data ------------------------------------ */
+/* PIDS project data */
 const pidsProjects = [
   {
     id: 1,
@@ -109,7 +109,7 @@ const pidsProjects = [
 
   {
     id: 3,
-    project: "Bina - Panki Pipeline",
+    project: "Bina Panki Pipeline",
     client: "BPCL",
     sys: [1, 1, 1],
     distance: 356,
@@ -133,14 +133,14 @@ const pidsProjects = [
 
   {
     id: 6,
-    project: "National ‘Capital’ Region (NCR)",
+    project: "National Capital Region (NCR)",
     client: "GAIL",
     sys: [1, 0, 0],
     distance: 513,
   },
 ];
 
-/* --- Square indicator ------------------------------------- */
+/* Square indicator */
 function Dot({ active }) {
   return active ? (
     <span className="inline-block w-3.5 h-3.5 rounded-[3px] bg-[var(--primary)] shadow-sm" />
@@ -149,7 +149,7 @@ function Dot({ active }) {
   );
 }
 
-/* --- Project table ---------------------------------------- */
+/* Project table */
 function ProjectTable({ cols, projects }) {
   const maxDist = Math.max(...projects.map((p) => p.distance));
   const total = projects.reduce((s, p) => s + p.distance, 0);
@@ -161,28 +161,28 @@ function ProjectTable({ cols, projects }) {
         {/* Header */}
         <thead>
           <tr>
-            <th className="bg-[var(--primary)] px-5 py-4 text-left text-[9px] font-semibold uppercase tracking-[3px] text-white/35 w-12">
+            <th className="bg-[var(--primary)] px-5 py-4 text-left text-[9px] font-semibold uppercase tracking-[3px] text-white/80 w-12">
               Sr.
             </th>
 
-            <th className="bg-[var(--primary)] px-5 py-4 text-left text-[9px] font-semibold uppercase tracking-[3px] text-white/35">
+            <th className="bg-[var(--primary)] px-5 py-4 text-left text-[9px] font-semibold uppercase tracking-[3px] text-white/80">
               Project Details
             </th>
 
-            <th className="bg-[var(--primary)] px-5 py-4 text-center text-[9px] font-semibold uppercase tracking-[3px] text-white/35 whitespace-nowrap">
+            <th className="bg-[var(--primary)] px-5 py-4 text-center text-[9px] font-semibold uppercase tracking-[3px] text-white/80 whitespace-nowrap">
               End Customer
             </th>
 
             {cols.map((col) => (
               <th
                 key={col}
-                className="bg-[var(--primary)] px-3 py-4 text-center text-[9px] font-semibold uppercase tracking-[2px] text-white/35 whitespace-nowrap"
+                className="bg-[var(--primary)] px-3 py-4 text-center text-[9px] font-semibold uppercase tracking-[2px] text-white/80 whitespace-nowrap"
               >
                 {col}
               </th>
             ))}
 
-            <th className="bg-[var(--primary)] px-5 py-4 text-right text-[9px] font-semibold uppercase tracking-[3px] text-white/35 whitespace-nowrap">
+            <th className="bg-[var(--primary)] px-5 py-4 text-right text-[9px] font-semibold uppercase tracking-[3px] text-white/80 whitespace-nowrap">
               Distance
             </th>
           </tr>
@@ -285,7 +285,7 @@ function ProjectTable({ cols, projects }) {
   );
 }
 
-/* --- Legend ------------------------------------------------ */
+/* Legend */
 function Legend({ clients }) {
   return (
     <div className="mt-5 flex flex-wrap items-center gap-x-8 gap-y-3">
@@ -323,7 +323,7 @@ function Legend({ clients }) {
   );
 }
 
-/* --- Section intro ---------------------------------------- */
+/* Section intro */
 function SectionIntro({
   tag,
   label,
@@ -347,7 +347,7 @@ function SectionIntro({
         </p>
 
         <div className="flex items-baseline gap-2">
-          <span className="text-6xl lg:text-7xl font-black text-gray-900 leading-none">
+          <span className="text-6xl lg:text-7xl font-black text-[var(--secondary)] leading-none">
             {stat}
           </span>
 
@@ -356,7 +356,7 @@ function SectionIntro({
           </span>
         </div>
 
-        <div className="mt-3 w-12 h-[3px] bg-[var(--primary)] rounded-full" />
+        <div className="mt-3 w-12 h-[3px] bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] rounded-full" />
       </div>
 
       <div className="lg:pb-2">
@@ -364,9 +364,9 @@ function SectionIntro({
           {tag}
         </p>
 
-        <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 leading-snug mb-3 max-w-2xl">
-          {title}
-        </h3>
+      <h3 className="text-2xl lg:text-3xl font-bold leading-snug mb-3 max-w-2xl bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">
+  {title}
+</h3>
 
         <p className="text-sm text-gray-500 leading-relaxed max-w-2xl">
           {description}
@@ -376,7 +376,7 @@ function SectionIntro({
   );
 }
 
-/* --- Main export ------------------------------------------ */
+/* Main export */
 export default function OurPresence() {
   return (
     <div className="bg-white">
@@ -385,12 +385,12 @@ export default function OurPresence() {
       <div className="max-w-7xl mx-auto px-6 lg:px-20 py-20">
 
         <SectionIntro
-          tag="Section 01 — Telecom Infrastructure"
+          tag="Section 01 , Telecom Infrastructure"
           label="Delivered"
           stat="6,000+"
           unit="KM"
           title="Telecom Projects Span More than 6,000 KM Delivered"
-          description="Our design and implementation capabilities range from simple point-to-point networks to fully converged telecom architectures, seamlessly integrating multiple systems to meet specific customer requirements."
+          description="Our design and implementation capabilities range from simple point to point networks to fully converged telecom architectures, seamlessly integrating multiple systems to meet specific customer requirements."
         />
 
         <ProjectTable
@@ -411,12 +411,12 @@ export default function OurPresence() {
         <div className="max-w-7xl mx-auto px-6 lg:px-20 py-20">
 
           <SectionIntro
-            tag="Section 02 — Pipeline Intrusion Detection"
+            tag="Section 02 , Pipeline Intrusion Detection"
             label="Delivered"
             stat="2,200+"
             unit="KM"
             title="Our PIDS Implementation Spanning 2,200 KM Delivered"
-            description="Our complete start-to-end Design, Implementation, and Commissioning of Pipeline Intrusion Detection Systems across major Government-regulated Oil & Gas pipelines, ensuring secure, intrusion-free operations in full compliance with statutory security standards and TPIs."
+            description="Our complete start to end Design, Implementation, and Commissioning of Pipeline Intrusion Detection Systems across major Government regulated Oil & Gas pipelines, ensuring secure, intrusion free operations in full compliance with statutory security standards and TPIs."
           />
 
           <ProjectTable
@@ -432,7 +432,7 @@ export default function OurPresence() {
       <div className="bg-white border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-20 py-20">
 
-          <div className="relative bg-[var(--primary)] rounded-3xl px-10 lg:px-16 py-14 overflow-hidden">
+          <div className="relative bg-[var(--primary)] rounded-3xl px-6 sm:px-10 lg:px-16 py-10 sm:py-14 overflow-hidden">
 
             <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
 
@@ -442,7 +442,7 @@ export default function OurPresence() {
                 </p>
 
                 <h3 className="text-2xl lg:text-3xl font-bold text-white leading-snug mb-3">
-                  Looking to deploy mission-critical telecom infrastructure?
+                  Looking to deploy mission critical telecom infrastructure?
                 </h3>
 
                 <p className="text-white/40 text-sm leading-relaxed">

@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const stats = [
   { value: "15+", label: "Years of Experience" },
-  { value: "24×7", label: "Service Support" },
+  { value: "24 7", label: "Service Support" },
   { value: "50+", label: "Projects Delivered" },
   { value: "3+", label: "Industry Sectors" },
 ];
@@ -16,7 +16,7 @@ const cards = [
     title: "Vision",
     Icon: FiCompass,
     description:
-      "To revolutionize the Indian Telecom Landscape with innovative solutions and state-of-the-art service delivery.",
+      "To revolutionize the Indian Telecom Landscape with innovative solutions and state of the art service delivery.",
   },
   {
     title: "Mission",
@@ -33,14 +33,18 @@ const containerVariants = {
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+  },
 };
 
 export default function CompanyOverview() {
   return (
     <section className="bg-white overflow-hidden">
 
-      {/* -- INTRO -- */}
+      {/* INTRO */}
       <div className="max-w-7xl mx-auto px-6 lg:px-16 pt-24 pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
@@ -51,35 +55,45 @@ export default function CompanyOverview() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
-            <motion.div variants={fadeUp} className="flex items-center gap-3 mb-7">
+            <motion.div
+              variants={fadeUp}
+              className="flex items-center gap-3 mb-7"
+            >
               <span className="block w-10 h-px bg-[var(--primary)]" />
+
               <span className="text-[var(--primary)] text-xs font-semibold tracking-[4px] uppercase">
                 About Eratronics
               </span>
             </motion.div>
 
-           <motion.h2
-  variants={fadeUp}
-  className="text-4xl lg:text-5xl font-bold leading-tight mb-8"
->
-  <span className="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">
-    A Decade of Mission-Critical Telecom Excellence
-  </span>
-</motion.h2>
+            <motion.h2
+              variants={fadeUp}
+              className="text-4xl lg:text-5xl font-bold leading-tight mb-8"
+            >
+              <span className="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">
+                A Decade of Mission Critical Telecom Excellence
+              </span>
+            </motion.h2>
 
-            <motion.p variants={fadeUp} className="text-gray-500 text-sm leading-relaxed mb-5">
-              Since inception, Eratronics Pvt. Ltd. has built over a decade of hands-on experience
+            <motion.p
+              variants={fadeUp}
+              className="text-gray-500 text-sm leading-relaxed mb-5"
+            >
+              Since inception, Eratronics Pvt. Ltd. has built over a decade of hands on experience
               as a telecom systems integrator, specializing in advanced, reliable communication
-              solutions for mission-critical environments. Headquartered in India, we serve leading
-              organizations in the Oil &amp; Gas sector and are steadily expanding our presence
+              solutions for mission critical environments. Headquartered in India, we serve leading
+              organizations in the Oil and Gas sector and are steadily expanding our presence
               across Metro Rail, Power, and infrastructure domains.
             </motion.p>
 
-            <motion.p variants={fadeUp} className="text-gray-500 text-sm leading-relaxed mb-10">
+            <motion.p
+              variants={fadeUp}
+              className="text-gray-500 text-sm leading-relaxed mb-10"
+            >
               We are strengthening our Engineering Services portfolio to support international
-              markets — offering high-quality design, integration, commissioning, and lifecycle
-              support. Backed by a dedicated 24×7 service team, we ensure operational continuity,
-              system reliability, and long-term value.
+              markets, offering high quality design, integration, commissioning, and lifecycle
+              support. Backed by a dedicated 24 7 service team, we ensure operational continuity,
+              system reliability, and long term value.
             </motion.p>
 
             <motion.div variants={fadeUp}>
@@ -88,12 +102,16 @@ export default function CompanyOverview() {
                 className="group inline-flex items-center gap-2 bg-[var(--secondary)] text-white text-sm font-semibold px-7 py-3.5 rounded-full hover:bg-[var(--primary)]/90 transition-all duration-300"
               >
                 Get In Touch
-                <FiArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
+
+                <FiArrowRight
+                  size={14}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
               </Link>
             </motion.div>
           </motion.div>
 
-          {/* Right — vision & mission */}
+          {/* Right */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -105,19 +123,27 @@ export default function CompanyOverview() {
               <motion.div
                 key={title}
                 variants={fadeUp}
-                className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-[var(--secondary)]/10 p-8 hover:border-[var(--primary)]/30 hover:shadow-xl hover:shadow-[var(--primary)]/5 transition-all duration-500"
+                className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-[var(--secondary)]/5 p-8 hover:border-[var(--primary)]/30 hover:shadow-xl hover:shadow-[var(--primary)]/5 transition-all duration-500"
               >
+
                 {/* Hover accent line */}
                 <span className="absolute top-0 left-0 w-0 h-[3px] bg-[var(--primary)] group-hover:w-full transition-all duration-700 ease-out" />
 
                 <div className="flex items-center gap-4 mb-4">
+
                   <div className="w-11 h-11 rounded-xl bg-[var(--primary)]/8 border border-[var(--primary)]/15 flex items-center justify-center group-hover:bg-[var(--primary)] group-hover:border-[var(--primary)] transition-all duration-300">
-                    <Icon className="text-[var(--primary)] group-hover:text-white transition-colors duration-300" size={18} />
+                    <Icon
+                      className="text-[var(--primary)] group-hover:text-white transition-colors duration-300"
+                      size={18}
+                    />
                   </div>
+
                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-[var(--primary)] transition-colors duration-300">
                     {title}
                   </h3>
+
                 </div>
+
                 <p className="text-sm text-gray-500 leading-relaxed">
                   {description}
                 </p>
@@ -126,6 +152,7 @@ export default function CompanyOverview() {
                 <span className="absolute bottom-4 right-6 text-[64px] font-black text-gray-50 leading-none select-none pointer-events-none">
                   {title[0]}
                 </span>
+
               </motion.div>
             ))}
           </motion.div>
@@ -133,10 +160,12 @@ export default function CompanyOverview() {
         </div>
       </div>
 
-      {/* -- STATS STRIP -- */}
+      {/* STATS STRIP */}
       <div className="bg-[var(--primary)]">
         <div className="max-w-7xl mx-auto px-6 lg:px-16">
+
           <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/10">
+
             {stats.map((stat, i) => (
               <motion.div
                 key={i}
@@ -146,15 +175,20 @@ export default function CompanyOverview() {
                 viewport={{ once: true }}
                 className="py-12 px-8 text-center"
               >
-                <p className="text-4xl lg:text-5xl font-black text-white mb-2">
+
+                <p className="text-4xl lg:text-5xl font-black text-[var(--secondary)] mb-2">
                   {stat.value}
                 </p>
+
                 <p className="text-xs text-white/50 uppercase tracking-[3px] font-medium">
                   {stat.label}
                 </p>
+
               </motion.div>
             ))}
+
           </div>
+
         </div>
       </div>
 
