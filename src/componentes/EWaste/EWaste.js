@@ -1,50 +1,28 @@
-﻿"use client";
+"use client";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   FiPackage, FiFilter, FiShield, FiTruck,
-  FiRefreshCw, FiCheckCircle, FiCheck, FiX, FiMapPin,
+  FiRefreshCw, FiCheckCircle, FiCheck, FiX, FiMapPin, FiArrowRight,
 } from "react-icons/fi";
 
-/* Data */
+gsap.registerPlugin(ScrollTrigger);
 
 const policyItems = [
-  {
-    num: "01",
-    icon: FiPackage,
-    title: "Safe Collection of E Waste",
-    desc: "All obsolete, damaged, non functional, or end of life electronic products are identified and collected separately from general waste to ensure proper disposal.",
-  },
-  {
-    num: "02",
-    icon: FiFilter,
-    title: "Proper Segregation",
-    desc: "Electronic waste is carefully segregated based on product type, material composition, and recycling requirements to facilitate safe handling and efficient recycling.",
-  },
-  {
-    num: "03",
-    icon: FiShield,
-    title: "Environmentally Safe Storage",
-    desc: "Collected e waste is stored securely in designated areas to prevent leakage, contamination, and environmental damage before final disposal.",
-  },
-  {
-    num: "04",
-    icon: FiTruck,
-    title: "Disposal Through Authorized Recycler",
-    desc: "We ensure that all e waste is handed over only to authorized recyclers, dismantlers, and certified waste management agencies approved by relevant government authorities.",
-  },
-  {
-    num: "05",
-    icon: FiRefreshCw,
-    title: "Recycling and Resource Recovery",
-    desc: "Wherever possible, valuable materials such as metals, plastics, and reusable components are recovered through proper recycling processes to reduce resource wastage.",
-  },
-  {
-    num: "06",
-    icon: FiCheckCircle,
-    title: "Compliance with Statutory Regulations",
-    desc: "We maintain compliance with all applicable environmental laws, government regulations, and industry standards related to electronic waste management.",
-  },
+  { num: "01", icon: FiPackage, title: "Safe Collection of E Waste",
+    desc: "All obsolete, damaged, non functional, or end of life electronic products are identified and collected separately from general waste to ensure proper disposal." },
+  { num: "02", icon: FiFilter, title: "Proper Segregation",
+    desc: "Electronic waste is carefully segregated based on product type, material composition, and recycling requirements to facilitate safe handling and efficient recycling." },
+  { num: "03", icon: FiShield, title: "Environmentally Safe Storage",
+    desc: "Collected e waste is stored securely in designated areas to prevent leakage, contamination, and environmental damage before final disposal." },
+  { num: "04", icon: FiTruck, title: "Disposal Through Authorized Recycler",
+    desc: "We ensure that all e waste is handed over only to authorized recyclers, dismantlers, and certified waste management agencies approved by relevant government authorities." },
+  { num: "05", icon: FiRefreshCw, title: "Recycling and Resource Recovery",
+    desc: "Wherever possible, valuable materials such as metals, plastics, and reusable components are recovered through proper recycling processes to reduce resource wastage." },
+  { num: "06", icon: FiCheckCircle, title: "Compliance with Statutory Regulations",
+    desc: "We maintain compliance with all applicable environmental laws, government regulations, and industry standards related to electronic waste management." },
 ];
 
 const dos = [
@@ -62,345 +40,280 @@ const donts = [
   "Do not dispose of electronic waste along with regular household or municipal waste, as it may eventually end up in landfills and cause environmental harm.",
 ];
 
-/* Main component */
-
 export default function EWaste() {
+  const introRef   = useRef(null);
+  const policyRef  = useRef(null);
+  const dosDontsRef = useRef(null);
+  const collectionRef = useRef(null);
+  const ctaRef     = useRef(null);
+
+  useEffect(() => {
+    [introRef, policyRef, dosDontsRef, collectionRef, ctaRef].forEach(ref => {
+      if (!ref.current) return;
+      gsap.fromTo(ref.current, { opacity: 0, y: 24 }, {
+        opacity: 1, y: 0, duration: 0.7, ease: "power3.out",
+        scrollTrigger: { trigger: ref.current, start: "top 85%", once: true },
+      });
+    });
+
+    const policyRows = policyRef.current?.querySelectorAll(".policy-row");
+    if (policyRows) {
+      gsap.fromTo(policyRows, { opacity: 0, x: -20 }, {
+        opacity: 1, x: 0, duration: 0.5, stagger: 0.07, ease: "power3.out",
+        scrollTrigger: { trigger: policyRef.current, start: "top 85%", once: true },
+      });
+    }
+
+    return () => ScrollTrigger.getAll().forEach(t => t.kill());
+  }, []);
+
   return (
-    <div className="bg-white">
+    <div style={{ background: "var(--surface-off)" }}>
 
       {/* INTRO */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20 py-14 lg:py-24">
-        <div className="grid lg:grid-cols-1 gap-10 lg:gap-20">
-
-          <motion.div
-            initial={{ opacity: 0, y: 22 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+      <section className="mx-auto px-6 lg:px-20 py-20">
+        <div ref={introRef}>
+          <div className="label-tag mb-6">Environmental Responsibility</div>
+          <h2
+            className="font-extrabold leading-snug mb-6"
+            style={{ fontSize: "clamp(26px, 3.5vw, 44px)", color: "var(--primary)", letterSpacing: "-0.02em" }}
           >
-            <div className="mb-6">
-              <div className="flex items-center gap-3 mb-7">
-                <span className="w-8 h-px bg-[var(--primary)]" />
+            Our Commitment to Responsible{" "}
+            <span style={{ color: "var(--secondary)" }}>E Waste Management</span>
+          </h2>
+          <div className="h-px w-14 mb-8" style={{ background: "var(--secondary)" }} />
 
-                <span className="text-[8px] sm:text-[9px] font-bold uppercase tracking-[4px] sm:tracking-[5px] text-[var(--primary)]">
-                  Environmental Responsibility
-                </span>
-              </div>
-
-              <h2 className="text-3xl lg:text-4xl font-bold leading-snug bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">
-                Our Commitment to
-                Responsible E Waste Management
-              </h2>
-            </div>
-
-            <div className="space-y-4 text-[14px] text-gray-500 leading-relaxed">
-              <p>
-                At Eratronics, environmental responsibility is an integral part of our business philosophy. We are committed to implementing effective E Waste Management practices to ensure the safe handling, disposal, recycling, and reuse of electronic waste generated through our operations and supplied products.
-              </p>
-
-              <p>
-                Improper disposal of electronic waste can lead to serious environmental and health hazards. Therefore, responsible disposal and recycling are essential for protecting natural resources and maintaining environmental sustainability.
-              </p>
-
-              <p>
-                We strictly follow the E Waste Management Rules and comply with the guidelines issued by the <strong className="text-gray-700 font-semibold">Central Pollution Control Board (CPCB), Government of India</strong>, for safe disposal and environmentally sound recycling practices.
-              </p>
-            </div>
-          </motion.div>
-
+          <div className="flex flex-col gap-4 max-w-3xl text-sm leading-relaxed" style={{ color: "var(--text-muted-l)" }}>
+            <p>At Eratronics, environmental responsibility is an integral part of our business philosophy. We are committed to implementing effective E Waste Management practices to ensure the safe handling, disposal, recycling, and reuse of electronic waste generated through our operations and supplied products.</p>
+            <p>Improper disposal of electronic waste can lead to serious environmental and health hazards. Therefore, responsible disposal and recycling are essential for protecting natural resources and maintaining environmental sustainability.</p>
+            <p>We strictly follow the E Waste Management Rules and comply with the guidelines issued by the <strong style={{ color: "var(--primary)", fontWeight: 600 }}>Central Pollution Control Board (CPCB), Government of India</strong>, for safe disposal and environmentally sound recycling practices.</p>
+          </div>
         </div>
       </section>
 
-      {/* POLICY SECTION */}
-      <section className="bg-[#F8FAFC] border-y border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20 py-14 lg:py-24">
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55 }}
-            viewport={{ once: true }}
-            className="mb-12 lg:mb-14 text-center"
-          >
-            <p className="inline-block px-4 py-2 rounded-full text-[8px] sm:text-[9px] font-bold uppercase bg-[var(--secondary)]/15 tracking-[4px] sm:tracking-[5px] text-[var(--primary)] mb-4">
-              Policy Framework
-            </p>
-
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--secondary)] leading-snug">
+      {/* POLICY */}
+      <section style={{ background: "var(--surface-light)", borderTop: "1px solid var(--border-light)", borderBottom: "1px solid var(--border-light)" }}>
+        <div className="mx-auto px-6 lg:px-20 py-20">
+          <div className="text-center mb-14">
+            <div className="label-tag mb-4 inline-block">Policy Framework</div>
+            <h2
+              className="font-extrabold leading-snug"
+              style={{ fontSize: "clamp(22px, 2.8vw, 34px)", color: "var(--primary)", letterSpacing: "-0.02em" }}
+            >
               Our E Waste Management Policy
             </h2>
-          </motion.div>
+          </div>
 
-          <div className="space-y-0">
+          <div ref={policyRef} style={{ border: "1px solid var(--border-light)" }}>
             {policyItems.map((item, i) => {
               const Icon = item.icon;
-
               return (
-                <motion.div
+                <div
                   key={item.num}
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.45, delay: i * 0.06 }}
-                  viewport={{ once: true }}
-                  className="group flex items-start gap-4 sm:gap-6 lg:gap-10 py-6 border-b border-gray-200 last:border-b-0 hover:bg-white/70 px-2 sm:px-6 lg:px-20 transition-colors duration-200"
+                  className="policy-row group flex items-start gap-6 lg:gap-10 py-6 px-6 lg:px-10 transition-all duration-250"
+                  style={{
+                    borderBottom: i < policyItems.length - 1 ? "1px solid var(--border-light)" : "none",
+                    background: "transparent",
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.background = "rgba(33,150,243,0.03)"; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = "transparent"; }}
                 >
-                  <span className="text-[10px] sm:text-[11px] font-black text-gray-200 tabular-nums shrink-0 mt-1 w-5 sm:w-6">
+                  <span className="text-[11px] font-black tabular-nums shrink-0 mt-1 w-6" style={{ color: "rgba(33,150,243,0.25)" }}>
                     {item.num}
                   </span>
-
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white border group-hover:bg-[var(--primary)] border-gray-200 flex items-center justify-center shrink-0 group-hover:border-[var(--primary)] transition-all duration-250">
-                    <Icon
-                      size={16}
-                      className="text-gray-400 group-hover:text-[var(--secondary)] transition-colors duration-250"
-                    />
+                  <div
+                    className="w-10 h-10 flex items-center justify-center shrink-0 transition-all duration-250 group-hover:scale-110"
+                    style={{ background: "rgba(33,150,243,0.08)", border: "1px solid var(--border-blue)" }}
+                  >
+                    <Icon size={15} style={{ color: "var(--secondary)" }} />
                   </div>
-
                   <div className="flex-1 min-w-0">
-                    <p className="font-bold text-[14px] sm:text-[15px] text-gray-900 mb-2 group-hover:text-[var(--primary)] transition-colors duration-200">
+                    <p className="font-bold text-sm mb-2 transition-colors duration-200 group-hover:text-(--secondary)" style={{ color: "var(--primary)" }}>
                       {item.title}
                     </p>
-
-                    <p className="text-[13px] sm:text-sm text-gray-500 leading-relaxed max-w-3xl">
+                    <p className="text-sm leading-relaxed max-w-3xl" style={{ color: "var(--text-muted-l)" }}>
                       {item.desc}
                     </p>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </div>
-
         </div>
       </section>
 
-      {/* COMMITMENT */}
-      <section className="bg-[var(--primary)] overflow-hidden relative">
-        <div
-          className="absolute inset-0 opacity-[0.035]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)",
-            backgroundSize: "36px 36px",
-          }}
-        />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-20 py-14 lg:py-24">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className=""
+      {/* COMMITMENT — dark */}
+      <section className="relative overflow-hidden" style={{ background: "var(--primary)" }}>
+        {/* Dot grid */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          backgroundImage: "radial-gradient(circle, rgba(33,150,243,0.08) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+        }} />
+        <div className="relative z-10 mx-auto px-6 lg:px-20 py-20">
+          <div className="h-0.5 w-full mb-10" style={{ background: "linear-gradient(90deg, var(--secondary), var(--accent), transparent)" }} />
+          <div className="label-tag mb-6">Our Commitment</div>
+          <h2
+            className="font-extrabold leading-snug mb-6"
+            style={{ fontSize: "clamp(22px, 2.8vw, 34px)", color: "var(--text-bright)", letterSpacing: "-0.02em", maxWidth: "720px" }}
           >
-            <p className="inline-block text-[8px] sm:text-[9px] font-bold uppercase tracking-[4px] sm:tracking-[5px] text-white px-4 py-2 bg-[var(--secondary)] rounded-full mb-6">
-              Our Commitment
-            </p>
-
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-snug mb-6 bg-gradient-to-r from-white to-[var(--secondary)] bg-clip-text text-transparent">
-              A Responsible Partner for Environmental Stewardship
-            </h2>
-
-            <div className="space-y-4 text-[14px] text-white/50 leading-relaxed">
-              <p>
-                As a responsible supplier and system integrator serving Government, PSU, Railways, Oil & Gas, Telecom, and Infrastructure sectors, we recognize our duty to contribute toward environmental protection and sustainable development.
-              </p>
-
-              <p>
-                We continuously strive to improve our waste management systems and work closely with our partners, vendors, and customers to promote responsible recycling practices.
-              </p>
-
-              <p>
-                Our commitment to E Waste Management reflects our dedication to environmental stewardship, operational excellence, and long term sustainability.
-              </p>
-            </div>
-          </motion.div>
+            A Responsible Partner for Environmental Stewardship
+          </h2>
+          <div className="flex flex-col gap-4 text-sm leading-relaxed max-w-3xl" style={{ color: "var(--text-muted-d)" }}>
+            <p>As a responsible supplier and system integrator serving Government, PSU, Railways, Oil & Gas, Telecom, and Infrastructure sectors, we recognize our duty to contribute toward environmental protection and sustainable development.</p>
+            <p>We continuously strive to improve our waste management systems and work closely with our partners, vendors, and customers to promote responsible recycling practices.</p>
+            <p>Our commitment to E Waste Management reflects our dedication to environmental stewardship, operational excellence, and long term sustainability.</p>
+          </div>
         </div>
       </section>
 
       {/* DO'S AND DON'TS */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20 py-14 lg:py-24">
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55 }}
-          viewport={{ once: true }}
-          className="mb-12 text-center"
-        >
-          <p className="inline-block text-[8px] sm:text-[9px] px-4 py-2 bg-[var(--secondary)]/15 rounded-full font-bold uppercase tracking-[4px] sm:tracking-[5px] text-[var(--primary)] mb-4">
-            Handling Guidelines
-          </p>
-
-          <h2 className="text-3xl lg:text-4xl font-bold leading-snug bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">
+      <section ref={dosDontsRef} className="mx-auto px-6 lg:px-20 py-20">
+        <div className="text-center mb-12">
+          <div className="label-tag mb-4 inline-block">Handling Guidelines</div>
+          <h2
+            className="font-extrabold leading-snug"
+            style={{ fontSize: "clamp(22px, 2.8vw, 34px)", color: "var(--primary)", letterSpacing: "-0.02em" }}
+          >
             Responsible E Waste Handling
           </h2>
-        </motion.div>
+        </div>
 
         <div className="grid lg:grid-cols-2 gap-5 lg:gap-6">
-
           {/* DO'S */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="rounded-2xl border border-green-100 bg-green-50/40 overflow-hidden"
-          >
-            <div className="flex items-center gap-3 px-5 sm:px-7 py-4 sm:py-5 bg-green-600">
-              <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center">
-                <FiCheck size={14} className="text-white" />
+          <div className="overflow-hidden" style={{ border: "1px solid rgba(34,197,94,0.25)" }}>
+            <div className="flex items-center gap-3 px-7 py-5" style={{ background: "#16a34a" }}>
+              <div className="w-7 h-7 flex items-center justify-center" style={{ background: "rgba(255,255,255,0.15)" }}>
+                <FiCheck size={14} color="white" />
               </div>
-
-              <span className="text-sm font-bold text-white uppercase tracking-widest">
-                Do's
-              </span>
+              <span className="text-sm font-bold text-white uppercase tracking-widest">Do's</span>
             </div>
-
-            <div className="divide-y divide-green-100">
+            <div style={{ background: "rgba(34,197,94,0.03)" }}>
               {dos.map((item, i) => (
-                <div key={i} className="flex items-start gap-3 sm:gap-4 px-5 sm:px-7 py-4 sm:py-5">
-                  <span className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center shrink-0 mt-0.5">
-                    <FiCheck size={11} className="text-green-600" />
+                <div
+                  key={i}
+                  className="flex items-start gap-4 px-7 py-5"
+                  style={{ borderBottom: i < dos.length - 1 ? "1px solid rgba(34,197,94,0.12)" : "none" }}
+                >
+                  <span className="w-5 h-5 flex items-center justify-center shrink-0 mt-0.5" style={{ background: "rgba(34,197,94,0.15)" }}>
+                    <FiCheck size={11} color="#16a34a" />
                   </span>
-
-                  <p className="text-[13px] text-gray-700 leading-relaxed">
-                    {item}
-                  </p>
+                  <p className="text-[13px] leading-relaxed" style={{ color: "var(--text-muted-l)" }}>{item}</p>
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
           {/* DON'TS */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.08 }}
-            viewport={{ once: true }}
-            className="rounded-2xl border border-red-100 bg-red-50/30 overflow-hidden"
-          >
-            <div className="flex items-center gap-3 px-5 sm:px-7 py-4 sm:py-5 bg-red-600">
-              <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center">
-                <FiX size={14} className="text-white" />
+          <div className="overflow-hidden" style={{ border: "1px solid rgba(239,68,68,0.25)" }}>
+            <div className="flex items-center gap-3 px-7 py-5" style={{ background: "#dc2626" }}>
+              <div className="w-7 h-7 flex items-center justify-center" style={{ background: "rgba(255,255,255,0.15)" }}>
+                <FiX size={14} color="white" />
               </div>
-
-              <span className="text-sm font-bold text-white uppercase tracking-widest">
-                Don'ts
-              </span>
+              <span className="text-sm font-bold text-white uppercase tracking-widest">Don'ts</span>
             </div>
-
-            <div className="divide-y divide-red-100">
+            <div style={{ background: "rgba(239,68,68,0.03)" }}>
               {donts.map((item, i) => (
-                <div key={i} className="flex items-start gap-3 sm:gap-4 px-5 sm:px-7 py-4 sm:py-5">
-                  <span className="w-5 h-5 rounded-full bg-red-100 flex items-center justify-center shrink-0 mt-0.5">
-                    <FiX size={11} className="text-red-500" />
+                <div
+                  key={i}
+                  className="flex items-start gap-4 px-7 py-5"
+                  style={{ borderBottom: i < donts.length - 1 ? "1px solid rgba(239,68,68,0.12)" : "none" }}
+                >
+                  <span className="w-5 h-5 flex items-center justify-center shrink-0 mt-0.5" style={{ background: "rgba(239,68,68,0.12)" }}>
+                    <FiX size={11} color="#dc2626" />
                   </span>
-
-                  <p className="text-[13px] text-gray-700 leading-relaxed">
-                    {item}
-                  </p>
+                  <p className="text-[13px] leading-relaxed" style={{ color: "var(--text-muted-l)" }}>{item}</p>
                 </div>
               ))}
             </div>
-          </motion.div>
-
+          </div>
         </div>
       </section>
 
       {/* COLLECTION POINTS */}
-      <section className="bg-[#F8FAFC] border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20 py-14 lg:py-24">
+      <section ref={collectionRef} style={{ background: "var(--surface-light)", borderTop: "1px solid var(--border-light)" }}>
+        <div className="mx-auto px-6 lg:px-20 py-20">
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55 }}
-            viewport={{ once: true }}
+          <div className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-16 mb-10">
+            <div>
+              <div className="label-tag mb-4">Collection Network</div>
+              <h3
+                className="font-extrabold"
+                style={{ fontSize: "clamp(20px, 2.5vw, 30px)", color: "var(--primary)", letterSpacing: "-0.02em" }}
+              >
+                E Waste Drop Off Points
+              </h3>
+            </div>
+            <div className="hidden lg:block w-px h-16" style={{ background: "var(--border-light)" }} />
+            <p className="text-sm leading-relaxed max-w-2xl" style={{ color: "var(--text-muted-l)" }}>
+              Please drop your E Waste at the nearest authorised collection point listed below. Our certified partners ensure responsible handling and processing.
+            </p>
+          </div>
+
+          <div
+            className="relative px-10 py-16 text-center"
+            style={{
+              border: "1px dashed var(--border-blue)",
+              background: "rgba(33,150,243,0.03)",
+            }}
           >
-            <div className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-16 mb-8">
-
-              <div>
-                <p className="text-[8px] sm:text-[9px] font-bold uppercase tracking-[4px] sm:tracking-[5px] text-[var(--primary)] mb-4">
-                  Collection Network
-                </p>
-
-                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
-                  E Waste Drop Off Points
-                </h3>
-              </div>
-
-              <div className="hidden lg:block h-20 w-px bg-[var(--primary)]" />
-
-              <p className="text-sm text-gray-500 max-w-2xl leading-relaxed">
-                Please drop your E Waste at the nearest authorised collection point listed below. Our certified partners ensure responsible handling and processing.
-              </p>
+            <div
+              className="w-14 h-14 flex items-center justify-center mx-auto mb-5"
+              style={{ border: "1px solid var(--border-blue)", background: "rgba(33,150,243,0.08)" }}
+            >
+              <FiMapPin size={22} style={{ color: "var(--secondary)" }} />
             </div>
-
-            <div className="relative border-2 border-dashed border-gray-200 rounded-2xl px-5 sm:px-10 py-12 sm:py-16 text-center bg-white">
-              <div className="w-14 h-14 rounded-2xl bg-gray-100 flex items-center justify-center mx-auto mb-5">
-                <FiMapPin size={22} className="text-gray-400" />
-              </div>
-
-              <p className="text-base font-semibold text-gray-700 mb-2">
-                Collection Points Coming Soon
-              </p>
-
-              <p className="text-sm text-gray-400 max-w-sm mx-auto leading-relaxed">
-                Details of collection points along with address and contact information will be updated here shortly.
-              </p>
-
-              <div className="mt-7">
-                <span className="inline-flex items-center gap-2 text-[11px] font-semibold text-[var(--primary)] bg-[var(--primary)]/8 border border-[var(--primary)]/15 px-5 py-2.5 rounded-full">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] animate-pulse" />
-                  Information will be added soon
-                </span>
-              </div>
+            <p className="text-base font-semibold mb-2" style={{ color: "var(--primary)" }}>
+              Collection Points Coming Soon
+            </p>
+            <p className="text-sm max-w-sm mx-auto leading-relaxed" style={{ color: "var(--text-muted-l)" }}>
+              Details of collection points along with address and contact information will be updated here shortly.
+            </p>
+            <div className="mt-7">
+              <span
+                className="inline-flex items-center gap-2 text-[11px] font-semibold px-5 py-2.5"
+                style={{ color: "var(--secondary)", border: "1px solid var(--border-blue)", background: "rgba(33,150,243,0.06)" }}
+              >
+                <span className="w-1.5 h-1.5 animate-pulse" style={{ background: "var(--secondary)" }} />
+                Information will be added soon
+              </span>
             </div>
-          </motion.div>
-
+          </div>
         </div>
       </section>
 
       {/* CONTACT CTA */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20 py-14 lg:py-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55 }}
-          viewport={{ once: true }}
-          className="relative bg-[var(--primary)] rounded-3xl px-5 sm:px-10 lg:px-16 py-10 sm:py-14 overflow-hidden"
-        >
-          <div
-            className="absolute inset-0 opacity-20"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle at 80% 50%, #0B3D91 0%, transparent 55%)",
-            }}
-          />
-
-          <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 sm:gap-8">
-            <div className="max-w-xl">
-              <p className="text-[8px] sm:text-[9px] font-bold uppercase tracking-[4px] text-white/30 mb-4">
-                Need Assistance?
-              </p>
-
-              <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-white leading-snug mb-3">
-                For E Waste disposal queries or to locate your nearest collection centre, contact us.
-              </h4>
-
-              <p className="text-white/40 text-sm leading-relaxed">
-                Our team will guide you through the responsible disposal process in compliance with CPCB guidelines.
-              </p>
-            </div>
-
-            <div className="shrink-0">
+      <section className="py-20" style={{ background: "var(--secondary)" }}>
+        <div className="mx-auto px-6 lg:px-20">
+          <div className="relative overflow-hidden p-10 lg:p-14" style={{ border: "1px solid rgba(255,255,255,0.15)" }}>
+            <div className="absolute inset-0 pointer-events-none" style={{
+              backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px)",
+              backgroundSize: "32px 32px",
+            }} />
+            <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+              <div className="max-w-xl">
+                <div className="label-tag mb-4">Need Assistance?</div>
+                <h4
+                  className="font-bold text-white mb-3"
+                  style={{ fontSize: "clamp(18px, 2vw, 26px)", letterSpacing: "-0.02em" }}
+                >
+                  For E Waste disposal queries or to locate your nearest collection centre, contact us.
+                </h4>
+                <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.60)" }}>
+                  Our team will guide you through the responsible disposal process in compliance with CPCB guidelines.
+                </p>
+              </div>
               <Link
                 href="/contact-us"
-                className="inline-flex items-center gap-2 bg-[var(--secondary)] text-[var(--primary)] font-semibold text-sm px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl hover:bg-gray-50 transition-colors duration-200"
+                className="flex items-center gap-2.5 px-8 py-4 font-bold text-sm shrink-0 transition-all duration-250"
+                style={{ background: "var(--primary)", color: "white" }}
+                onMouseEnter={e => { e.currentTarget.style.background = "var(--surface-0)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
+                onMouseLeave={e => { e.currentTarget.style.background = "var(--primary)"; e.currentTarget.style.transform = "translateY(0)"; }}
               >
-                Contact Us
+                Contact Us <FiArrowRight size={14} />
               </Link>
             </div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
     </div>

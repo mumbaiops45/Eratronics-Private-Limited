@@ -1,145 +1,188 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FiArrowRight } from "react-icons/fi";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const industries = [
   {
+    num: "01",
     tag: "Energy Sector",
     title: "Oil & Gas Industry",
     description:
       "Rugged telecom and communication infrastructure for upstream, midstream, and downstream oil and gas operations engineered for hazardous zones, remote sites, and mission critical reliability.",
     points: ["ATEX Rated Equipment", "SCADA Integration", "Ex proof Communication"],
     href: "/industries-we-serve/oil-and-gas-industry",
-    accent: "from-amber-900/20 to-transparent",
-    dot: "bg-amber-500",
   },
   {
+    num: "02",
     tag: "Utilities",
     title: "Power Sector",
     description:
       "Integrated communication solutions for power generation, transmission, and distribution networks supporting grid automation, protection relaying, and substation telecom infrastructure.",
     points: ["Grid Communication", "Protection Relaying", "Substation Telecom"],
     href: "/industries-we-serve/power-sector",
-    accent: "from-blue-900/20 to-transparent",
-    dot: "bg-blue-400",
   },
   {
+    num: "03",
     tag: "Urban Transport",
     title: "Metro Rail",
     description:
       "End to end communication systems for metro rail networks including TETRA and LTE R radio, CCTV, PIDS, and OFC backbone ensuring safe, efficient, and passenger centric transit operations.",
     points: ["TETRA and LTE R Radio", "PIDS Systems", "Integrated CCTV and ACS"],
     href: "/industries-we-serve/metro-rail",
-    accent: "from-emerald-900/20 to-transparent",
-    dot: "bg-emerald-400",
   },
 ];
+
 export default function HomeIndustries() {
+  const [activeIdx, setActiveIdx] = useState(0);
+  const sectionRef = useRef(null);
+  const leftRef    = useRef(null);
+  const rightRef   = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(leftRef.current,
+      { opacity: 0, x: -40 },
+      { opacity: 1, x: 0, duration: 0.9, ease: "power3.out",
+        scrollTrigger: { trigger: sectionRef.current, start: "top 85%", once: true } }
+    );
+    gsap.fromTo(rightRef.current,
+      { opacity: 0, x: 40 },
+      { opacity: 1, x: 0, duration: 0.9, ease: "power3.out",
+        scrollTrigger: { trigger: sectionRef.current, start: "top 85%", once: true } }
+    );
+    return () => ScrollTrigger.getAll().forEach(t => t.kill());
+  }, []);
+
+  const active = industries[activeIdx];
+
   return (
-    <section className="py-28 bg-[var(--primary)] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-16">
+    <section ref={sectionRef} className="py-24" style={{ background: "var(--surface-2)" }}>
+      <div className=" mx-auto px-6 lg:px-16">
 
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="mb-20 flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-18"
-        >
-          <div className="flex items-center gap-3 mb-0">
-            <span className="block w-10 h-px bg-white/30" />
-            <span className="text-white/70 text-xs font-semibold tracking-[4px] uppercase">
-              Industries We Serve
-            </span>
-          </div>
-           <span className="hidden lg:block w-px h-20 bg-white/30" />
+        <div className="mb-14  gap-6">
           <div>
-            <h2 className="text-4xl lg:text-5xl font-bold leading-tight max-w-3xl">
-              <span className="bg-gradient-to-r from-white to-[var(--secondary)] bg-clip-text text-transparent">
-                Precision Engineered for Critical Sectors
-              </span>
-            </h2>
-
-            <p className="mt-5 text-white/60 text-sm leading-relaxed max-w-xl">
-              Deep domain expertise across high stakes industries where communication failure is never an option.
-            </p>
-          </div>
-
-        </motion.div>
-
-        {/* Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {industries.map((ind, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.50 }}
-              viewport={{ once: true }}
+            <div className="label-tag mb-5">Industries We Serve</div>
+            <h2
+              className="font-extrabold leading-tight text-white mb-5"
+              style={{ fontSize: "clamp(28px, 4vw, 48px)", letterSpacing: "-0.02em" }}
             >
-              <Link
-                href={ind.href}
-                className="group relative flex flex-col h-full bg-[var(--secondary)]/5 hover:bg-[var(--secondary)]/15 border border-white/10 rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-500 p-8"
-              >
-                {/* Top accent */}
-                <span className="absolute top-0 left-0 w-0 h-[2px] bg-[var(--secondary)]/70 group-hover:w-full transition-all duration-700 ease-out" />
-
-                {/* Tag */}
-                <span className="text-xs font-semibold text-white/50 tracking-[3px] uppercase mb-4">
-                  {ind.tag}
-                </span>
-
-                {/* Title */}
-                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-white transition-colors duration-300">
-                  {ind.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-sm text-white/60 leading-relaxed mb-6 flex-1">
-                  {ind.description}
-                </p>
-
-                {/* Points */}
-                <div className="flex flex-col gap-2 mb-8">
-                  {ind.points.map((pt, j) => (
-                    <div key={j} className="flex items-center gap-2.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-white/50 flex-shrink-0" />
-                      <span className="text-xs text-white/50 font-medium">
-                        {pt}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Arrow */}
-                <div className="flex items-center gap-2 text-white/70 text-sm group-hover:text-[var(--secondary)] font-semibold">
-                  <span>Explore Industry</span>
-                  <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
-                </div>
-              </Link>
-            </motion.div>
-          ))}
+              Precision Engineered for Critical Sectors
+            </h2>
+          </div>
+          <p className="text-sm leading-relaxed " style={{ color: "rgba(255,255,255,0.40)" }}>
+            Deep domain expertise across high stakes industries where communication failure is never an option.
+          </p>
         </div>
 
-        {/* Bottom link */}
-        {/* <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="mt-12 text-center"
-        >
-          <Link
-            href="/industries-we-serve"
-            className="inline-flex items-center gap-2 text-sm bg-[var(--secondary)] text-white/80 hover:text-white font-medium transition-colors duration-300 border border-white/10 hover:border-white/30 px-6 py-3 rounded-full"
+        {/* Two-column layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0" style={{ border: "1px solid var(--border-dark)" }}>
+
+          {/* LEFT — selector list */}
+          <div
+            ref={leftRef}
+            className="flex flex-col"
+            style={{ borderRight: "1px solid var(--border-dark)" }}
           >
-            View All Industries
-            <FiArrowRight size={14} />
-          </Link>
-        </motion.div> */}
+            {industries.map((ind, i) => {
+              const on = activeIdx === i;
+              return (
+                <button
+                  key={i}
+                  onClick={() => setActiveIdx(i)}
+                  className="group text-left px-8 py-8 transition-all duration-300 flex items-start gap-5"
+                  style={{
+                    borderBottom: i < industries.length - 1 ? "1px solid var(--border-dark)" : "none",
+                    background: on ? "rgba(33,150,243,0.08)" : "transparent",
+                    borderLeft: on ? "3px solid var(--secondary)" : "3px solid transparent",
+                  }}
+                >
+                  {/* Number */}
+                  <span
+                    className="text-2xl font-black tabular-nums mt-1 transition-colors duration-300"
+                    style={{ color: on ? "var(--secondary)" : "rgba(255,255,255,0.12)" }}
+                  >
+                    {ind.num}
+                  </span>
+
+                  <div>
+                    <span
+                      className="block text-[10px] font-bold uppercase tracking-[0.15em] mb-2"
+                      style={{ color: on ? "var(--accent)" : "rgba(255,255,255,0.28)" }}
+                    >
+                      {ind.tag}
+                    </span>
+                    <span
+                      className="block text-lg font-extrabold leading-snug transition-colors duration-300"
+                      style={{ color: on ? "#fff" : "rgba(255,255,255,0.50)" }}
+                    >
+                      {ind.title}
+                    </span>
+
+                    {/* Points shown inline when active on mobile */}
+                    {on && (
+                      <div className="mt-4 flex flex-col gap-2 lg:hidden">
+                        {ind.points.map((pt, j) => (
+                          <div key={j} className="flex items-center gap-2">
+                            <div className="w-4 h-px" style={{ background: "var(--secondary)" }} />
+                            <span className="text-xs" style={{ color: "rgba(255,255,255,0.55)" }}>{pt}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* RIGHT — detail panel */}
+          <div
+            ref={rightRef}
+            className="p-10 hidden lg:flex flex-col justify-between"
+            style={{ minHeight: "360px" }}
+          >
+            <div>
+              <div className="label-tag mb-6" style={{ color: "var(--accent)" }}>
+                {active.tag}
+              </div>
+
+              <h3
+                className="font-extrabold text-white leading-tight mb-6"
+                style={{ fontSize: "clamp(22px, 2.8vw, 34px)", letterSpacing: "-0.02em" }}
+              >
+                {active.title}
+              </h3>
+
+              <p className="text-sm leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.45)" }}>
+                {active.description}
+              </p>
+
+              <div className="flex flex-col gap-3 mb-10">
+                {active.points.map((pt, j) => (
+                  <div key={j} className="flex items-center gap-3">
+                    <div className="w-6 h-px shrink-0" style={{ background: "var(--secondary)" }} />
+                    <span className="text-sm font-semibold" style={{ color: "rgba(255,255,255,0.65)" }}>
+                      {pt}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <Link
+              href={active.href}
+              className="btn-primary self-start"
+            >
+              Explore Industry <FiArrowRight size={14} />
+            </Link>
+          </div>
+        </div>
 
       </div>
     </section>

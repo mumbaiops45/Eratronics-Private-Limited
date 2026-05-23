@@ -1,85 +1,159 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { FiPhoneCall } from "react-icons/fi";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FiArrowRight, FiPhoneCall } from "react-icons/fi";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutCTA() {
-  return (
-    <section className="relative py-28 bg-[var(--primary)] overflow-hidden">
+  const sectionRef = useRef(null);
+  const lineRef    = useRef(null);
+  const leftRef    = useRef(null);
+  const rightRef   = useRef(null);
 
-      {/* Grid texture */}
+  useEffect(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: { trigger: sectionRef.current, start: "top 80%", once: true },
+    });
+
+    tl.fromTo(lineRef.current,
+      { scaleX: 0, transformOrigin: "left" },
+      { scaleX: 1, duration: 0.7, ease: "power3.out" }
+    )
+    .fromTo(leftRef.current,
+      { opacity: 0, x: -40 },
+      { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" },
+      "-=0.3"
+    )
+    .fromTo(rightRef.current,
+      { opacity: 0, x: 40 },
+      { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" },
+      "-=0.6"
+    );
+
+    return () => ScrollTrigger.getAll().forEach(t => t.kill());
+  }, []);
+
+  return (
+    <section
+      ref={sectionRef}
+      className="relative py-24 overflow-hidden"
+      style={{ background: "var(--secondary)" }}
+    >
+      {/* Dot grid overlay */}
       <div
-        className="absolute inset-0 opacity-[0.04]"
+        className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
+          backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px)",
+          backgroundSize: "36px 36px",
         }}
       />
 
-      <div className="absolute top-40 right-40 w-[500px] h-[500px] rounded-full bg-blue-500/10 blur-[120px] pointer-events-none" />
+      {/* Corner glow — cyan top-right */}
+      <div
+        className="absolute top-0 right-0 w-96 h-96 pointer-events-none"
+        style={{
+          background: "radial-gradient(circle at 100% 0%, rgba(0,180,216,0.25) 0%, transparent 65%)",
+        }}
+      />
 
-      <div className="absolute bottom-40 left-40 w-[400px] h-[400px] rounded-full bg-blue-300/5 blur-[100px] pointer-events-none" />
+      {/* Corner glow — navy bottom-left */}
+      <div
+        className="absolute bottom-0 left-0 w-80 h-80 pointer-events-none"
+        style={{
+          background: "radial-gradient(circle at 0% 100%, rgba(11,29,58,0.40) 0%, transparent 65%)",
+        }}
+      />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16">
+      <div className="relative z-10 mx-auto px-6 lg:px-16">
+
+        {/* Top blue rule */}
+        <div ref={lineRef} className="h-0.5 w-20 mb-10" style={{ background: "rgba(255,255,255,0.50)" }} />
 
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-12">
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="max-w-2xl"
-          >
-
-            <span className="block text-white/40 text-xs font-semibold tracking-[4px] uppercase mb-6">
+          {/* Left */}
+          <div ref={leftRef} className="max-w-2xl">
+            <div
+              className="inline-block text-[10px] font-bold uppercase tracking-[0.18em] px-3 py-1.5 mb-6"
+              style={{
+                color: "rgba(255,255,255,0.85)",
+                background: "rgba(255,255,255,0.12)",
+                border: "1px solid rgba(255,255,255,0.20)",
+              }}
+            >
               Partner With Us
-            </span>
+            </div>
 
-            <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
-
+            <h2
+              className="font-extrabold leading-tight text-white mb-5"
+              style={{ fontSize: "clamp(26px, 3.5vw, 44px)", letterSpacing: "-0.02em" }}
+            >
               Let us Build Something{" "}
-
-              <span className="text-white/60">
+              <span style={{ color: "rgba(255,255,255,0.55)" }}>
                 Mission Critical Together
               </span>
-
             </h2>
 
-            <p className="text-white/50 text-sm leading-relaxed">
+            <div className="h-px w-14 mb-6" style={{ background: "rgba(255,255,255,0.35)" }} />
+
+            <p className="text-sm leading-relaxed max-w-lg" style={{ color: "rgba(255,255,255,0.60)" }}>
               Whether you are planning a new project or optimizing existing infrastructure,
               Eratronics brings the expertise, framework, and commitment to deliver.
             </p>
+          </div>
 
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.15 }}
-            viewport={{ once: true }}
-            className="flex flex-col sm:flex-row lg:flex-col gap-4 lg:min-w-[220px]"
-          >
-
+          {/* Right — buttons */}
+          <div ref={rightRef} className="flex flex-col sm:flex-row lg:flex-col gap-4 lg:min-w-56">
             <Link
               href="/contact-us"
-              className="group flex items-center justify-center gap-3 bg-[var(--secondary)] text-[var(--primary)] px-8 py-4 rounded-full font-semibold text-sm hover:bg-white/90 transition-all duration-300"
+              className="group flex items-center justify-center gap-2.5 px-8 py-4 font-bold text-sm tracking-wide transition-all duration-300"
+              style={{
+                background: "var(--primary)",
+                color: "white",
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.background = "var(--surface-0)";
+                e.currentTarget.style.transform = "translateY(-2px)";
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.background = "var(--primary)";
+                e.currentTarget.style.transform = "translateY(0)";
+              }}
             >
-
-              <FiPhoneCall size={15} />
-
+              <FiPhoneCall size={14} />
               Contact Us Today
-
             </Link>
 
-          </motion.div>
+            <Link
+              href="/services"
+              className="flex items-center justify-center gap-2.5 px-8 py-4 font-bold text-sm tracking-wide transition-all duration-300"
+              style={{
+                background: "transparent",
+                color: "white",
+                border: "1px solid rgba(255,255,255,0.35)",
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.background = "rgba(255,255,255,0.10)";
+                e.currentTarget.style.borderColor = "rgba(255,255,255,0.60)";
+                e.currentTarget.style.transform = "translateY(-2px)";
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.background = "transparent";
+                e.currentTarget.style.borderColor = "rgba(255,255,255,0.35)";
+                e.currentTarget.style.transform = "translateY(0)";
+              }}
+            >
+              Our Services
+              <FiArrowRight size={13} />
+            </Link>
+          </div>
 
         </div>
-
       </div>
-
     </section>
   );
 }

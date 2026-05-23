@@ -1,368 +1,197 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FiArrowRight } from "react-icons/fi";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const capabilities = [
   {
+    num: "01",
     tag: "End to End Delivery",
     title: "Turnkey Solutions",
     description:
-      "Experience seamless end-to-end project delivery with single point accountability , from requirements analysis and design engineering to supply chain management, system integration, FAT/SAT, commissioning, documentation handover, and go live support.",
-    keywords: [
-      "Requirements Analysis",
-      "Design Engineering",
-      "FAT / SAT",
-      "Commissioning",
-    ],
+      "Experience seamless end-to-end project delivery with single point accountability, from requirements analysis and design engineering to supply chain management, system integration, FAT/SAT, commissioning, documentation handover, and go live support.",
+    keywords: ["Requirements Analysis", "Design Engineering", "FAT / SAT", "Commissioning"],
     href: "/turnkey-solutions",
-    image: "/Turnkey Solutions.png",
-
-    svg: (
-      <svg width="130" height="130" viewBox="0 0 200 200" fill="none">
-        <rect
-          x="40"
-          y="40"
-          width="120"
-          height="120"
-          stroke="var(--secondary)"
-          strokeWidth="2"
-          opacity="0.5"
-        />
-
-        <path
-          d="M60 100H140"
-          stroke="white"
-          strokeWidth="2"
-          opacity="0.5"
-        />
-
-        <path
-          d="M100 60V140"
-          stroke="white"
-          strokeWidth="2"
-          opacity="0.5"
-        />
-
-        <circle
-          cx="100"
-          cy="100"
-          r="18"
-          fill="var(--secondary)"
-          opacity="0.5"
-        />
-      </svg>
-    ),
   },
-
   {
+    num: "02",
     tag: "Industrial Engineering",
     title: "Engineering Services",
     description:
       "We bring a structured engineering approach spanning concept and design to integration and commissioning ensuring operational reliability and long term performance.",
-    keywords: [
-      "Oil & Gas",
-      "Cyber Security",
-      "Mission Critical",
-      "Scalability",
-    ],
+    keywords: ["Oil & Gas", "Cyber Security", "Mission Critical", "Scalability"],
     href: "/engineering-services",
-    image: "/Engineering Services.png",
-
-    svg: (
-      <svg width="130" height="130" viewBox="0 0 200 200" fill="none">
-        <circle
-          cx="100"
-          cy="100"
-          r="65"
-          stroke="var(--secondary)"
-          strokeWidth="2"
-          strokeDasharray="8 8"
-          opacity="0.5"
-        />
-
-        <circle
-          cx="100"
-          cy="100"
-          r="35"
-          stroke="white"
-          strokeWidth="2"
-          opacity="0.4"
-        />
-
-        <path
-          d="M100 35V165"
-          stroke="white"
-          strokeWidth="2"
-          opacity="0.4"
-        />
-
-        <path
-          d="M35 100H165"
-          stroke="var(--secondary)"
-          strokeWidth="2"
-          opacity="0.5"
-        />
-      </svg>
-    ),
   },
-
   {
+    num: "03",
     tag: "Advanced Communication",
     title: "Integration Excellence",
     description:
       "We enable communication networks for voice, surveillance, data, and Ethernet over fiber, radio, or copper with rigorous deployment validation.",
-    keywords: [
-      "Voice Networks",
-      "Fiber & Radio",
-      "Testing",
-      "Customer FAT",
-    ],
+    keywords: ["Voice Networks", "Fiber & Radio", "Testing", "Customer FAT"],
     href: "/integration-excellence",
-    image: "/Integration Excellence.png",
-
-    svg: (
-      <svg width="130" height="130" viewBox="0 0 200 200" fill="none">
-        <circle
-          cx="100"
-          cy="100"
-          r="12"
-          fill="white"
-          opacity="0.5"
-        />
-
-        <circle
-          cx="100"
-          cy="100"
-          r="35"
-          stroke="var(--secondary)"
-          strokeWidth="2"
-          opacity="0.5"
-        />
-
-        <circle
-          cx="100"
-          cy="100"
-          r="60"
-          stroke="white"
-          strokeWidth="2"
-          opacity="0.3"
-        />
-
-        <path
-          d="M40 100C60 70 140 70 160 100"
-          stroke="var(--secondary)"
-          strokeWidth="2"
-          opacity="0.5"
-        />
-
-        <path
-          d="M55 125C75 105 125 105 145 125"
-          stroke="white"
-          strokeWidth="2"
-          opacity="0.4"
-        />
-      </svg>
-    ),
   },
-
   {
+    num: "04",
     tag: "Lifecycle Support",
     title: "Through Life Care",
     description:
       "Comprehensive operations support from troubleshooting to emergency response across the full system lifecycle with SLA driven support models.",
-    keywords: [
-      "CARE Model",
-      "SLA Services",
-      "Emergency Response",
-      "Lifecycle Support",
-    ],
+    keywords: ["CARE Model", "SLA Services", "Emergency Response", "Lifecycle Support"],
     href: "/through-life-care-program",
-    image: "/Through-Life Care Program.png",
-
-    svg: (
-      <svg width="130" height="130" viewBox="0 0 200 200" fill="none">
-        <path
-          d="M100 30L160 70V130L100 170L40 130V70L100 30Z"
-          stroke="var(--secondary)"
-          strokeWidth="2"
-          opacity="0.5"
-        />
-
-        <circle
-          cx="100"
-          cy="100"
-          r="28"
-          stroke="white"
-          strokeWidth="2"
-          opacity="0.4"
-        />
-
-        <path
-          d="M100 82V118"
-          stroke="white"
-          strokeWidth="2"
-          opacity="0.4"
-        />
-
-        <path
-          d="M82 100H118"
-          stroke="var(--secondary)"
-          strokeWidth="2"
-          opacity="0.5"
-        />
-      </svg>
-    ),
   },
 ];
 
 export default function GlobalCapability() {
+  const headerRef = useRef(null);
+  const rowRefs   = useRef([]);
+
+  useEffect(() => {
+    gsap.fromTo(headerRef.current,
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.8, ease: "power3.out",
+        scrollTrigger: { trigger: headerRef.current, start: "top 88%", once: true } }
+    );
+
+    rowRefs.current.forEach((el, i) => {
+      if (!el) return;
+      gsap.fromTo(el,
+        { opacity: 0, y: 40 },
+        { opacity: 1, y: 0, duration: 0.7, ease: "power3.out", delay: i * 0.08,
+          scrollTrigger: { trigger: el, start: "top 90%", once: true } }
+      );
+    });
+
+    return () => ScrollTrigger.getAll().forEach(t => t.kill());
+  }, []);
+
   return (
-    <section className="py-24 bg-[var(--secondary)]/10 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-16">
+    <section
+      className="py-24"
+      style={{ background: "var(--surface-off)" }}
+    >
+      <div className=" mx-auto px-6 lg:px-16">
 
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.3 }}
-          className="mb-20 flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-12"
-        >
-          <div className="flex items-center gap-3 mb-0">
-            <span className="block w-10 h-px bg-[var(--primary)]" />
-
-            <span className="text-[var(--primary)] text-xs font-semibold tracking-[4px] uppercase">
-              Eratronics
-            </span>
+        {/* ── HEADER ── */}
+        <div ref={headerRef} className="mb-16 grid grid-cols-1 gap-4">
+          <div>
+            <div className="label-tag mb-5">What We Do</div>
+            <h2
+              className="font-extrabold leading-tight"
+              style={{
+                fontSize: "clamp(28px, 4vw, 48px)",
+                color: "var(--primary)",
+                letterSpacing: "-0.02em",
+              }}
+            >
+              Global Capability &amp; Mission Critical Engineering
+            </h2>
           </div>
- <span className="hidden lg:block w-px h-20 bg-[var(--primary)]" />
- <div>
-     <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
-            <span className="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">
-              Global Capability & Mission Critical Engineering
-            </span>
-          </h2>
-
-          <p className="mt-5 text-gray-500 text-sm leading-relaxed max-w-3xl">
+          <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted-l)" }}>
             Four integrated service pillars delivering precision, resilience,
-            and single point accountability across every phase of your project
-            lifecycle.
+            and single point accountability across every phase of your project lifecycle.
           </p>
- </div>
-       
-        </motion.div>
-
-        <div className="space-y-0">
-          {capabilities.map((cap, index) => {
-            const isReverse = index % 2 !== 0;
-
-            return (
-              <motion.div
-                key={cap.title}
-                initial={{ opacity: 0, y: 70 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7 }}
-                viewport={{ once: true, amount: 0.2 }}
-              >
-
-                {index !== 0 && (
-                  <div className="h-px w-full bg-gradient-to-r from-transparent via-[var(--secondary)]/40 to-transparent" />
-                )}
-
-                <Link
-                  href={cap.href}
-                  className={`group grid grid-cols-1 lg:grid-cols-5 min-h-[auto] lg:min-h-[560px]
-                  ${isReverse ? "lg:[&>*:first-child]:order-2" : ""}
-                  `}
-                >
-
-                  {/* IMAGE */}
-                  <div className="lg:col-span-2 relative overflow-hidden min-h-[240px] lg:min-h-[320px] bg-gray-100">
-                    <img
-                      src={cap.image}
-                      alt={cap.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-500" />
-                  </div>
-
-                  {/* CONTENT */}
-                  <div className="lg:col-span-3 bg-[var(--primary)] text-white relative flex flex-col justify-center p-8 lg:p-16 overflow-hidden">
-
-                    {/* SVG */}
-                    <div className="absolute top-8 right-8 opacity-80">
-                      {cap.svg}
-                    </div>
-
-                    {/* TAG */}
-                    <div className="flex items-center gap-3 mb-6">
-                      <span className="w-10 h-px bg-white/40" />
-
-                      <span className="text-xs uppercase tracking-[4px] font-semibold text-white/70">
-                        {cap.tag}
-                      </span>
-                    </div>
-
-                    {/* TITLE */}
-                    <div className="inline-block w-fit">
-                      <h3 className="text-3xl lg:text-5xl font-bold leading-tight relative z-10">
-                        {cap.title}
-                      </h3>
-
-                      <div className="mt-4 h-[3px] w-[30%] group-hover:w-full transition-all duration-500 bg-[var(--secondary)]" />
-                    </div>
-
-                    {/* DESCRIPTION */}
-                    <p className="mt-10 text-white/70 leading-relaxed text-sm lg:text-base max-w-2xl">
-                      {cap.description}
-                    </p>
-
-                    {/* KEYWORDS */}
-                    <div className="flex flex-wrap gap-3 mt-8">
-                      {cap.keywords.map((keyword) => (
-                        <span
-                          key={keyword}
-                          className="px-4 py-2 border border-white/15 bg-[var(--secondary)] rounded-md text-xs uppercase tracking-wide"
-                        >
-                          {keyword}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* BUTTON */}
-                    <div className="mt-10 flex items-center gap-4">
-
-                      <span className="uppercase tracking-[3px] text-sm font-semibold text-white/80 group-hover:text-white transition-colors duration-300">
-                        Explore Service
-                      </span>
-
-                      <span className="w-11 h-11 border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-[var(--primary)] transition-all duration-300">
-
-                        <svg
-                          className="w-4 h-4 -rotate-45"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 12h14M12 5l7 7-7 7"
-                          />
-                        </svg>
-
-                      </span>
-                    </div>
-
-                  </div>
-                </Link>
-              </motion.div>
-            );
-          })}
         </div>
+
+        {/* ── NUMBERED ROWS ── */}
+        <div>
+          {capabilities.map((cap, i) => (
+            <div
+              key={cap.num}
+              ref={el => (rowRefs.current[i] = el)}
+              style={{ borderTop: "1px solid var(--border-light)" }}
+            >
+              <Link
+                href={cap.href}
+                className="group grid grid-cols-1 lg:grid-cols-12 gap-6 py-10 transition-all duration-300"
+                onMouseEnter={e => {
+                  e.currentTarget.style.paddingLeft = "16px";
+                  e.currentTarget.style.borderLeft = "2px solid var(--secondary)";
+                  e.currentTarget.style.background = "rgba(33,150,243,0.03)";
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.paddingLeft = "0";
+                  e.currentTarget.style.borderLeft = "2px solid transparent";
+                  e.currentTarget.style.background = "transparent";
+                }}
+                style={{ borderLeft: "2px solid transparent", transition: "all 0.3s ease" }}
+              >
+                {/* Number */}
+                <div className="lg:col-span-1 flex items-start pt-1">
+                  <span
+                    className="text-3xl font-black tabular-nums leading-none"
+                    style={{ color: "var(--secondary)", opacity: 0.25,
+                      transition: "opacity 0.3s" }}
+                    ref={el => {
+                      if (el) {
+                        el.closest("a")?.addEventListener("mouseenter", () => { el.style.opacity = "1"; });
+                        el.closest("a")?.addEventListener("mouseleave", () => { el.style.opacity = "0.25"; });
+                      }
+                    }}
+                  >
+                    {cap.num}
+                  </span>
+                </div>
+
+                {/* Tag + Title */}
+                <div className="lg:col-span-3">
+                  <span className="sec-num block mb-2">{cap.tag}</span>
+                  <h3
+                    className="font-extrabold leading-tight transition-colors duration-300 group-hover:text-[var(--secondary)]"
+                    style={{
+                      fontSize: "clamp(18px, 2.2vw, 26px)",
+                      color: "var(--primary)",
+                      letterSpacing: "-0.01em",
+                    }}
+                  >
+                    {cap.title}
+                  </h3>
+                </div>
+
+                {/* Description */}
+                <div className="lg:col-span-5">
+                  <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted-l)" }}>
+                    {cap.description}
+                  </p>
+                </div>
+
+                {/* Tags + Arrow */}
+                <div className="lg:col-span-3 flex flex-col justify-between items-start gap-4">
+                  <div className="flex flex-wrap gap-2">
+                    {cap.keywords.map(kw => (
+                      <span
+                        key={kw}
+                        className="text-[10px] font-bold uppercase tracking-[0.08em] px-3 py-1"
+                        style={{
+                          border: "1px solid var(--border-blue)",
+                          color: "var(--secondary)",
+                          background: "rgba(33,150,243,0.05)",
+                        }}
+                      >
+                        {kw}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div
+                    className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.08em] transition-all duration-300 group-hover:gap-3"
+                    style={{ color: "var(--secondary)" }}
+                  >
+                    Explore <FiArrowRight size={13} />
+                  </div>
+                </div>
+              </Link>
+            </div>
+          ))}
+          {/* Bottom border */}
+          <div style={{ borderTop: "1px solid var(--border-light)" }} />
+        </div>
+
       </div>
     </section>
   );

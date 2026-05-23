@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <HomeStats />
+      {/* <HomeStats /> */}
       <GlobalCapability />
       <HomeIndustries />
       <HomeSystemsTeaser />

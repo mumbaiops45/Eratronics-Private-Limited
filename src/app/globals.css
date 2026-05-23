@@ -1,125 +1,248 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 @import "tailwindcss";
 
+/* ═══════════════════════════════════════════════════════════
+   DESIGN SYSTEM — COMMAND THEME
+   Primary: Navy  |  Secondary: Electric Blue  |  Accent: Cyan
+   ═══════════════════════════════════════════════════════════ */
 :root {
- --primary: #0B1D3A;
---secondary: #2196F3;
+  /* ── Brand Colors ──────────────────────────────────────── */
+  --primary:        #0B1D3A;      /* Deep Navy */
+  --secondary:      #2196F3;      /* Electric Blue */
+  --accent:         #00B4D8;      /* Electric Cyan */
+
+  /* ── Surface Layers (dark-first) ───────────────────────── */
+  --surface-0:      #030B17;      /* Deepest — body bg */
+  --surface-1:      #060F1E;      /* Page background */
+  --surface-2:      #0B1D3A;      /* Cards / containers */
+  --surface-3:      #102347;      /* Elevated cards */
+
+  /* ── Light Surfaces ─────────────────────────────────────── */
+  --surface-light:  #FFFFFF;
+  --surface-off:    #F0F4FB;      /* Cool off-white */
+  --surface-muted:  #E4EAF4;      /* Dividers, subtle bg */
+
+  /* ── Text on Dark ───────────────────────────────────────── */
+  --text-bright:    #FFFFFF;
+  --text-primary-d: rgba(255,255,255,0.88);
+  --text-muted-d:   rgba(255,255,255,0.45);
+  --text-faint-d:   rgba(255,255,255,0.20);
+
+  /* ── Text on Light ──────────────────────────────────────── */
+  --text-primary-l: #0B1D3A;
+  --text-body-l:    #2C3E55;
+  --text-muted-l:   #5A7090;
+
+  /* ── Borders ─────────────────────────────────────────────── */
+  --border-dark:    rgba(255,255,255,0.07);
+  --border-blue:    rgba(33,150,243,0.25);
+  --border-blue-h:  rgba(33,150,243,0.60);
+  --border-light:   rgba(11,29,58,0.10);
+
+  /* ── Glows ───────────────────────────────────────────────── */
+  --glow-blue:      rgba(33,150,243,0.15);
+  --glow-cyan:      rgba(0,180,216,0.12);
+
+  /* ── Spacing system (section padding) ───────────────────── */
+  --section-v:      clamp(72px, 8vw, 120px);
 }
 
-/* Global font */
+/* ═══════════════════════════════════════════════════════════
+   GLOBAL BASE
+   ═══════════════════════════════════════════════════════════ */
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 15px;
   font-weight: 400;
-  line-height: 1.6;
-  color: black;
+  line-height: 1.65;
+  color: var(--text-primary-l);
+  background: var(--surface-1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* ── Heading Scale ─────────────────────────────────────────── */
 h1 {
   font-size: 46px;
-  font-weight: 700;
-  line-height: 1.2;
+  font-weight: 800;
+  line-height: 1.10;
+  letter-spacing: -0.03em;
 }
-
 h2 {
   font-size: 26px;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.22;
+  letter-spacing: -0.02em;
 }
-
 h3 {
   font-size: 18px;
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.30;
 }
-
 h4 {
   font-size: 16px;
   font-weight: 600;
   line-height: 1.35;
 }
-
-h5,
-h6 {
+h5, h6 {
   font-size: 14px;
   font-weight: 500;
-  line-height: 1.4;
+  line-height: 1.40;
 }
+strong { font-weight: 700; }
 
+/* ═══════════════════════════════════════════════════════════
+   UTILITY CLASSES
+   ═══════════════════════════════════════════════════════════ */
 
-
-strong {
+/* Section label — small uppercase tag */
+.label-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
   font-weight: 700;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--secondary);
 }
-
-/* ============================= */
-/* PRIMARY BUTTON */
-/* ============================= */
-
-.primary-btn {
-  background-color: var(--primary);
-  font-size: 13px;
-  color: white;
-  border: 1px solid var(--primary);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.primary-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-.seconadry-btn {
-  background-color:var(--secondary);
-  font-size: 13px;
-  color:white;
-  border: 1px solid var(--primary);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.seconadry-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-
-/* ============================= */
-/* GlobalCapability scroll-in */
-/* ============================= */
-
-.gc-animate {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.gc-animate.gc-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ============================= */
-/* scroll bar animation */
-/* ============================= */
-
-/* WIDTH */
-::-webkit-scrollbar {
-  width: 4px;
-}
-
-/* TRACK (BACKGROUND) */
-::-webkit-scrollbar-track {
-  background: #0B1D3A;
-}
-
-/* SCROLLBAR */
-::-webkit-scrollbar-thumb {
+.label-tag::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
   background: var(--secondary);
-  border-radius: 999px;
 }
 
-/* HOVER EFFECT */
-::-webkit-scrollbar-thumb:hover {
-  opacity: 0.8;
-  cursor: pointer;
+/* Section number — monospace large */
+.sec-num {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  font-variant-numeric: tabular-nums;
+  color: var(--secondary);
+  opacity: 0.7;
 }
+
+/* Blue horizontal rule */
+.blue-rule {
+  height: 1px;
+  background: linear-gradient(90deg, var(--secondary) 0%, var(--accent) 60%, transparent 100%);
+  opacity: 0.40;
+}
+
+/* Button: Primary (Blue filled) */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--secondary);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 12px 28px;
+  border: 1px solid var(--secondary);
+  border-radius: 2px;
+  transition: background 0.25s, box-shadow 0.25s, transform 0.2s;
+  white-space: nowrap;
+}
+.btn-primary:hover {
+  background: #1E87E0;
+  box-shadow: 0 0 28px rgba(33,150,243,0.40);
+  transform: translateY(-1px);
+}
+
+/* Button: Outline (white bordered) */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 11px 27px;
+  border: 1px solid rgba(255,255,255,0.30);
+  border-radius: 2px;
+  transition: border-color 0.25s, background 0.25s, transform 0.2s;
+  white-space: nowrap;
+}
+.btn-outline:hover {
+  border-color: var(--secondary);
+  background: rgba(33,150,243,0.10);
+  transform: translateY(-1px);
+}
+
+/* Button: Outline on light bg */
+.btn-outline-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 11px 27px;
+  border: 1px solid var(--border-blue);
+  border-radius: 2px;
+  transition: border-color 0.25s, background 0.25s, color 0.25s;
+}
+.btn-outline-dark:hover {
+  border-color: var(--secondary);
+  background: var(--secondary);
+  color: #fff;
+}
+
+/* ── seconadry-btn alias kept for backward compat ─────────── */
+.seconadry-btn, .secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--secondary);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--secondary);
+  border-radius: 2px;
+  transition: background 0.25s, box-shadow 0.25s;
+}
+.seconadry-btn:hover, .secondary-btn:hover {
+  background: #1E87E0;
+  box-shadow: 0 0 24px rgba(33,150,243,0.35);
+}
+
+/* ── Primary btn ────────────────────────────────────────────── */
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--primary);
+  border-radius: 2px;
+  transition: background 0.25s, box-shadow 0.25s;
+}
+.primary-btn:hover {
+  background: var(--surface-3);
+  box-shadow: 0 6px 20px rgba(11,29,58,0.35);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SCROLLBAR
+   ═══════════════════════════════════════════════════════════ */
+::-webkit-scrollbar        { width: 4px; }
+::-webkit-scrollbar-track  { background: var(--surface-1); }
+::-webkit-scrollbar-thumb  { background: var(--secondary); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }

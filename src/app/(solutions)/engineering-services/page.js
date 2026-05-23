@@ -1,4 +1,4 @@
-import EngineeringServices from "@/componentes/Solutions/EngineeringServices";
+import EngineeringServices from "@/componentes/services/EngineeringServices";
 import TopHeading from "@/componentes/TopHeading";
 export default function TurnkeySolutionsPage() {
 

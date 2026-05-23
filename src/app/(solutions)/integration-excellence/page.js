@@ -1,4 +1,4 @@
-import SystemIntegrationServices from "@/componentes/Solutions/SystemIntegrationServices";
+import SystemIntegrationServices from "@/componentes/services/SystemIntegrationServices";
 import TopHeading from "@/componentes/TopHeading";
 export default function TurnkeySolutionsPage() {
 

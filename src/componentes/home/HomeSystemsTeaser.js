@@ -1,88 +1,246 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { FiArrowRight } from "react-icons/fi";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
-  FiWifi, FiPhoneCall, FiVideo, FiRadio,
-  FiShield, FiMonitor, FiLock, FiServer,
+  FiArrowRight, FiWifi, FiPhoneCall, FiVideo, FiRadio,
+  FiShield, FiMonitor, FiLock, FiServer
 } from "react-icons/fi";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const systems = [
-  { icon: FiWifi, name: "OFC Backbone Networks" },
-  { icon: FiPhoneCall, name: "EPABX Communication" },
-  { icon: FiVideo, name: "Video Conferencing" },
-  { icon: FiRadio, name: "UHF / VHF & TETRA" },
-  { icon: FiMonitor, name: "Passenger Info Systems" },
-  { icon: FiServer, name: "PAGA Systems" },
-  { icon: FiShield, name: "CCTV Surveillance" },
-  { icon: FiLock, name: "Access Control" },
+  { icon: FiWifi, name: "OFC Backbone Networks", num: "01" },
+  { icon: FiPhoneCall, name: "EPABX Communication", num: "02" },
+  { icon: FiVideo, name: "Video Conferencing", num: "03" },
+  { icon: FiRadio, name: "UHF / VHF & TETRA", num: "04" },
+  { icon: FiMonitor, name: "Passenger Info Systems", num: "05" },
+  { icon: FiServer, name: "PAGA Systems", num: "06" },
+  { icon: FiShield, name: "CCTV Surveillance", num: "07" },
+  { icon: FiLock, name: "Access Control", num: "08" },
 ];
 
 export default function HomeSystemsTeaser() {
+  const headerRef = useRef(null);
+  const gridRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(headerRef.current,
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1, y: 0, duration: 0.8, ease: "power3.out",
+        scrollTrigger: { trigger: headerRef.current, start: "top 88%", once: true }
+      }
+    );
+
+    const cards = gridRef.current?.querySelectorAll(".sys-card");
+    if (cards) {
+      gsap.fromTo(cards,
+        { opacity: 0, y: 24, scale: 0.97 },
+        {
+          opacity: 1, y: 0, scale: 1, duration: 0.55, stagger: 0.06, ease: "power3.out",
+          scrollTrigger: { trigger: gridRef.current, start: "top 88%", once: true }
+        }
+      );
+    }
+    return () => ScrollTrigger.getAll().forEach(t => t.kill());
+  }, []);
+
+
   return (
-    <section className="py-28 bg-gray-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-16">
+    <section
+      className="relative py-24 overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(180deg, #0B1D3A 0%, #102347 55%, #0F213F 100%)",
+      }}
+    >
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
+        style={{
+          backgroundImage: "url('/system-we-offer.png')",
+          filter: "brightness(0.48)",
+        }}
+      />
+
+      {/* Ultra Light Overlay */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(8,15,28,0.18) 0%, rgba(10,20,40,0.70) 45%, rgba(8,15,30,0.62) 100%)",
+        }}
+      />
+
+
+
+      <div className="relative z-10 px-6 lg:px-16">
 
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="mb-16 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8"
+        <div
+          ref={headerRef}
+          className="mb-16 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6"
         >
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-              <span className="block w-10 h-px bg-[var(--primary)]" />
-              <span className="text-[var(--primary)] text-xs font-semibold tracking-[4px] uppercase">
-                Systems We Offer
-              </span>
+          <div className="">
+            <div className="label-tag mb-5">
+              Systems We Offer
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold leading-tight max-w-2xl">
-              <span className="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">
-                Intelligent Telecom Systems for Every Layer
+
+            <h2
+              className="font-extrabold leading-[1.05]"
+              style={{
+                fontSize: "clamp(34px, 4vw, 56px)",
+                color: "#fff",
+                letterSpacing: "-0.03em",
+              }}
+            >
+              Intelligent Telecom &
+              <span
+                style={{
+                  background:
+                    "linear-gradient(90deg,var(--secondary),var(--accent))",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
+                {" "}
+                Security Systems
               </span>
             </h2>
+
+            <p
+              className="mt-6 text-lg leading-8"
+              style={{
+                color: "rgba(255,255,255,0.88)",
+              }}
+            >
+              Mission critical telecom infrastructure,
+              surveillance, sensing and communication systems
+              engineered for Oil & Gas, Power and Metro Rail operations.
+            </p>
           </div>
-          <Link
-            href="#"
-            className="group inline-flex items-center gap-2 bg-[var(--secondary)] text-sm font-semibold text-[var(--primary)] border border-[var(--primary)]/30 px-6 py-3 rounded-full hover:bg-[var(--primary)] hover:text-white hover:border-[var(--primary)] transition-all duration-300 self-start lg:self-auto"
+
+          {/* <Link
+            href="/systems-we-offer"
+            className="btn-outline self-start lg:self-auto"
           >
             View All Systems
-            <FiArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
-        </motion.div>
+            <FiArrowRight size={14} />
+          </Link> */}
+        </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div
+          ref={gridRef}
+          className="grid md:grid-cols-2 xl:grid-cols-4 gap-5"
+        >
           {systems.map((sys, i) => {
             const Icon = sys.icon;
+
+            const descriptions = [
+              "OFC backbone networks using SDH, MPLS TP, IP MPLS & DWDM technologies.",
+              "Integrated IP, digital and analog communication systems for critical operations.",
+              "Secure HD collaboration systems with voice tracking and recording support.",
+              "Reliable radio communication systems for industrial and metro infrastructure.",
+              "Real time passenger information and centralized display systems.",
+              "Public address and emergency alarm systems integrated with safety infrastructure.",
+              "Advanced surveillance systems with centralized monitoring and analytics.",
+              "Role based secure access systems with monitoring and audit capabilities.",
+            ];
+
             return (
-              <motion.div
+              <div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: i * 0.06 }}
-                viewport={{ once: true }}
+
+                className="bg-[var(--primary)]/5 sys-card group relative overflow-hidden p-7 transition-all duration-500"
+                style={{
+                
+                  border: "1px solid rgba(255,255,255,0.16)",
+                  backdropFilter: "blur(4px)",
+                  boxShadow: "0 6px 18px rgba(0,0,0,0.08)",
+                }}
               >
-                <Link
-                  href="/systems-we-offer"
-                  className="group flex flex-col items-center text-center p-8 bg-[var(--secondary)]/5 border border-gray-100 rounded-xl hover:border-[var(--primary)]/30 hover:shadow-lg hover:shadow-[var(--primary)]/5 transition-all duration-300"
+                {/* Hover Overlay */}
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, rgba(33,150,243,0.12), transparent 70%)",
+                  }}
+                />
+
+                {/* Number */}
+                <span className="sec-num relative z-10">
+                  {sys.num}
+                </span>
+
+                {/* Icon */}
+                <div
+                  className="relative z-10 w-14 h-14 mt-5 mb-6 flex items-center justify-center transition-all duration-500 group-hover:scale-110"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, rgba(33,150,243,0.16), rgba(0,180,216,0.10))",
+                    border:
+                      "1px solid rgba(33,150,243,0.20)",
+                  }}
                 >
-                  <div className="w-14 h-14 rounded-xl bg-[var(--primary)] flex items-center justify-center mb-4 group-hover:bg-[var(--primary)] transition-all duration-300">
-                    <Icon className="text-white group-hover:text-white transition-colors duration-300" size={22} />
-                  </div>
-                  <span className="text-sm font-semibold text-gray-800 leading-snug group-hover:text-[var(--primary)] transition-colors duration-300">
-                    {sys.name}
+                  <Icon
+                    size={22}
+                    style={{
+                      color: "var(--secondary)",
+                    }}
+                  />
+                </div>
+
+                {/* Title */}
+                <h3
+                  className="relative z-10 text-[20px] font-bold leading-snug mb-4"
+                  style={{
+                    color: "#fff",
+                  }}
+                >
+                  {sys.name}
+                </h3>
+
+                {/* Description */}
+                <p
+                  className="relative z-10 text-sm leading-7"
+                  style={{
+                    color: "rgba(255,255,255,0.95)",
+                  }}
+                >
+                  {descriptions[i]}
+                </p>
+
+                {/* CTA */}
+                {/* <div className="relative z-10 mt-8 flex items-center gap-2">
+                  <span
+                    className="text-xs font-bold uppercase tracking-[0.12em]"
+                    style={{
+                      color: "var(--secondary)",
+                    }}
+                  >
+                    Explore System
                   </span>
-                </Link>
-              </motion.div>
+
+                  <FiArrowRight
+                    size={14}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                    style={{
+                      color: "var(--secondary)",
+                    }}
+                  />
+                </div> */}
+              </div>
             );
           })}
         </div>
-
       </div>
     </section>
   );
+
+
 }

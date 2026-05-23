@@ -1,5 +1,5 @@
 
-import TurnkeySolutions from "@/componentes/Solutions/TurnkeySolutions";
+import TurnkeySolutions from "@/componentes/services/TurnkeySolutions";
 import TopHeading from "@/componentes/TopHeading";
 export default function TurnkeySolutionsPage() {
 

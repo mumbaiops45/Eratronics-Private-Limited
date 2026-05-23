@@ -1,7 +1,11 @@
-﻿"use client";
+"use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FiHeart, FiUsers, FiStar, FiZap } from "react-icons/fi";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const culturePoints = [
   {
@@ -27,149 +31,173 @@ const culturePoints = [
 ];
 
 export default function OurCulture() {
+  const headerRef = useRef(null);
+  const quoteRef  = useRef(null);
+  const cardsRef  = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(headerRef.current, { opacity: 0, x: -40 }, {
+      opacity: 1, x: 0, duration: 0.9, ease: "power3.out",
+      scrollTrigger: { trigger: headerRef.current, start: "top 85%", once: true },
+    });
+    gsap.fromTo(quoteRef.current, { opacity: 0, x: 40 }, {
+      opacity: 1, x: 0, duration: 0.9, ease: "power3.out",
+      scrollTrigger: { trigger: quoteRef.current, start: "top 85%", once: true },
+    });
+
+    const cards = cardsRef.current?.querySelectorAll(".culture-card");
+    if (cards) {
+      gsap.fromTo(cards, { opacity: 0, y: 30 }, {
+        opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: "power3.out",
+        scrollTrigger: { trigger: cardsRef.current, start: "top 85%", once: true },
+      });
+    }
+
+    return () => ScrollTrigger.getAll().forEach(t => t.kill());
+  }, []);
+
   return (
-    <section className="py-28 bg-gray-50 overflow-hidden">
+    <section className="py-24 overflow-hidden" style={{ background: "var(--surface-1)" }}>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-16">
+      {/* Dot grid */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: "radial-gradient(circle, rgba(33,150,243,0.04) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+        }}
+      />
 
-        {/* HEADER */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+      <div className="relative z-10 mx-auto px-6 lg:px-16">
 
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
-          >
+        {/* Header + Quote grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
 
-            <div className="flex items-center gap-3 mb-6">
-
-              <span className="block w-10 h-px bg-[var(--primary)]" />
-
-              <span className="text-[var(--primary)] text-xs font-semibold tracking-[4px] uppercase">
-                Our Spirit
-              </span>
-
-            </div>
-
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
-
+          {/* Left header */}
+          <div ref={headerRef}>
+            <div className="label-tag mb-5">Our Spirit</div>
+            <h2
+              className="font-extrabold leading-tight mb-5"
+              style={{ fontSize: "clamp(26px, 3.5vw, 44px)", color: "var(--text-bright)", letterSpacing: "-0.02em" }}
+            >
               A Culture Built on{" "}
-
-              <span className="text-[var(--primary)]">
-                People and Purpose
-              </span>
-
+              <span style={{ color: "var(--secondary)" }}>People & Purpose</span>
             </h2>
-
-            <p className="text-gray-500 text-sm leading-relaxed max-w-lg">
+            <div className="h-px w-14 mb-6" style={{ background: "var(--secondary)" }} />
+            <p className="text-sm leading-relaxed max-w-lg" style={{ color: "var(--text-muted-d)" }}>
               At Eratronics, we believe a successful organization is built not only on
               strong projects and technology, but on strong people and meaningful relationships.
             </p>
-
-          </motion.div>
+          </div>
 
           {/* Pull quote */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="relative"
-          >
+          <div ref={quoteRef}>
+            <div
+              className="relative overflow-hidden p-10"
+              style={{
+                background: "var(--surface-3)",
+                border: "1px solid var(--border-dark)",
+              }}
+            >
+              {/* Blue left accent */}
+              <div className="absolute top-0 left-0 bottom-0 w-0.5" style={{ background: "var(--secondary)" }} />
 
-            <div className="relative bg-[var(--primary)] rounded-2xl p-10 overflow-hidden">
+              {/* Top rule */}
+              <div className="h-px w-full mb-8" style={{ background: "linear-gradient(90deg, var(--secondary), var(--accent), transparent)" }} />
 
-              {/* Grid texture */}
-              <div
-                className="absolute inset-0 opacity-[0.05]"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)",
-                  backgroundSize: "32px 32px",
-                }}
-              />
+              <span
+                className="text-7xl font-serif leading-none block mb-3"
+                style={{ color: "var(--secondary)", opacity: 0.3 }}
+              >
+                &ldquo;
+              </span>
 
-              <div className="absolute top-8 right-8 w-40 h-40 rounded-full bg-white/5" />
+              <p
+                className="text-base leading-relaxed font-medium mb-8"
+                style={{ color: "var(--text-primary-d)" }}
+              >
+                When employees feel connected, valued, and supported, they perform with
+                greater confidence, energy, and purpose.
+              </p>
 
-              <div className="absolute bottom-6 left-6 w-28 h-28 rounded-full bg-white/5" />
-
-              <div className="relative z-10">
-
-                <span className="text-6xl text-white/20 font-serif leading-none block mb-4">
-                  &ldquo;
-                </span>
-
-                <p className="text-white text-lg leading-relaxed font-medium mb-6">
-                  When employees feel connected, valued, and supported, they perform with
-                  greater confidence, energy, and purpose.
-                </p>
-
-                <div className="flex items-center gap-3">
-
-                  <div className="w-10 h-10 rounded-full bg-white/15 flex items-center justify-center">
-
-                    <FiHeart className="text-white" size={16} />
-
-                  </div>
-
-                  <span className="text-white/60 text-xs font-semibold uppercase tracking-[3px]">
-                    Eratronics Culture
-                  </span>
-
+              <div className="flex items-center gap-3">
+                <div
+                  className="w-9 h-9 flex items-center justify-center"
+                  style={{
+                    background: "rgba(33,150,243,0.12)",
+                    border: "1px solid var(--border-blue)",
+                  }}
+                >
+                  <FiHeart size={15} style={{ color: "var(--secondary)" }} />
                 </div>
-
+                <span
+                  className="text-[10px] font-bold uppercase tracking-[0.15em]"
+                  style={{ color: "var(--secondary)" }}
+                >
+                  Eratronics Culture
+                </span>
               </div>
 
+              {/* Watermark */}
+              <span
+                className="absolute bottom-2 right-4 text-[100px] font-black leading-none select-none pointer-events-none"
+                style={{ color: "rgba(255,255,255,0.02)" }}
+              >
+                ❞
+              </span>
             </div>
-
-          </motion.div>
+          </div>
 
         </div>
 
-        {/* CULTURE POINTS GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
+        {/* Culture points grid */}
+        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2" style={{ border: "1px solid var(--border-dark)" }}>
           {culturePoints.map(({ Icon, title, text }, i) => (
-
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              viewport={{ once: true }}
-              className="group flex gap-6 bg-[var(--secondary)]/5 rounded-2xl border border-gray-100 p-8 hover:border-[var(--primary)]/30 hover:shadow-lg hover:shadow-[var(--primary)]/5 transition-all duration-400"
+              className="culture-card group relative p-8 transition-all duration-300 overflow-hidden"
+              style={{
+                background: "transparent",
+                borderRight: i % 2 === 0 ? "1px solid var(--border-dark)" : "none",
+                borderBottom: i < 2 ? "1px solid var(--border-dark)" : "none",
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.background = "rgba(33,150,243,0.05)";
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.background = "transparent";
+              }}
             >
+              {/* Top sweep on hover */}
+              <div
+                className="absolute top-0 left-0 right-0 h-0.5 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"
+                style={{ background: "var(--secondary)" }}
+              />
 
-              <div className="shrink-0 w-12 h-12 rounded-xl bg-[var(--primary)]/8 border border-[var(--primary)]/15 flex items-center justify-center group-hover:bg-[var(--primary)] group-hover:border-[var(--primary)] transition-all duration-300">
-
-                <Icon
-                  className="text-[var(--primary)] group-hover:text-[var(--secondary)] transition-colors duration-300"
-                  size={18}
-                />
-
+              <div
+                className="w-10 h-10 flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110"
+                style={{
+                  border: "1px solid var(--border-blue)",
+                  background: "rgba(33,150,243,0.08)",
+                }}
+              >
+                <Icon size={16} style={{ color: "var(--secondary)" }} />
               </div>
 
-              <div>
-
-                <h3 className="text-base font-bold text-gray-900 mb-2 group-hover:text-[var(--primary)] transition-colors duration-300">
-                  {title}
-                </h3>
-
-                <p className="text-sm text-gray-500 leading-relaxed">
-                  {text}
-                </p>
-
-              </div>
-
-            </motion.div>
-
+              <h3
+                className="text-sm font-bold mb-3"
+                style={{ color: "var(--text-bright)" }}
+              >
+                {title}
+              </h3>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted-d)" }}>
+                {text}
+              </p>
+            </div>
           ))}
-
         </div>
 
       </div>
-
     </section>
   );
 }
