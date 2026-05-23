@@ -15,109 +15,146 @@ const stats = [
   { value: "100%",  label: "Industrial Grade Deployment" },
 ];
 
-const telecomData = [
-  {
-    title: "OFC-Based Backbone Telecom Networks",
-    description: [
-      "We design and deploy mission-critical backbone telecom networks built on Optical Fiber Cable (OFC) infrastructure, leveraging proven technologies such as SDH, MPLS-TP, IP/MPLS, and DWDM. These networks deliver high reliability, deterministic performance, and scalable architecture for critical operations.",
-      "Our solutions are field-proven and engineered for seamless integration with both legacy systems and third-party platforms, including SCADA, RTU, EPABX, CCTV, VCS, UHF/VHF radio, PAGA, and access control systems, ensuring unified, secure, and uninterrupted communication across the enterprise.",
-      "The backbone is supported by a centralized Network Management System (NMS) offering comprehensive FCAPS functionality, enabling end-to-end visibility, control, and proactive network management. All deployed equipment is temperature-hardened and designed to operate reliably in harsh environmental conditions.",
-    ],
-  },
-  {
-    title: "Communication Systems",
-    subSections: [
-      {
-        heading: "EPABX System",
-        paragraphs: [
-          "We design and deploy integrated EPABX-based communication systems supporting IP, digital, and legacy analog telephony. Our solutions include hazardous-area compliant (Ex-proof) and weatherproof telephones, along with accessories such as acoustic booths and beacon sounders to ensure effective communication in high-noise and critical environments.",
-        ],
-      },
-      {
-        heading: "Video Conferencing Solutions",
-        paragraphs: [
-          "Telecom Projects in Oil & Gas and Power sectors often require secure, high-definition audio-visual communication over private networks. Eratronics designs and deploys Video Conferencing Systems (VCS) using proven third-party platforms such as Polycom and Avaya, enabling seamless collaboration across geographically distributed locations.",
-          "These systems are equipped with voice-tracking cameras, high-fidelity speakers, and intelligent microphones to deliver clear and immersive communication experiences. The solutions also support meeting recording and archival for operational continuity.",
-        ],
-      },
-    ],
-  },
-  {
-    title: "UHF / VHF, TETRA & LTE-R Communication Systems",
-    description: [
-      "Reliable, real-time communication is critical for safe and efficient operations in geographically challenging and mission-critical environments. We design and deploy robust radio communication systems using UHF/VHF, TETRA, and LTE-R technologies, tailored to specific operational requirements.",
-    ],
-    subSections: [
-      {
-        heading: "UHF / VHF Radio Systems",
-        paragraphs: ["For pipeline networks where OFC deployment is impractical, such as water crossings, UHF/VHF radio networks provide dependable data/voice communication."],
-      },
-      {
-        heading: "TETRA Communication Systems",
-        bullets: [
-          "For high-density and safety-critical environments such as metro rail systems, TETRA-based networks offer secure, digital trunked radio communication.",
-          "Continuous communication between train operators (metro pilots) and the Operations Control Center (OCC).",
-          "Instant group calling and priority-based communication during normal and emergency scenarios.",
-          "Dedicated handheld radios for key personnel to ensure coordinated emergency response.",
-        ],
-      },
-      {
-        heading: "LTE-R (Long Term Evolution — Railways)",
-        paragraphs: ["For next-generation railway communication, LTE-R provides high-bandwidth, IP-based communication supporting voice, video, and data applications, enabling advanced operational control and future-ready digital railway infrastructure."],
-      },
-      {
-        heading: "Passenger Information & Display Systems (PIDS)",
-        paragraphs: [
-          "Passenger Information & Display Systems (PIDS) are designed to deliver accurate, real-time information to passengers across stations and onboard environments, enhancing overall travel experience and operational efficiency.",
-          "With centralized monitoring and control, PIDS ensures real time, consistent, reliable, and timely dissemination of emergency information, improving passenger convenience while supporting smooth and safe transit operations.",
-        ],
-      },
-    ],
-  },
-  {
-    title: "Public Address & General Alarm Systems (PAGA)",
-    description: [
-      "Public Address & General Alarm (PAGA) Systems are engineered for safety-critical environments, enabling reliable, real-time zone-based communication for routine operations as well as emergency situations. Integration with fire & gas systems, SCADA, and emergency shutdown systems for automated alerts.",
-    ],
-  },
-  {
-    title: "CCTV Surveillance Systems",
-    description: [
-      "We design and deploy advanced CCTV surveillance systems to provide continuous monitoring, enhanced situational awareness, and improved security across Oil & Gas facilities and Metro environments.",
-    ],
-    subSections: [
-      {
-        heading: "Our solutions offer:",
-        bullets: [
-          "High-definition video monitoring with centralized viewing and recording",
-          "Intelligent video analytics for perimeter protection, intrusion detection, and incident investigation",
-          "Scalable architecture covering indoor, outdoor, and critical infrastructure areas",
-          "Integration with command and control systems for real-time monitoring and faster response",
-        ],
-        footer: "These systems enable proactive security management, helping operators detect, assess, and respond to potential threats effectively.",
-      },
-    ],
-  },
-  {
-    title: "Access Control Systems (ACS)",
-    description: [
-      "Our Access Control Systems (ACS) ensure secure and controlled entry to critical areas, safeguarding personnel, assets, and infrastructure in high-security environments.",
-    ],
-    subSections: [
-      {
-        heading: "Key capabilities include:",
-        bullets: [
-          "Role-based access control using smart cards, biometrics, or multi-factor authentication",
-          "Centralized access management with real-time monitoring and audit trails",
-          "Integration with surveillance, fire & safety, and building management systems",
-          "Scalable solutions for stations, depots, control rooms, and industrial facilities",
-        ],
-        footer: "ACS solutions enhance security governance by ensuring that only authorized personnel gain access, while maintaining complete visibility and traceability of movement across facilities.",
-      },
-    ],
-  },
-];
 
+const telecomData = [
+{
+title: "OFC-Based Backbone Telecom Networks",
+description: [
+"We design and deploys mission-critical backbone telecom networks built on Optical Fiber Cable (OFC) infrastructure, leveraging proven technologies such as SDH, MPLS-TP, IP/MPLS, and DWDM. These networks deliver high reliability, deterministic performance, and scalable architecture for critical operations.",
+
+"Our solutions are field-proven and engineered for seamless integration with both legacy systems and third-party platforms, including SCADA, RTU, EPABX, CCTV, VCS, UHF/VHF radio, PAGA, and access control systems, ensuring unified, secure, and uninterrupted communication across the enterprise.",
+
+"The backbone is supported by a centralized Network Management System (NMS) offering comprehensive FCAPS (Fault, Configuration, Accounting, Performance, and Security) functionality, enabling end-to-end visibility, control, and proactive network management. All deployed equipment is temperature-hardened and designed to operate reliably in harsh environmental conditions typical of industrial installations.",
+],
+},
+
+{
+title: "Communication Systems",
+
+subSections: [
+{
+heading: "EPABX System",
+
+paragraphs: [
+"We design and deploy integrated EPABX-based communication systems supporting IP, digital, and legacy analog telephony. Our solutions include hazardous-area compliant (Ex-proof) and weatherproof telephones, along with accessories such as acoustic booths and beacon sounders to ensure effective communication in high-noise and critical environments. We also implement dedicated emergency communication systems, particularly suited for metro and other mass transit applications.",
+],
+},
+
+{
+heading: "Video Conferencing Solutions",
+
+paragraphs: [
+"Telecom Projects in Oil & Gas and Power sectors often require secure, high-definition audio-visual communication over private networks. Eratronics designs and deploys Video Conferencing Systems (VCS) using proven third-party platforms such as Polycom and Avaya, enabling seamless collaboration across geographically distributed locations.",
+
+"These systems are equipped with voice-tracking cameras, high-fidelity speakers, and intelligent microphones to deliver clear and immersive communication experiences. The solutions also support meeting recording and archival, allowing users to store and retrieve sessions for future reference while ensuring operational continuity.",
+],
+},
+],
+},
+
+{
+title: "UHF / VHF, TETRA & LTE-R Communication Systems",
+
+description: [
+"Reliable, real-time communication is critical for safe and efficient operations in geographically challenging and mission-critical environments. We design and deploy robust radio communication systems using UHF/VHF, TETRA, and LTE-R technologies, tailored to specific operational requirements.",
+],
+
+subSections: [
+{
+heading: "UHF / VHF Radio Systems",
+
+paragraphs: [
+"For pipeline networks where OFC deployment is impractical, such as water crossings, UHF/VHF radio networks provide dependable data/voice communication.",
+],
+},
+
+{
+heading: "TETRA Communication Systems",
+
+bullets: [
+"For high-density and safety-critical environments such as metro rail systems, TETRA-based networks offer secure, digital trunked radio communication.",
+"Continuous communication between train operators (metro pilots) and the Operations Control Center (OCC).",
+"Instant group calling and priority-based communication during normal and emergency scenarios.",
+"Dedicated handheld radios for key personnel to ensure coordinated emergency response.",
+],
+},
+
+{
+heading: "LTE-R (Long Term Evolution , Railways)",
+
+paragraphs: [
+"For next-generation railway communication, LTE-R provides high-bandwidth, IP-based communication supporting voice, video, and data applications, enabling advanced operational control and future-ready digital railway infrastructure.",
+],
+},
+
+{
+heading: "Passenger Information & Display Systems (PIDS)",
+
+paragraphs: [
+"Passenger Information & Display Systems (PIDS) are designed to deliver accurate, real-time information to passengers across stations and onboard environments, enhancing overall travel experience and operational efficiency.",
+
+"With centralized monitoring and control, PIDS ensures Real time, consistent, reliable, and timely dissemination of Emergency information, improving passenger convenience while supporting smooth and safe transit operations.",
+],
+},
+],
+},
+
+{
+title: "Public Address & General Alarm Systems (PAGA)",
+
+description: [
+"Public Address & General Alarm (PAGA) Systems are engineered for safety-critical environments, enabling reliable, real-time zone-based communication for routine operations as well as emergency situations. Integration with fire & gas systems, SCADA, and emergency shutdown systems for automated alerts.",
+],
+},
+
+{
+title: "CCTV Surveillance Systems",
+
+description: [
+"We design and deploy advanced CCTV surveillance systems to provide continuous monitoring, enhanced situational awareness, and improved security across Oil & Gas facilities and Metro environments.",
+],
+
+subSections: [
+{
+heading: "Our solutions offer:",
+
+bullets: [
+"High-definition video monitoring with centralized viewing and recording",
+"Intelligent video analytics for perimeter protection, intrusion detection, and incident investigation",
+"Scalable architecture covering indoor, outdoor, and critical infrastructure areas",
+"Integration with command and control systems for real-time monitoring and faster response",
+],
+
+footer:
+"These systems enable proactive security management, helping operators detect, assess, and respond to potential threats effectively.",
+},
+],
+},
+
+{
+title: "Access Control Systems (ACS)",
+
+description: [
+"Our Access Control Systems (ACS) ensure secure and controlled entry to critical areas, safeguarding personnel, assets, and infrastructure in high-security environments.",
+],
+
+subSections: [
+{
+heading: "Key capabilities include:",
+
+bullets: [
+"Role-based access control using smart cards, biometrics, or multi-factor authentication",
+"Centralized access management with real-time monitoring and audit trails",
+"Integration with surveillance, fire & safety, and building management systems",
+"Scalable solutions for stations, depots, control rooms, and industrial facilities",
+],
+
+footer:
+"ACS solutions enhance security governance by ensuring that only authorized personnel gain access, while maintaining complete visibility and traceability of movement across facilities.",
+},
+],
+},
+];
 function ContentBlock({ item, index }) {
   const ref = useRef(null);
   useEffect(() => {

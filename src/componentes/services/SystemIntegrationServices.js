@@ -147,77 +147,181 @@ export default function SystemIntegrationServices() {
       </section>
 
       {/* SERVICE CARDS */}
-      <section className="py-24 overflow-hidden" style={{ background: "var(--surface-light)" }}>
-        <div className="mx-auto px-6 lg:px-16">
-          <div className="label-tag mb-12">Integration Workflow</div>
+      {/* SERVICE CARDS */}
+<section
+  className="py-24 overflow-hidden"
+  style={{ background: "var(--surface-light)" }}
+>
+  <div className="mx-auto px-6 lg:px-16">
+    <div className="label-tag mb-12">
+      Integration Workflow
+    </div>
 
-          <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2" style={{ border: "1px solid var(--border-light)" }}>
-            {integrationServices.map((svc, i) => {
-              const Icon = svc.icon;
-              const isLast = i === integrationServices.length - 1;
-              const isOdd = integrationServices.length % 2 !== 0;
+    <div
+      ref={cardsRef}
+      className="grid grid-cols-1 md:grid-cols-2"
+      style={{
+        border: "1px solid var(--border-light)",
+      }}
+    >
+      {integrationServices.map((svc, i) => {
+        const Icon = svc.icon;
 
-              return (
-                <div
-                  key={svc.number}
-                  className="svc-card group relative p-8 overflow-hidden transition-all duration-300"
+        const isLast =
+          i === integrationServices.length - 1;
+
+        const isOdd =
+          integrationServices.length % 2 !== 0;
+
+        return (
+          <div
+            key={svc.number}
+            className="svc-card group relative p-8 transition-all duration-300 overflow-hidden"
+            style={{
+              borderRight:
+                i % 2 === 0 && !isLast
+                  ? "1px solid var(--border-light)"
+                  : "none",
+
+              borderBottom:
+                i <
+                integrationServices.length -
+                  (isOdd ? 1 : 2)
+                  ? "1px solid var(--border-light)"
+                  : "none",
+
+              background: "transparent",
+
+              gridColumn:
+                isLast && isOdd
+                  ? "1 / -1"
+                  : "auto",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background =
+                "rgba(33,150,243,0.03)";
+
+              e.currentTarget.style.borderLeft =
+                "3px solid var(--secondary)";
+
+              e.currentTarget.style.paddingLeft =
+                "calc(2rem - 2px)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background =
+                "transparent";
+
+              e.currentTarget.style.borderLeft =
+                "";
+
+              e.currentTarget.style.paddingLeft =
+                "";
+            }}
+          >
+            {/* Top sweep */}
+            <div
+              className="absolute top-0 left-0 right-0 h-0.5 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"
+              style={{
+                background: "var(--secondary)",
+              }}
+            />
+
+            {/* TOP SECTION */}
+            <div className="flex items-start gap-5 mb-4">
+              <div
+                className="shrink-0 w-10 h-10 flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+                style={{
+                  background:
+                    "rgba(33,150,243,0.08)",
+
+                  border:
+                    "1px solid var(--border-blue)",
+                }}
+              >
+                <Icon
+                  size={16}
                   style={{
-                    borderRight: i % 2 === 0 && !isLast ? "1px solid var(--border-light)" : "none",
-                    borderBottom: i < integrationServices.length - (isOdd ? 1 : 2) ? "1px solid var(--border-light)" : "none",
-                    background: "transparent",
-                    gridColumn: isLast && isOdd ? "1 / -1" : "auto",
+                    color: "var(--secondary)",
                   }}
-                  onMouseEnter={e => { e.currentTarget.style.background = "rgba(33,150,243,0.03)"; }}
-                  onMouseLeave={e => { e.currentTarget.style.background = "transparent"; }}
-                >
-                  <div
-                    className="absolute top-0 left-0 right-0 h-0.5 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"
-                    style={{ background: "var(--secondary)" }}
-                  />
+                />
+              </div>
 
-                  <div className="flex items-start gap-5 mb-4">
-                    <div
-                      className="shrink-0 w-10 h-10 flex items-center justify-center transition-all duration-300 group-hover:scale-110"
-                      style={{ background: "rgba(33,150,243,0.08)", border: "1px solid var(--border-blue)" }}
+              <div className="flex-1">
+                <span
+                  className="block text-[10px] font-bold uppercase tracking-[0.12em] mb-1"
+                  style={{
+                    color: "var(--text-muted-l)",
+                  }}
+                >
+                  {svc.tag}
+                </span>
+
+                <h3
+                  className="text-sm font-bold leading-snug"
+                  style={{
+                    color: "var(--primary)",
+                  }}
+                >
+                  {svc.title}
+                </h3>
+              </div>
+
+              <span
+                className="ml-auto text-2xl font-black tabular-nums shrink-0"
+                style={{
+                  color:
+                    "rgba(33,150,243,0.15)",
+                }}
+              >
+                {svc.number}
+              </span>
+            </div>
+
+            {/* DESCRIPTION */}
+            <p
+              className="text-sm leading-relaxed mb-4"
+              style={{
+                color: "var(--text-muted-l)",
+              }}
+            >
+              {svc.description}
+            </p>
+
+            {/* POINTS */}
+            {svc.points && (
+              <div className="flex flex-col gap-2 mt-3">
+                {svc.points.map((pt, j) => (
+                  <div
+                    key={j}
+                    className="flex items-start gap-2.5"
+                  >
+                    <span
+                      className="mt-1.5 w-1 h-1 shrink-0"
+                      style={{
+                        background:
+                          "var(--secondary)",
+                      }}
+                    />
+
+                    <span
+                      className="text-sm leading-relaxed"
+                      style={{
+                        color:
+                          "var(--text-muted-l)",
+                      }}
                     >
-                      <Icon size={16} style={{ color: "var(--secondary)" }} />
-                    </div>
-                    <div>
-                      <span className="block text-[10px] font-bold uppercase tracking-[0.12em] mb-1" style={{ color: "var(--text-muted-l)" }}>
-                        {svc.tag}
-                      </span>
-                      <h3 className="text-sm font-bold leading-snug" style={{ color: "var(--primary)" }}>
-                        {svc.title}
-                      </h3>
-                    </div>
-                    <span className="ml-auto text-2xl font-black tabular-nums shrink-0" style={{ color: "rgba(33,150,243,0.12)" }}>
-                      {svc.number}
+                      {pt}
                     </span>
                   </div>
-
-                  <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--text-muted-l)" }}>
-                    {svc.description}
-                  </p>
-
-                  {svc.points && (
-                    <div className="flex flex-col gap-2 mt-3">
-                      {svc.points.map((pt, j) => (
-                        <div key={j} className="flex items-start gap-2.5">
-                          <span
-                            className="mt-1.5 w-1 h-1 shrink-0"
-                            style={{ background: "var(--secondary)" }}
-                          />
-                          <span className="text-sm leading-relaxed" style={{ color: "var(--text-muted-l)" }}>{pt}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+                ))}
+              </div>
+            )}
           </div>
-        </div>
-      </section>
+        );
+      })}
+    </div>
+  </div>
+</section>
 
       {/* CTA */}
       <section ref={ctaRef} className="py-20" style={{ background: "var(--secondary)" }}>

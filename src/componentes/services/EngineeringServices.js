@@ -5,7 +5,12 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
-  FiActivity, FiLayers, FiCpu, FiTrendingUp, FiArrowRight, FiCheck,
+  FiActivity,
+  FiLayers,
+  FiCpu,
+  FiTrendingUp,
+  FiArrowRight,
+  FiCheck,
 } from "react-icons/fi";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -73,186 +78,396 @@ const capabilities = [
 
 export default function EngineeringServices() {
   const introRef = useRef(null);
-  const capRef   = useRef(null);
+  const capRef = useRef(null);
   const cardsRef = useRef(null);
-  const ctaRef   = useRef(null);
+  const ctaRef = useRef(null);
 
   useEffect(() => {
-    gsap.fromTo(introRef.current, { opacity: 0, y: 40 }, {
-      opacity: 1, y: 0, duration: 0.9, ease: "power3.out",
-      scrollTrigger: { trigger: introRef.current, start: "top 85%", once: true },
-    });
-    gsap.fromTo(capRef.current, { opacity: 0, x: 40 }, {
-      opacity: 1, x: 0, duration: 0.8, ease: "power3.out",
-      scrollTrigger: { trigger: capRef.current, start: "top 85%", once: true },
-    });
+    gsap.fromTo(
+      introRef.current,
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: introRef.current,
+          start: "top 85%",
+          once: true,
+        },
+      }
+    );
+
+    gsap.fromTo(
+      capRef.current,
+      { opacity: 0, x: 40 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: capRef.current,
+          start: "top 85%",
+          once: true,
+        },
+      }
+    );
 
     const cards = cardsRef.current?.querySelectorAll(".svc-card");
+
     if (cards) {
-      gsap.fromTo(cards, { opacity: 0, y: 30 }, {
-        opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: "power3.out",
-        scrollTrigger: { trigger: cardsRef.current, start: "top 85%", once: true },
-      });
+      gsap.fromTo(
+        cards,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.07,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: cardsRef.current,
+            start: "top 85%",
+            once: true,
+          },
+        }
+      );
     }
 
-    gsap.fromTo(ctaRef.current, { opacity: 0, y: 30 }, {
-      opacity: 1, y: 0, duration: 0.8, ease: "power3.out",
-      scrollTrigger: { trigger: ctaRef.current, start: "top 85%", once: true },
-    });
+    gsap.fromTo(
+      ctaRef.current,
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ctaRef.current,
+          start: "top 85%",
+          once: true,
+        },
+      }
+    );
 
-    return () => ScrollTrigger.getAll().forEach(t => t.kill());
+    return () => ScrollTrigger.getAll().forEach((t) => t.kill());
   }, []);
 
   return (
     <>
       {/* INTRO */}
-      <section className="py-24 overflow-hidden" style={{ background: "var(--surface-off)" }}>
+      <section
+        className="py-24 overflow-hidden"
+        style={{ background: "var(--surface-off)" }}
+      >
         <div className="mx-auto px-6 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 items-start">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-12">
+            <div ref={introRef} className="max-w-2xl">
+              <div className="label-tag mb-6">
+                Engineering Excellence
+              </div>
 
-            <div ref={introRef} className="lg:col-span-7">
-              <div className="label-tag mb-6">Engineering Excellence</div>
               <h2
                 className="font-extrabold leading-tight mb-6"
-                style={{ fontSize: "clamp(26px, 3.5vw, 44px)", color: "var(--primary)", letterSpacing: "-0.02em" }}
+                style={{
+                  fontSize: "clamp(26px, 3.5vw, 44px)",
+                  color: "var(--primary)",
+                  letterSpacing: "-0.02em",
+                }}
               >
                 Engineering Services Built for{" "}
-                <span style={{ color: "var(--secondary)" }}>Mission Critical Infrastructure</span>
+                <span style={{ color: "var(--secondary)" }}>
+                  Mission Critical Infrastructure
+                </span>
               </h2>
-              <div className="h-px w-14 mb-6" style={{ background: "var(--secondary)" }} />
-              <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted-l)" }}>
-                Over the past decade, Eratronics has developed deep technical expertise in
-                delivering telecom engineering solutions for mission critical industries.
-                Through collaborative execution models, we operate as a seamless extension
-                of our customers' teams, combining engineering depth with delivery agility.
+
+              <div
+                className="h-px w-14 mb-6"
+                style={{ background: "var(--secondary)" }}
+              />
+
+              <p
+                className="text-sm leading-relaxed"
+                style={{ color: "var(--text-muted-l)" }}
+              >
+                Over the past decade, Eratronics has developed deep technical
+                expertise in delivering telecom engineering solutions for
+                mission critical industries. Through collaborative execution
+                models, we operate as a seamless extension of our customers'
+                teams, combining engineering depth with delivery agility.
               </p>
             </div>
 
-            {/* Capabilities panel — dark */}
+            {/* Capabilities */}
             <div
               ref={capRef}
-              className="lg:col-span-5 relative overflow-hidden p-8"
-              style={{ background: "var(--primary)" }}
+              className="grid grid-cols-2 shrink-0"
+              style={{
+                border: "1px solid var(--border-light)",
+              }}
             >
-              {/* Blue top rule */}
-              <div className="h-0.5 w-full mb-7" style={{ background: "linear-gradient(90deg, var(--secondary), var(--accent), transparent)" }} />
-
-              <div className="label-tag mb-6">Our Capabilities</div>
-              <div className="flex flex-col gap-4">
-                {capabilities.map((cap, i) => (
-                  <div key={i} className="flex items-center gap-3">
+              {capabilities.map((cap, i) => (
+                <div
+                  key={i}
+                  className="px-8 py-6"
+                  style={{
+                    borderRight:
+                      i % 2 === 0
+                        ? "1px solid var(--border-light)"
+                        : "none",
+                    borderBottom:
+                      i < 2
+                        ? "1px solid var(--border-light)"
+                        : "none",
+                    background: "var(--surface-light)",
+                  }}
+                >
+                  <div className="flex items-center gap-3 mb-2">
                     <div
                       className="w-5 h-5 flex items-center justify-center shrink-0"
-                      style={{ background: "rgba(33,150,243,0.15)", border: "1px solid var(--border-blue)" }}
+                      style={{
+                        background: "rgba(33,150,243,0.12)",
+                        border: "1px solid var(--border-blue)",
+                      }}
                     >
-                      <FiCheck size={10} style={{ color: "var(--secondary)" }} />
+                      <FiCheck
+                        size={10}
+                        style={{ color: "var(--secondary)" }}
+                      />
                     </div>
-                    <span className="text-sm font-medium" style={{ color: "var(--text-primary-d)" }}>{cap}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
 
+                    <span
+                      className="text-xs uppercase tracking-[0.12em] font-bold"
+                      style={{ color: "var(--secondary)" }}
+                    >
+                      Capability
+                    </span>
+                  </div>
+
+                  <p
+                    className="text-sm font-medium leading-relaxed"
+                    style={{ color: "var(--primary)" }}
+                  >
+                    {cap}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* SERVICES */}
-      <section className="py-24 overflow-hidden" style={{ background: "var(--surface-light)" }}>
-        <div className="mx-auto px-6 lg:px-16">
-          <div className="label-tag mb-12">Service Areas</div>
+  {/* SERVICES */}
+<section
+  className="py-24 overflow-hidden"
+  style={{ background: "var(--surface-light)" }}
+>
+  <div className="mx-auto px-6 lg:px-16">
+    <div className="label-tag mb-12">
+      Service Areas
+    </div>
 
-          <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2" style={{ border: "1px solid var(--border-light)" }}>
-            {engineeringServices.map((svc, i) => {
-              const Icon = svc.icon;
-              return (
-                <div
-                  key={svc.number}
-                  className="svc-card group relative p-8 lg:p-10 overflow-hidden transition-all duration-300"
+    <div
+      ref={cardsRef}
+      className="grid grid-cols-1 md:grid-cols-2"
+      style={{
+        border: "1px solid var(--border-light)",
+      }}
+    >
+      {engineeringServices.map((svc, i) => {
+        const Icon = svc.icon;
+
+        return (
+          <div
+            key={svc.number}
+            className="svc-card group relative p-8 transition-all duration-300 overflow-hidden"
+            style={{
+              borderRight:
+                i % 2 === 0
+                  ? "1px solid var(--border-light)"
+                  : "none",
+              borderBottom:
+                i < 2
+                  ? "1px solid var(--border-light)"
+                  : "none",
+              background: "transparent",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background =
+                "rgba(33,150,243,0.03)";
+              e.currentTarget.style.borderLeft =
+                "3px solid var(--secondary)";
+              e.currentTarget.style.paddingLeft =
+                "calc(2rem - 2px)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background =
+                "transparent";
+              e.currentTarget.style.borderLeft = "";
+              e.currentTarget.style.paddingLeft = "";
+            }}
+          >
+            {/* Top sweep */}
+            <div
+              className="absolute top-0 left-0 right-0 h-0.5 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"
+              style={{
+                background: "var(--secondary)",
+              }}
+            />
+
+            {/* TOP */}
+            <div className="flex items-start gap-5 mb-5">
+              <div
+                className="shrink-0 w-10 h-10 flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+                style={{
+                  background: "rgba(33,150,243,0.08)",
+                  border: "1px solid var(--border-blue)",
+                }}
+              >
+                <Icon
+                  size={16}
                   style={{
-                    borderRight: i % 2 === 0 ? "1px solid var(--border-light)" : "none",
-                    borderBottom: i < 2 ? "1px solid var(--border-light)" : "none",
-                    background: "transparent",
+                    color: "var(--secondary)",
                   }}
-                  onMouseEnter={e => { e.currentTarget.style.background = "rgba(33,150,243,0.03)"; }}
-                  onMouseLeave={e => { e.currentTarget.style.background = "transparent"; }}
+                />
+              </div>
+
+              <div className="flex-1">
+                <span
+                  className="block text-[10px] font-bold uppercase tracking-[0.12em] mb-1"
+                  style={{
+                    color: "var(--text-muted-l)",
+                  }}
                 >
-                  {/* Top sweep */}
-                  <div
-                    className="absolute top-0 left-0 right-0 h-0.5 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"
-                    style={{ background: "var(--secondary)" }}
-                  />
+                  Engineering Service
+                </span>
 
-                  {/* Number watermark */}
-                  <span
-                    className="absolute top-4 right-6 text-[80px] font-black leading-none select-none pointer-events-none"
-                    style={{ color: "rgba(33,150,243,0.06)" }}
-                  >
-                    {svc.number}
-                  </span>
+                <h3
+                  className="text-sm font-bold leading-snug"
+                  style={{
+                    color: "var(--primary)",
+                  }}
+                >
+                  {svc.title}
+                </h3>
+              </div>
 
-                  <div
-                    className="w-10 h-10 flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110"
-                    style={{ background: "rgba(33,150,243,0.08)", border: "1px solid var(--border-blue)" }}
-                  >
-                    <Icon size={16} style={{ color: "var(--secondary)" }} />
-                  </div>
+              <span
+                className="ml-auto text-2xl font-black tabular-nums shrink-0"
+                style={{
+                  color: "rgba(33,150,243,0.15)",
+                }}
+              >
+                {svc.number}
+              </span>
+            </div>
 
-                  <h3 className="text-base font-bold mb-4 leading-snug" style={{ color: "var(--primary)" }}>
-                    {svc.title}
-                  </h3>
+            {/* DESCRIPTION */}
+            <p
+              className="text-sm leading-relaxed mb-6"
+              style={{
+                color: "var(--text-muted-l)",
+              }}
+            >
+              {svc.description}
+            </p>
 
-                  <p className="text-sm leading-relaxed mb-6" style={{ color: "var(--text-muted-l)" }}>
-                    {svc.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2">
-                    {svc.tags.map(tag => (
-                      <span
-                        key={tag}
-                        className="text-[10px] font-bold uppercase tracking-[0.08em] px-3 py-1.5"
-                        style={{
-                          border: "1px solid var(--border-blue)",
-                          color: "var(--secondary)",
-                          background: "rgba(33,150,243,0.05)",
-                        }}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
+            {/* TAGS */}
+            <div className="flex flex-wrap gap-2">
+              {svc.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="text-[10px] font-bold uppercase tracking-[0.08em] px-3 py-1.5"
+                  style={{
+                    border:
+                      "1px solid var(--border-blue)",
+                    color: "var(--secondary)",
+                    background:
+                      "rgba(33,150,243,0.05)",
+                  }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        );
+      })}
+    </div>
+  </div>
+</section>
 
       {/* CTA */}
-      <section ref={ctaRef} className="py-20" style={{ background: "var(--secondary)" }}>
+      <section
+        ref={ctaRef}
+        className="py-20"
+        style={{ background: "var(--secondary)" }}
+      >
         <div className="mx-auto px-6 lg:px-16">
-          <div className="relative overflow-hidden p-10 lg:p-14" style={{ border: "1px solid rgba(255,255,255,0.15)" }}>
-            <div className="absolute inset-0 pointer-events-none" style={{
-              backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px)",
-              backgroundSize: "32px 32px",
-            }} />
+          <div
+            className="relative overflow-hidden p-10 lg:p-14"
+            style={{
+              border: "1px solid rgba(255,255,255,0.15)",
+            }}
+          >
+            {/* Dot grid */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px)",
+                backgroundSize: "32px 32px",
+              }}
+            />
+
             <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
               <div>
-                <h3 className="font-bold text-white mb-3" style={{ fontSize: "clamp(20px, 2.5vw, 30px)", letterSpacing: "-0.02em" }}>
+                <h3
+                  className="font-bold text-white mb-3"
+                  style={{
+                    fontSize: "clamp(20px, 2.5vw, 30px)",
+                    letterSpacing: "-0.02em",
+                  }}
+                >
                   Need Expert Engineering Support?
                 </h3>
-                <p className="text-sm leading-relaxed max-w-lg" style={{ color: "rgba(255,255,255,0.65)" }}>
-                  Our engineering team is ready to consult on your telecom architecture, FEED package, or infrastructure gap analysis.
+
+                <p
+                  className="text-sm leading-relaxed max-w-lg"
+                  style={{
+                    color: "rgba(255,255,255,0.65)",
+                  }}
+                >
+                  Our engineering team is ready to consult on your telecom
+                  architecture, FEED package, or infrastructure gap analysis.
                 </p>
               </div>
+
               <Link
                 href="/contact-us"
                 className="flex items-center gap-2.5 px-8 py-4 font-bold text-sm shrink-0 transition-all duration-250"
-                style={{ background: "var(--primary)", color: "white" }}
-                onMouseEnter={e => { e.currentTarget.style.background = "var(--surface-0)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
-                onMouseLeave={e => { e.currentTarget.style.background = "var(--primary)"; e.currentTarget.style.transform = "translateY(0)"; }}
+                style={{
+                  background: "var(--primary)",
+                  color: "white",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background =
+                    "var(--surface-0)";
+                  e.currentTarget.style.transform =
+                    "translateY(-2px)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background =
+                    "var(--primary)";
+                  e.currentTarget.style.transform =
+                    "translateY(0)";
+                }}
               >
-                Get in Touch <FiArrowRight size={14} />
+                Get in Touch
+                <FiArrowRight size={14} />
               </Link>
             </div>
           </div>
