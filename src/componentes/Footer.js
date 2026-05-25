@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
@@ -17,7 +17,7 @@ const cols = [
     links: [
       { name: "Home", href: "/" },
       { name: "About Us", href: "/about-us" },
-       { name: "Services", href: "/services" },
+      { name: "Services", href: "/services" },
       { name: "Our Presence", href: "/our-presence" },
       { name: "E-Waste", href: "/e-waste" },
       { name: "Contact Us", href: "/contact-us" },
@@ -68,28 +68,15 @@ export default function Footer() {
           {/* Brand column */}
           <div>
             {/* Logo mark */}
-           <Link href="/" className="flex items-center gap-3 mb-6">
-              {/* Monogram badge */}
-              <div
-                className="w-9 h-9 flex items-center justify-center text-white font-black text-sm shrink-0"
-                style={{
-                  background: "var(--secondary)",
-                  clipPath: "polygon(0 0, 100% 0, 100% 75%, 75% 100%, 0 100%)",
-                }}
-              >
-                E
-              </div>
-              <div>
-                <div className="text-white font-extrabold text-[15px] tracking-[0.06em] leading-none uppercase">
-                  Eratronics
-                </div>
-                <div
-                  className="text-[8px] font-semibold tracking-[0.18em] uppercase leading-none mt-0.5"
-                  style={{ color: "var(--secondary)" }}
-                >
-                  Private Limited
-                </div>
-              </div>
+            <Link href="/" className="group">
+              <Image
+                src="/logo.png"
+                alt="Eratronics Logo"
+                width={180}
+                height={60}
+                className="h-12 w-auto object-contain mb-4"
+                priority
+              />
             </Link>
             <p
               className="text-sm leading-relaxed mb-7 max-w-xs"
@@ -182,29 +169,29 @@ export default function Footer() {
             </div>
           ))}
           <div>
-             <h4
-                className="text-[10px] font-bold uppercase tracking-[0.18em] mb-5"
-                style={{ color: "var(--secondary)" }}
-              >
-                contact us
-              </h4>
-             <div className="flex flex-col gap-3 text-xs" style={{ color: "rgba(255,255,255,0.50)" }}>
-          
-            <div className="flex items-start gap-2.5">
-              <HiOutlineLocationMarker className="text-base shrink-0 mt-0.5" style={{ color: "var(--secondary)" }} />
-              <span>Raheja Tesla Industrial, Juinagar, Navi Mumbai, Maharashtra – 400705</span>
-            </div>
-            <div className="flex items-center gap-2.5">
-              <HiOutlinePhone className="text-base shrink-0" style={{ color: "var(--secondary)" }} />
-              <a href="tel:+91222087774" className="hover:text-white transition-colors duration-200">+91 22 2087774</a>
-            </div>
-            <div className="flex items-center gap-2.5">
-              <HiOutlineMail className="text-base shrink-0" style={{ color: "var(--secondary)" }} />
-              <a href="mailto:sales@eratronics.in" className="hover:text-white transition-colors duration-200">sales@eratronics.in</a>
+            <h4
+              className="text-[10px] font-bold uppercase tracking-[0.18em] mb-5"
+              style={{ color: "var(--secondary)" }}
+            >
+              contact us
+            </h4>
+            <div className="flex flex-col gap-3 text-xs" style={{ color: "rgba(255,255,255,0.50)" }}>
+
+              <div className="flex items-start gap-2.5">
+                <HiOutlineLocationMarker className="text-base shrink-0 mt-0.5" style={{ color: "var(--secondary)" }} />
+                <span>Raheja Tesla Industrial, Juinagar, Navi Mumbai, Maharashtra – 400705</span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <HiOutlinePhone className="text-base shrink-0" style={{ color: "var(--secondary)" }} />
+                <a href="tel:+91222087774" className="hover:text-white transition-colors duration-200">+91 22 2087774</a>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <HiOutlineMail className="text-base shrink-0" style={{ color: "var(--secondary)" }} />
+                <a href="mailto:sales@eratronics.in" className="hover:text-white transition-colors duration-200">sales@eratronics.in</a>
+              </div>
             </div>
           </div>
-          </div>
-         
+
         </div>
       </div>
 
@@ -227,8 +214,8 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="hover:text-white transition-colors duration-200"
               style={{ color: "rgba(255,255,255,0.50)" }}
-              onMouseEnter={e =>{e.currentTarget.style.color = 'var(--secondary)'}}
-              onMouseLeave={e=>{e.currentTarget.style.color="rgba(255,255,255,0.50)"}}
+              onMouseEnter={e => { e.currentTarget.style.color = 'var(--secondary)' }}
+              onMouseLeave={e => { e.currentTarget.style.color = "rgba(255,255,255,0.50)" }}
             >
               Nakshatra Namaha Creations
             </a>

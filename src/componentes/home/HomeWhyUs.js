@@ -119,7 +119,7 @@ export default function HomeWhyUs() {
             </div>
 
             <h2
-              className="font-extrabold leading-tight text-[var(--primary)]"
+              className="font-extrabold leading-tight"
               style={{
                 fontSize: "clamp(28px,4vw,48px)",
                 letterSpacing: "-0.02em",
@@ -172,26 +172,26 @@ export default function HomeWhyUs() {
                 {/* Number + Icon */}
                 <div className="flex items-center justify-between mb-8">
 
-                  <span className="text-xs font-black tracking-[0.12em] text-[var(--secondary)] opacity-50 transition-all duration-300 group-hover:text-white/30">
+                  <span className="text-xs font-black tracking-[0.12em] text-[var(--secondary)] opacity-50 transition-all duration-300 group-hover:text-white">
                     {item.num}
                   </span>
 
                   <div className="w-10 h-10 flex items-center justify-center border border-[var(--border-blue)] bg-[rgba(33,150,243,0.06)] transition-all duration-300 group-hover:scale-110">
                     <Icon
                       size={18}
-                      className="text-[var(--secondary)]"
+                      className="text-[var(--secondary)] group-hover:text-white"
                     />
                   </div>
 
                 </div>
 
                 {/* Title */}
-                <h3 className="mb-3 text-base font-bold leading-snug text-[var(--primary)] transition-colors duration-300 group-hover:text-[var(--secondary)]">
+                <h3 className="mb-3 text-base font-bold leading-snug text-[var(--primary)] transition-colors duration-300 group-hover:text-white">
                   {item.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm leading-relaxed text-[var(--text-muted-l)] transition-colors duration-300 group-hover:text-white">
+                <p className="text-sm leading-relaxed text-[var(--text-muted-l)] transition-colors duration-300 group-hover:text-white/70">
                   {item.description}
                 </p>
 

@@ -89,7 +89,7 @@ export default function GlobalCapability() {
               className="font-extrabold leading-tight"
               style={{
                 fontSize: "clamp(28px, 4vw, 48px)",
-                color: "var(--primary)",
+             
                 letterSpacing: "-0.02em",
               }}
             >

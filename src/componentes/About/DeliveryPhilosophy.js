@@ -106,7 +106,7 @@ export default function DeliveryPhilosophy() {
               <div className="flex items-center justify-between mb-6">
                 <span
                   className="text-5xl font-black tabular-nums leading-none transition-colors duration-300"
-                  style={{ color: "rgba(33,150,243,0.20)" }}
+                  style={{ color: "var(--secondary)" }}
                 >
                   {letter}
                 </span>

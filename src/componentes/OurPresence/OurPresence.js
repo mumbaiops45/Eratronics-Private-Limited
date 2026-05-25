@@ -274,7 +274,7 @@ export default function OurPresence() {
       </div>
 
       {/* CTA */}
-      <div ref={ctaRef} className="py-20" style={{ background: "var(--secondary)" }}>
+      <div ref={ctaRef} className="py-20" style={{ background: "var(--primary)" }}>
         <div className="mx-auto px-6 lg:px-20">
           <div
             className="relative overflow-hidden p-10 lg:p-14"
@@ -298,8 +298,8 @@ export default function OurPresence() {
                 href="/contact-us"
                 className="flex items-center gap-2.5 px-8 py-4 font-bold text-sm shrink-0 transition-all duration-250"
                 style={{ background: "var(--primary)", color: "white" }}
-                onMouseEnter={e => { e.currentTarget.style.background = "var(--surface-0)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
-                onMouseLeave={e => { e.currentTarget.style.background = "var(--primary)"; e.currentTarget.style.transform = "translateY(0)"; }}
+                onMouseEnter={e => { e.currentTarget.style.background = "var(--secondary)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
+                onMouseLeave={e => { e.currentTarget.style.background = "var(--accent)"; e.currentTarget.style.transform = "translateY(0)"; }}
               >
                 Contact Us <FiArrowRight size={14} />
               </Link>

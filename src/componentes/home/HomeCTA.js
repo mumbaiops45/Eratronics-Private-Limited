@@ -33,7 +33,7 @@ export default function HomeCTA() {
   return (
     <section
       className="relative py-24 overflow-hidden"
-      style={{ background: "var(--secondary)" }}
+      style={{ background: "var(--primary)" }}
     >
       {/* Dot grid */}
       <div
@@ -100,7 +100,7 @@ export default function HomeCTA() {
                 borderRadius: "2px",
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.background = "#060F1E";
+                e.currentTarget.style.background = "var(--secondary)";
                 e.currentTarget.style.boxShadow = "0 0 28px rgba(11,29,58,0.50)";
               }}
               onMouseLeave={e => {

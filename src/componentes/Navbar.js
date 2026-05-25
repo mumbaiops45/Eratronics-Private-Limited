@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
@@ -84,32 +84,19 @@ export default function Navbar() {
         />
 
         <div className="mx-auto px-6 lg:px-10">
-          <div className="flex items-center justify-between h-[70px]">
+          <div className="flex items-center justify-between h-[80px]">
 
             {/* ── LOGO ── */}
-            <Link href="/" className="flex items-center gap-3 group">
-              {/* Monogram badge */}
-              <div
-                className="w-9 h-9 flex items-center justify-center text-white font-black text-sm shrink-0"
-                style={{
-                  background: "var(--secondary)",
-                  clipPath: "polygon(0 0, 100% 0, 100% 75%, 75% 100%, 0 100%)",
-                }}
-              >
-                E
-              </div>
-              <div>
-                <div className="text-white font-extrabold text-[15px] tracking-[0.06em] leading-none uppercase">
-                  Eratronics
-                </div>
-                <div
-                  className="text-[8px] font-semibold tracking-[0.18em] uppercase leading-none mt-0.5"
-                  style={{ color: "var(--secondary)" }}
-                >
-                  Private Limited
-                </div>
-              </div>
-            </Link>
+          <Link href="/" className="group">
+  <Image
+    src="/logo.png"
+    alt="Eratronics Logo"
+    width={180}
+    height={60}
+    className="h-12 w-auto object-contain"
+    priority
+  />
+</Link>
             <div className="flex gap-4">
               {/* ── DESKTOP NAV ── */}
               <nav className="hidden lg:flex items-center gap-1">
@@ -203,7 +190,7 @@ export default function Navbar() {
                     borderRadius: "2px",
                   }}
                   onMouseEnter={e => {
-                    e.currentTarget.style.background = "#1E87E0";
+                    e.currentTarget.style.background = "var(--accent)";
                     e.currentTarget.style.boxShadow = "0 0 24px rgba(33,150,243,0.40)";
                   }}
                   onMouseLeave={e => {

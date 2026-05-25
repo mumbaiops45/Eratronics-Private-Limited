@@ -61,13 +61,13 @@ export default function HomeIndustries() {
   const active = industries[activeIdx];
 
   return (
-    <section ref={sectionRef} className="py-24" style={{ background: "var(--surface-2)" }}>
+    <section ref={sectionRef} className="py-24" style={{ background: "var(--primary)" }}>
       <div className=" mx-auto px-6 lg:px-16">
 
         {/* Header */}
         <div className="mb-14  gap-6">
           <div>
-            <div className="label-tag mb-5">Industries We Serve</div>
+            <div className="label-tag mb-5 text-[var(--accent)]">Industries We Serve</div>
             <h2
               className="font-extrabold leading-tight text-white mb-5"
               style={{ fontSize: "clamp(28px, 4vw, 48px)", letterSpacing: "-0.02em" }}
@@ -98,14 +98,14 @@ export default function HomeIndustries() {
                   className="group text-left px-8 py-8 transition-all duration-300 flex items-start gap-5 cursor-pointer"
                   style={{
                     borderBottom: i < industries.length - 1 ? "1px solid var(--border-dark)" : "none",
-                    background: on ? "rgba(33,150,243,0.08)" : "transparent",
-                    borderLeft: on ? "3px solid var(--secondary)" : "3px solid transparent",
+                    background: on ? "var(--primary)" : "transparent",
+                    borderLeft: on ? "3px solid var(--accent)" : "3px solid transparent",
                   }}
                 >
                   {/* Number */}
                   <span
                     className="text-2xl font-black tabular-nums mt-1 transition-colors duration-300"
-                    style={{ color: on ? "var(--secondary)" : "rgba(255,255,255,0.12)" }}
+                    style={{ color: on ? "var( --accent)" : "rgba(255,255,255,0.12)" }}
                   >
                     {ind.num}
                   </span>

@@ -7,9 +7,9 @@
    ═══════════════════════════════════════════════════════════ */
 :root {
   /* ── Brand Colors ──────────────────────────────────────── */
-  --primary:        #0B1D3A;      /* Deep Navy */
-  --secondary:      #2196F3;      /* Electric Blue */
-  --accent:         #00B4D8;      /* Electric Cyan */
+  --primary:        #af0e0f;      /* Deep Navy */
+  --secondary:      #ff0000;      /* Electric Blue */
+  --accent:         #ff790c;      /* Electric Cyan */
 
   /* ── Surface Layers (dark-first) ───────────────────────── */
   --surface-0:      #030B17;      /* Deepest — body bg */
@@ -153,7 +153,7 @@ strong { font-weight: 700; }
   white-space: nowrap;
 }
 .btn-primary:hover {
-  background: #1E87E0;
+  background: var(--accent);
   box-shadow: 0 0 28px rgba(33,150,243,0.40);
   transform: translateY(-1px);
 }
@@ -176,7 +176,8 @@ strong { font-weight: 700; }
 }
 .btn-outline:hover {
   border-color: var(--secondary);
-  background: rgba(33,150,243,0.10);
+  background: white;
+  color: var(--secondary);
   transform: translateY(-1px);
 }
 

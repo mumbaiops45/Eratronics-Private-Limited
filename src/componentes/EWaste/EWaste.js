@@ -88,7 +88,7 @@ export default function EWaste() {
           <div className="label-tag mb-6">Environmental Responsibility</div>
           <h2
             className="font-extrabold leading-snug mb-6"
-            style={{ fontSize: "clamp(26px, 3.5vw, 44px)", color: "var(--primary)", letterSpacing: "-0.02em" }}
+            style={{ fontSize: "clamp(26px, 3.5vw, 44px)",letterSpacing: "-0.02em" }}
           >
             Our Commitment to Responsible{" "}
             <span style={{ color: "var(--secondary)" }}>E Waste Management</span>
@@ -358,7 +358,7 @@ export default function EWaste() {
       </section>
 
       {/* CONTACT CTA */}
-      <section className="py-20" style={{ background: "var(--secondary)" }}>
+      <section className="py-20" style={{ background: "var(--primary)" }}>
         <div className="mx-auto px-6 lg:px-20">
           <div className="relative overflow-hidden p-10 lg:p-14" style={{ border: "1px solid rgba(255,255,255,0.15)" }}>
             <div className="absolute inset-0 pointer-events-none" style={{
@@ -382,8 +382,8 @@ export default function EWaste() {
                 href="/contact-us"
                 className="flex items-center gap-2.5 px-8 py-4 font-bold text-sm shrink-0 transition-all duration-250"
                 style={{ background: "var(--primary)", color: "white" }}
-                onMouseEnter={e => { e.currentTarget.style.background = "var(--surface-0)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
-                onMouseLeave={e => { e.currentTarget.style.background = "var(--primary)"; e.currentTarget.style.transform = "translateY(0)"; }}
+                onMouseEnter={e => { e.currentTarget.style.background = "var(--secondary)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
+                onMouseLeave={e => { e.currentTarget.style.background = "var(--accent)"; e.currentTarget.style.transform = "translateY(0)"; }}
               >
                 Contact Us <FiArrowRight size={14} />
               </Link>

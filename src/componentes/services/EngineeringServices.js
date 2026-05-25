@@ -173,7 +173,7 @@ export default function EngineeringServices() {
                 className="font-extrabold leading-tight mb-6"
                 style={{
                   fontSize: "clamp(26px, 3.5vw, 44px)",
-                  color: "var(--primary)",
+                
                   letterSpacing: "-0.02em",
                 }}
               >
@@ -404,7 +404,7 @@ export default function EngineeringServices() {
       <section
         ref={ctaRef}
         className="py-20"
-        style={{ background: "var(--secondary)" }}
+        style={{ background: "var(--primary)" }}
       >
         <div className="mx-auto px-6 lg:px-16">
           <div
@@ -455,13 +455,13 @@ export default function EngineeringServices() {
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.background =
-                    "var(--surface-0)";
+                    "var(--accent)";
                   e.currentTarget.style.transform =
                     "translateY(-2px)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.background =
-                    "var(--primary)";
+                    "var(--secondary)";
                   e.currentTarget.style.transform =
                     "translateY(0)";
                 }}

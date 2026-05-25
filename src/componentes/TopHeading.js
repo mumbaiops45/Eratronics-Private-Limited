@@ -33,7 +33,7 @@ export default function TopHeading({ title }) {
   return (
     <div
       className="relative w-full overflow-hidden py-12 px-6"
-      style={{ background: "var(--surface-2)" }}
+      style={{ background: "var(--primary)" }}
     >
       {/* Dot grid */}
       <div

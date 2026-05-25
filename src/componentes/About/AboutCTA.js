@@ -41,7 +41,7 @@ export default function AboutCTA() {
     <section
       ref={sectionRef}
       className="relative py-24 overflow-hidden"
-      style={{ background: "var(--secondary)" }}
+      style={{ background: "var(--primary)" }}
     >
       {/* Dot grid overlay */}
       <div
@@ -116,7 +116,7 @@ export default function AboutCTA() {
                 color: "white",
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.background = "var(--surface-0)";
+                e.currentTarget.style.background = "var(--secondary)";
                 e.currentTarget.style.transform = "translateY(-2px)";
               }}
               onMouseLeave={e => {

@@ -143,7 +143,7 @@ function SolutionRow({ solution, index, isLast }) {
         />
         <div className="absolute bottom-6 left-6 z-10">
           <span className="inline-block text-[10px] font-bold uppercase tracking-[0.15em] px-3 py-1.5 mb-2"
-            style={{ background: "rgba(33,150,243,0.85)", color: "white" }}>
+            style={{ background: "var(--secondary)", color: "white" }}>
             Power Sector
           </span>
           <h4 className="text-white font-extrabold text-xl leading-tight">{solution.title}</h4>

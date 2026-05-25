@@ -99,9 +99,9 @@ export default function OurCulture() {
           {/* Pull quote */}
           <div ref={quoteRef}>
             <div
-              className="relative overflow-hidden p-10"
+              className="relative overflow-hidden bg-[var(--primary)]/15 p-10"
               style={{
-                background: "var(--surface-3)",
+            
                 border: "1px solid var(--border-dark)",
               }}
             >
@@ -161,18 +161,14 @@ export default function OurCulture() {
           {culturePoints.map(({ Icon, title, text }, i) => (
             <div
               key={i}
-              className="culture-card group relative p-8 transition-all duration-300 overflow-hidden"
+              className="culture-card group relative p-8 transition-all duration-300 overflow-hidden hover:bg-var(--primary)]"
               style={{
-                background: "transparent",
+          
                 borderRight: i % 2 === 0 ? "1px solid var(--border-dark)" : "none",
                 borderBottom: i < 2 ? "1px solid var(--border-dark)" : "none",
               }}
-              onMouseEnter={e => {
-                e.currentTarget.style.background = "rgba(33,150,243,0.05)";
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.background = "transparent";
-              }}
+             
+              
             >
               {/* Top sweep on hover */}
               <div

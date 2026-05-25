@@ -139,7 +139,7 @@ export default function LifecycleSupportServices() {
               className="font-extrabold leading-tight"
               style={{
                 fontSize: "clamp(26px, 3.5vw, 44px)",
-                color: "var(--primary)",
+              
                 letterSpacing: "-0.02em",
               }}
             >
