@@ -11,18 +11,30 @@ import {
 gsap.registerPlugin(ScrollTrigger);
 
 const policyItems = [
-  { num: "01", icon: FiPackage, title: "Safe Collection of E Waste",
-    desc: "All obsolete, damaged, non functional, or end of life electronic products are identified and collected separately from general waste to ensure proper disposal." },
-  { num: "02", icon: FiFilter, title: "Proper Segregation",
-    desc: "Electronic waste is carefully segregated based on product type, material composition, and recycling requirements to facilitate safe handling and efficient recycling." },
-  { num: "03", icon: FiShield, title: "Environmentally Safe Storage",
-    desc: "Collected e waste is stored securely in designated areas to prevent leakage, contamination, and environmental damage before final disposal." },
-  { num: "04", icon: FiTruck, title: "Disposal Through Authorized Recycler",
-    desc: "We ensure that all e waste is handed over only to authorized recyclers, dismantlers, and certified waste management agencies approved by relevant government authorities." },
-  { num: "05", icon: FiRefreshCw, title: "Recycling and Resource Recovery",
-    desc: "Wherever possible, valuable materials such as metals, plastics, and reusable components are recovered through proper recycling processes to reduce resource wastage." },
-  { num: "06", icon: FiCheckCircle, title: "Compliance with Statutory Regulations",
-    desc: "We maintain compliance with all applicable environmental laws, government regulations, and industry standards related to electronic waste management." },
+  {
+    num: "01", icon: FiPackage, title: "Safe Collection of E Waste",
+    desc: "All obsolete, damaged, non functional, or end of life electronic products are identified and collected separately from general waste to ensure proper disposal."
+  },
+  {
+    num: "02", icon: FiFilter, title: "Proper Segregation",
+    desc: "Electronic waste is carefully segregated based on product type, material composition, and recycling requirements to facilitate safe handling and efficient recycling."
+  },
+  {
+    num: "03", icon: FiShield, title: "Environmentally Safe Storage",
+    desc: "Collected e waste is stored securely in designated areas to prevent leakage, contamination, and environmental damage before final disposal."
+  },
+  {
+    num: "04", icon: FiTruck, title: "Disposal Through Authorized Recycler",
+    desc: "We ensure that all e waste is handed over only to authorized recyclers, dismantlers, and certified waste management agencies approved by relevant government authorities."
+  },
+  {
+    num: "05", icon: FiRefreshCw, title: "Recycling and Resource Recovery",
+    desc: "Wherever possible, valuable materials such as metals, plastics, and reusable components are recovered through proper recycling processes to reduce resource wastage."
+  },
+  {
+    num: "06", icon: FiCheckCircle, title: "Compliance with Statutory Regulations",
+    desc: "We maintain compliance with all applicable environmental laws, government regulations, and industry standards related to electronic waste management."
+  },
 ];
 
 const dos = [
@@ -41,11 +53,11 @@ const donts = [
 ];
 
 export default function EWaste() {
-  const introRef   = useRef(null);
-  const policyRef  = useRef(null);
+  const introRef = useRef(null);
+  const policyRef = useRef(null);
   const dosDontsRef = useRef(null);
   const collectionRef = useRef(null);
-  const ctaRef     = useRef(null);
+  const ctaRef = useRef(null);
 
   useEffect(() => {
     [introRef, policyRef, dosDontsRef, collectionRef, ctaRef].forEach(ref => {
@@ -83,10 +95,45 @@ export default function EWaste() {
           </h2>
           <div className="h-px w-14 mb-8" style={{ background: "var(--secondary)" }} />
 
-          <div className="flex flex-col gap-4 max-w-3xl text-sm leading-relaxed" style={{ color: "var(--text-muted-l)" }}>
+          {/* <div className="flex flex-col gap-4 text-sm leading-relaxed" style={{ color: "var(--text-muted-l)" }}>
             <p>At Eratronics, environmental responsibility is an integral part of our business philosophy. We are committed to implementing effective E Waste Management practices to ensure the safe handling, disposal, recycling, and reuse of electronic waste generated through our operations and supplied products.</p>
             <p>Improper disposal of electronic waste can lead to serious environmental and health hazards. Therefore, responsible disposal and recycling are essential for protecting natural resources and maintaining environmental sustainability.</p>
             <p>We strictly follow the E Waste Management Rules and comply with the guidelines issued by the <strong style={{ color: "var(--primary)", fontWeight: 600 }}>Central Pollution Control Board (CPCB), Government of India</strong>, for safe disposal and environmentally sound recycling practices.</p>
+          </div> */}
+          <div
+            className="flex flex-col gap-4 text-sm leading-relaxed"
+            style={{ color: "var(--text-muted-l)" }}
+          >
+            <p>
+              At Eratronics, environmental responsibility is an integral part of our
+              business philosophy. We are committed to implementing effective E Waste
+              Management practices to ensure the safe handling, disposal, recycling, and
+              reuse of electronic waste generated through our operations and supplied
+              products. Our approach focuses on reducing environmental impact while
+              encouraging sustainable practices across all stages of equipment lifecycle
+              management.
+            </p>
+
+            <p>
+              Improper disposal of electronic waste can lead to serious environmental and
+              health hazards. Therefore, responsible disposal and recycling are essential
+              for protecting natural resources and maintaining environmental
+              sustainability. By promoting proper waste segregation and authorized
+              recycling processes, we aim to contribute towards a cleaner and safer
+              environment for future generations.
+            </p>
+
+            <p>
+              We strictly follow the E Waste Management Rules and comply with the
+              guidelines issued by the{" "}
+              <strong style={{ color: "var(--primary)", fontWeight: 600 }}>
+                Central Pollution Control Board (CPCB), Government of India
+              </strong>
+              , for safe disposal and environmentally sound recycling practices. Our
+              commitment to regulatory compliance ensures that all e waste handling
+              activities are carried out responsibly, ethically, and in accordance with
+              national environmental standards.
+            </p>
           </div>
         </div>
       </section>
@@ -118,7 +165,7 @@ export default function EWaste() {
                   onMouseEnter={e => { e.currentTarget.style.background = "rgba(33,150,243,0.03)"; }}
                   onMouseLeave={e => { e.currentTarget.style.background = "transparent"; }}
                 >
-                  <span className="text-[11px] font-black tabular-nums shrink-0 mt-1 w-6" style={{ color: "rgba(33,150,243,0.25)" }}>
+                  <span className="hidden md:block text-[11px] font-black tabular-nums shrink-0 mt-1 w-6" style={{ color: "rgba(33,150,243,0.25)" }}>
                     {item.num}
                   </span>
                   <div
@@ -154,15 +201,44 @@ export default function EWaste() {
           <div className="label-tag mb-6">Our Commitment</div>
           <h2
             className="font-extrabold leading-snug mb-6"
-            style={{ fontSize: "clamp(22px, 2.8vw, 34px)", color: "var(--text-bright)", letterSpacing: "-0.02em", maxWidth: "720px" }}
+            style={{ fontSize: "clamp(22px, 2.8vw, 34px)", color: "var(--text-bright)", letterSpacing: "-0.02em" }}
           >
             A Responsible Partner for Environmental Stewardship
           </h2>
-          <div className="flex flex-col gap-4 text-sm leading-relaxed max-w-3xl" style={{ color: "var(--text-muted-d)" }}>
+          {/* <div className="flex flex-col gap-4 text-sm leading-relaxed" style={{ color: "var(--text-muted-d)" }}>
             <p>As a responsible supplier and system integrator serving Government, PSU, Railways, Oil & Gas, Telecom, and Infrastructure sectors, we recognize our duty to contribute toward environmental protection and sustainable development.</p>
             <p>We continuously strive to improve our waste management systems and work closely with our partners, vendors, and customers to promote responsible recycling practices.</p>
             <p>Our commitment to E Waste Management reflects our dedication to environmental stewardship, operational excellence, and long term sustainability.</p>
-          </div>
+          </div> */}
+          <div
+  className="flex flex-col gap-4 text-sm leading-relaxed"
+  style={{ color: "var(--text-muted-d)" }}
+>
+  <p>
+    As a responsible supplier and system integrator serving Government, PSU,
+    Railways, Oil & Gas, Telecom, and Infrastructure sectors, we recognize our
+    duty to contribute toward environmental protection and sustainable
+    development. We actively encourage environmentally responsible practices
+    across our operations while ensuring compliance with industry standards and
+    environmental regulations.
+  </p>
+
+  <p>
+    We continuously strive to improve our waste management systems and work
+    closely with our partners, vendors, and customers to promote responsible
+    recycling practices. Through awareness, collaboration, and efficient waste
+    handling processes, we aim to reduce environmental impact and support a
+    more sustainable ecosystem.
+  </p>
+
+  <p>
+    Our commitment to E Waste Management reflects our dedication to
+    environmental stewardship, operational excellence, and long term
+    sustainability. By integrating sustainable practices into our business
+    operations, we aim to create long lasting value for both our customers and
+    the environment.
+  </p>
+</div>
         </div>
       </section>
 

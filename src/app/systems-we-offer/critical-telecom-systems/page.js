@@ -7,7 +7,13 @@ import SystemWeOffer from '@/componentes/systems-we-offer/SystemsWeOffer'
 const SystemWeOfferPage = () => {
     return (
         <>
-            <TopHeading title="Systems we Offer" />
+           <TopHeading
+  title={
+    <>
+      <span className="text-[var(--secondary)]">Systems</span> we Offer
+    </>
+  }
+/>
             <SystemWeOffer />
         </>
     )

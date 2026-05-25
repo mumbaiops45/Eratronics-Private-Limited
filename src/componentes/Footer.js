@@ -91,7 +91,7 @@ export default function Footer() {
 
             <p
               className="text-sm leading-relaxed mb-7 max-w-xs"
-              style={{ color: "rgba(255,255,255,0.40)" }}
+              style={{ color: "rgba(255,255,255,0.50)" }}
             >
               Delivering reliable telecom infrastructure, engineering services, and
               mission-critical industrial communication solutions with precision and scalability.
@@ -162,9 +162,9 @@ export default function Footer() {
                       <Link
                         href={link.href}
                         className="flex items-center gap-1.5 text-sm font-medium transition-colors duration-200 group"
-                        style={{ color: active ? "var(--secondary)" : "rgba(255,255,255,0.40)" }}
+                        style={{ color: active ? "var(--secondary)" : "rgba(255,255,255,0.50)" }}
                         onMouseEnter={e => { e.currentTarget.style.color = "#fff"; }}
-                        onMouseLeave={e => { e.currentTarget.style.color = active ? "var(--secondary)" : "rgba(255,255,255,0.40)"; }}
+                        onMouseLeave={e => { e.currentTarget.style.color = active ? "var(--secondary)" : "rgba(255,255,255,0.50)"; }}
                       >
                         <FiArrowRight
                           size={10}
@@ -186,7 +186,7 @@ export default function Footer() {
               >
                 contact us
               </h4>
-             <div className="flex flex-col gap-3 text-xs" style={{ color: "rgba(255,255,255,0.40)" }}>
+             <div className="flex flex-col gap-3 text-xs" style={{ color: "rgba(255,255,255,0.50)" }}>
           
             <div className="flex items-start gap-2.5">
               <HiOutlineLocationMarker className="text-base shrink-0 mt-0.5" style={{ color: "var(--secondary)" }} />
@@ -215,7 +215,7 @@ export default function Footer() {
         }}
       >
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between gap-2 text-xs"
-          style={{ color: "rgba(255,255,255,0.25)" }}>
+          style={{ color: "rgba(255,255,255,0.40)" }}>
           <span>© {new Date().getFullYear()} Eratronics Private Limited. All Rights Reserved.</span>
           <span>
             Developed by{" "}
@@ -224,7 +224,9 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-white transition-colors duration-200"
-              style={{ color: "rgba(255,255,255,0.40)" }}
+              style={{ color: "rgba(255,255,255,0.50)" }}
+              onMouseEnter={e =>{e.currentTarget.style.color = 'var(--secondary)'}}
+              onMouseLeave={e=>{e.currentTarget.style.color="rgba(255,255,255,0.50)"}}
             >
               Nakshatra Namaha Creations
             </a>

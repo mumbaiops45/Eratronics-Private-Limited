@@ -209,7 +209,7 @@ export default function HomeSystemsTeaser() {
                 <p
                   className="relative z-10 text-sm leading-7"
                   style={{
-                    color: "rgba(255,255,255,0.95)",
+                    color: "rgba(255,255,255,0.60)",
                   }}
                 >
                   {descriptions[i]}

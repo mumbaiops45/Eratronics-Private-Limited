@@ -8,32 +8,79 @@ import { FiArrowRight } from "react-icons/fi";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// const data = {
+//   tag: "Power Sector",
+//   heading: "Reliable Telecom Solutions for Modern Power Infrastructure",
+//   intro: "We deliver reliable and secure communication systems that support generation, transmission, and distribution networks across the power sector. Our solutions are designed to enable real time monitoring, grid stability, and efficient energy management, while ensuring high availability and resilience for critical infrastructure.",
+//   solutions: [
+//     {
+//       title: "Generation Solutions",
+//       image: "/Power Sector/Generation Solutions.png",
+//       paragraphs: [
+//         "In power generation facilities, uninterrupted communication is essential for safe and efficient plant operations. Eratronics provides integrated telecom and surveillance systems that support control room operations, enabling seamless coordination across plant units.",
+//         "Our solutions include high reliability communication backbones, CCTV, PA/GA systems, and network infrastructure designed to operate in demanding industrial environments.",
+//       ],
+//       points: ["Integrated plant communication", "Industrial surveillance systems", "PA/GA & control room integration", "Redundant communication architecture"],
+//     },
+//     {
+//       title: "Transmission Solutions",
+//       image: "/Power Sector/Transmission Solutions.png",
+//       paragraphs: [
+//         "For transmission networks, we deploy robust communication systems that form the backbone of grid operations. Our expertise includes optical fiber networks such as OPGW/ADSS, along with SDH/MPLS based communication systems to support SCADA, teleprotection, and load dispatch functions.",
+//         "These systems are engineered for ultra high availability and low latency, ensuring reliable data exchange between substations and control centers, which is critical for grid stability and fault management.",
+//       ],
+//       points: ["OPGW & ADSS fiber networks", "SCADA & teleprotection support", "Ultra low latency communication", "Substation connectivity systems"],
+//     },
+//   ],
+// };
 const data = {
   tag: "Power Sector",
+
   heading: "Reliable Telecom Solutions for Modern Power Infrastructure",
-  intro: "We deliver reliable and secure communication systems that support generation, transmission, and distribution networks across the power sector. Our solutions are designed to enable real time monitoring, grid stability, and efficient energy management, while ensuring high availability and resilience for critical infrastructure.",
+
+  intro:
+    "We deliver reliable and secure communication systems that support generation, transmission, and distribution networks across the power sector. Our solutions are designed to enable real time monitoring, grid stability, and efficient energy management, while ensuring high availability and resilience for critical infrastructure. We also help utilities improve operational efficiency, network visibility, and seamless coordination across power facilities.",
+
   solutions: [
     {
       title: "Generation Solutions",
+
       image: "/Power Sector/Generation Solutions.png",
+
       paragraphs: [
-        "In power generation facilities, uninterrupted communication is essential for safe and efficient plant operations. Eratronics provides integrated telecom and surveillance systems that support control room operations, enabling seamless coordination across plant units.",
-        "Our solutions include high reliability communication backbones, CCTV, PA/GA systems, and network infrastructure designed to operate in demanding industrial environments.",
+        "In power generation facilities, uninterrupted communication is essential for safe and efficient plant operations. Eratronics provides integrated telecom and surveillance systems that support control room operations, enabling seamless coordination across plant units. Our systems improve operational visibility and support reliable plant communication in critical environments.",
+
+        "Our solutions include high reliability communication backbones, CCTV, PA/GA systems, and network infrastructure designed to operate in demanding industrial environments. We ensure stable performance, secure connectivity, and continuous communication for uninterrupted plant operations.",
       ],
-      points: ["Integrated plant communication", "Industrial surveillance systems", "PA/GA & control room integration", "Redundant communication architecture"],
+
+      points: [
+        "Integrated plant communication",
+        "Industrial surveillance systems",
+        "PA/GA & control room integration",
+        "Redundant communication architecture",
+      ],
     },
+
     {
       title: "Transmission Solutions",
+
       image: "/Power Sector/Transmission Solutions.png",
+
       paragraphs: [
-        "For transmission networks, we deploy robust communication systems that form the backbone of grid operations. Our expertise includes optical fiber networks such as OPGW/ADSS, along with SDH/MPLS based communication systems to support SCADA, teleprotection, and load dispatch functions.",
-        "These systems are engineered for ultra high availability and low latency, ensuring reliable data exchange between substations and control centers, which is critical for grid stability and fault management.",
+        "For transmission networks, we deploy robust communication systems that form the backbone of grid operations. Our expertise includes optical fiber networks such as OPGW/ADSS, along with SDH/MPLS based communication systems to support SCADA, teleprotection, and load dispatch functions. These systems enhance reliability and ensure efficient coordination across substations and control centers.",
+
+        "These systems are engineered for ultra high availability and low latency, ensuring reliable data exchange between substations and control centers, which is critical for grid stability and fault management. Our infrastructure is designed to support scalable, future ready, and secure power communication networks.",
       ],
-      points: ["OPGW & ADSS fiber networks", "SCADA & teleprotection support", "Ultra low latency communication", "Substation connectivity systems"],
+
+      points: [
+        "OPGW & ADSS fiber networks",
+        "SCADA & teleprotection support",
+        "Ultra low latency communication",
+        "Substation connectivity systems",
+      ],
     },
   ],
 };
-
 function SolutionRow({ solution, index, isLast }) {
   const rowRef = useRef(null);
 

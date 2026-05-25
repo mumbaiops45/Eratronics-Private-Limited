@@ -313,9 +313,9 @@ export default function ContactUs() {
                       <button
                         type="submit"
                         disabled={status === "loading"}
-                        className="shrink-0 inline-flex items-center gap-2.5 font-semibold text-sm px-8 py-3.5 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
+                        className="shrink-0 inline-flex items-center gap-2.5 font-semibold text-sm px-8 py-3.5 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
                         style={{ background: "var(--secondary)", color: "white" }}
-                        onMouseEnter={e => { if (status !== "loading") e.currentTarget.style.background = "var(--accent)"; }}
+                        onMouseEnter={e => { if (status !== "loading") e.currentTarget.style.background = "var(--primary)"; }}
                         onMouseLeave={e => { e.currentTarget.style.background = "var(--secondary)"; }}
                       >
                         {status === "loading" ? (

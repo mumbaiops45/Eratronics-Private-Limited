@@ -7,13 +7,13 @@ import { FiArrowRight, FiPhone } from "react-icons/fi";
 
 export default function Hero() {
   const eyebrowRef = useRef(null);
-  const lineRef    = useRef(null);
-  const h1Ref      = useRef(null);
-  const paraRef    = useRef(null);
-  const ctaRef     = useRef(null);
-  const statsRef   = useRef(null);
-  const numRef     = useRef(null);
-  const gridRef    = useRef(null);
+  const lineRef = useRef(null);
+  const h1Ref = useRef(null);
+  const paraRef = useRef(null);
+  const ctaRef = useRef(null);
+  const statsRef = useRef(null);
+  const numRef = useRef(null);
+  const gridRef = useRef(null);
 
   useEffect(() => {
     const tl = gsap.timeline({ delay: 0.3 });
@@ -68,13 +68,13 @@ export default function Hero() {
       </video>
 
       {/* ── DARK GRADIENT OVERLAY ── */}
-<div
-  className="absolute inset-0"
-  style={{
-    background:
-      "linear-gradient(115deg, rgba(3,11,23,0.42) 0%, rgba(6,15,30,0.28) 55%, rgba(11,29,58,0.15) 100%)",
-  }}
-/>
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(115deg, rgba(3,11,23,0.42) 0%, rgba(6,15,30,0.28) 55%, rgba(11,29,58,0.15) 100%)",
+        }}
+      />
 
       {/* ── DOT GRID ── */}
       <div
@@ -107,7 +107,7 @@ export default function Hero() {
 
       {/* ── CONTENT ── */}
       <div className="relative z-10 flex-1 flex items-center">
-        <div className="w-full mx-auto px-6 lg:px-16 py-32 lg:py-0">
+        <div className="w-full mx-auto px-6 lg:px-16 py-0">
           <div className="max-w-3xl">
 
             {/* Horizontal rule */}
@@ -163,7 +163,7 @@ export default function Hero() {
             {/* Stats strip */}
             <div
               ref={statsRef}
-              className="flex flex-wrap gap-0 pt-8"
+              className="grid grid-cols-2 md:grid-cols-4 gap-0 pt-8 pb-16"
               style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
             >
               {[
@@ -195,18 +195,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* ── SCROLL INDICATOR ── */}
-      <div className="relative z-10 flex justify-center pb-8">
-        <div className="flex flex-col items-center gap-2">
-          <div
-            className="w-px h-12 animate-pulse"
-            style={{ background: "linear-gradient(to bottom, var(--secondary), transparent)" }}
-          />
-          <span className="text-[9px] uppercase tracking-[0.2em] font-semibold" style={{ color: "rgba(255,255,255,0.25)" }}>
-            Scroll
-          </span>
-        </div>
-      </div>
+ 
     </section>
   );
 }

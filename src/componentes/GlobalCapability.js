@@ -14,7 +14,7 @@ const capabilities = [
     tag: "End to End Delivery",
     title: "Turnkey Solutions",
     description:
-      "Experience seamless end-to-end project delivery with single point accountability, from requirements analysis and design engineering to supply chain management, system integration, FAT/SAT, commissioning, documentation handover, and go live support.",
+      "o	Experience seamless end-to-end project delivery with single point accountability from requirements analysis and design engineering to supply chain management, system integration, FAT/SAT, commissioning, documentation handover, and go-live support. Our proven DARE model - Design Engineering, All-Weather Integration, Rigorous Testing, Effective Maintenance guarantees precision and reliability at every stage. ",
     keywords: ["Requirements Analysis", "Design Engineering", "FAT / SAT", "Commissioning"],
     href: "/turnkey-solutions",
   },
@@ -23,7 +23,7 @@ const capabilities = [
     tag: "Industrial Engineering",
     title: "Engineering Services",
     description:
-      "We bring a structured engineering approach spanning concept and design to integration and commissioning ensuring operational reliability and long term performance.",
+      "o	Your engineering services are not just about deploying telecom systems—they are about enabling safe, reliable, and future-ready operations in some of the most demanding industrial environments. At Eratronics, we bring a structured, end-to-end engineering approach that spans from concept and design to integration and commissioning, ensuring that every solution is aligned with operational criticality, regulatory requirements, and long-term performance objectives. With deep domain expertise in Oil & Gas and a focus on system resilience, cyber security, and scalability, we deliver telecom infrastructure that forms the backbone of mission-critical operations.",
     keywords: ["Oil & Gas", "Cyber Security", "Mission Critical", "Scalability"],
     href: "/engineering-services",
   },
@@ -32,7 +32,7 @@ const capabilities = [
     tag: "Advanced Communication",
     title: "Integration Excellence",
     description:
-      "We enable communication networks for voice, surveillance, data, and Ethernet over fiber, radio, or copper with rigorous deployment validation.",
+      "o	Beyond integration, we enable complex communication networks for voice, video surveillance, data, and Ethernet over fiber, radio, or copper. Custom solutions from past projects boost efficiency, minimize downtime, and serve as proven references. All systems undergo rigorous pre-deployment testing at our integration center, plus customer-witnessed FAT.",
     keywords: ["Voice Networks", "Fiber & Radio", "Testing", "Customer FAT"],
     href: "/integration-excellence",
   },
@@ -41,7 +41,7 @@ const capabilities = [
     tag: "Lifecycle Support",
     title: "Through Life Care",
     description:
-      "Comprehensive operations support from troubleshooting to emergency response across the full system lifecycle with SLA driven support models.",
+      "o	We deliver comprehensive operations support from routine troubleshooting to emergency response—across the full system lifecycle aligned with our CARE Model approach. Tailored SLA-based options meet your exact needs. Our resource-optimized, methodical approach handles unforeseen challenges and evolving goals with precision.",
     keywords: ["CARE Model", "SLA Services", "Emergency Response", "Lifecycle Support"],
     href: "/through-life-care-program",
   },

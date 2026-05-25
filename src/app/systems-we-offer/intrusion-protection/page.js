@@ -7,7 +7,16 @@ import IntrusionProtectionSystems from '@/componentes/systems-we-offer/Intrusion
 const SystemWeOfferPage = () => {
     return (
         <>
-            <TopHeading title="Advanced Intrusion Detection Systems for Prevention & Protection " />
+          <TopHeading
+  title={
+    <>
+      Advanced Intrusion Detection Systems for{" "}
+      <span className="text-[var(--secondary)]">
+        Prevention & Protection
+      </span>
+    </>
+  }
+/>
             <IntrusionProtectionSystems />
         </>
     )

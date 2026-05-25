@@ -7,37 +7,77 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// const tabs = [
+//   {
+//     id: 1, number: "01",
+//     tag: "Leadership and Ownership",
+//     title: "Empower Individuals",
+//     description: "Empowerment is the best lubricant to the exercise of learning. We enable our employees to make more and bigger decisions. Involve team members in taking important decisions. Encouraging employees to play a more active role.",
+//     keywords: ["Team Ownership", "Leadership", "Collaboration", "Growth"],
+//   },
+//   {
+//     id: 2, number: "02",
+//     tag: "Continuous Improvement",
+//     title: "Constantly Improve",
+//     description: "Our goals are aggressive and they demand improvement. It is in our nature. And it is the only way we are going to accomplish everything.",
+//     keywords: ["Innovation", "Performance", "Improvement", "Efficiency"],
+//   },
+//   {
+//     id: 3, number: "03",
+//     tag: "Positive Mindset",
+//     title: "Face Challenges With Optimism",
+//     description: "We value challenges because they produce innovations. We commit to approaching problems with enthusiasm and optimism.",
+//     keywords: ["Optimism", "Problem Solving", "Innovation", "Confidence"],
+//   },
+//   {
+//     id: 4, number: "04",
+//     tag: "Precision and Reliability",
+//     title: "Be Diligent, Get It Right",
+//     description: "To be diligent means to be very thorough and accurate when it comes to deploying mission critical networks. Hence to get it right.",
+//     keywords: ["Accuracy", "Quality", "Reliability", "Excellence"],
+//   },
+// ];
 const tabs = [
   {
-    id: 1, number: "01",
+    id: 1,
+    number: "01",
     tag: "Leadership and Ownership",
     title: "Empower Individuals",
-    description: "Empowerment is the best lubricant to the exercise of learning. We enable our employees to make more and bigger decisions. Involve team members in taking important decisions. Encouraging employees to play a more active role.",
+    description:
+      "Empowerment is the best lubricant to the exercise of learning. We enable our employees to make more and bigger decisions. Involve team members in taking important decisions. Encouraging employees to play a more active role. We believe that when individuals are trusted with responsibility, they develop stronger confidence, accountability, and leadership qualities. By creating an environment where ideas are valued and contributions are recognized, we inspire innovation, ownership, and long term professional growth across every level of the organization.",
     keywords: ["Team Ownership", "Leadership", "Collaboration", "Growth"],
   },
+
   {
-    id: 2, number: "02",
+    id: 2,
+    number: "02",
     tag: "Continuous Improvement",
     title: "Constantly Improve",
-    description: "Our goals are aggressive and they demand improvement. It is in our nature. And it is the only way we are going to accomplish everything.",
+    description:
+      "Our goals are aggressive and they demand improvement. It is in our nature. And it is the only way we are going to accomplish everything. We continuously evaluate our processes, technologies, and methodologies to identify opportunities for growth and optimization. By learning from every project and embracing new ideas, we strengthen our ability to deliver better performance, higher efficiency, and greater value to our clients while staying ahead in a rapidly evolving industry.",
     keywords: ["Innovation", "Performance", "Improvement", "Efficiency"],
   },
+
   {
-    id: 3, number: "03",
+    id: 3,
+    number: "03",
     tag: "Positive Mindset",
     title: "Face Challenges With Optimism",
-    description: "We value challenges because they produce innovations. We commit to approaching problems with enthusiasm and optimism.",
+    description:
+      "We value challenges because they produce innovations. We commit to approaching problems with enthusiasm and optimism. Every obstacle is viewed as an opportunity to learn, adapt, and create smarter solutions. By maintaining a positive mindset, we encourage teamwork, resilience, and creativity even in demanding situations. This attitude helps us build stronger relationships, achieve better outcomes, and create a work culture driven by confidence and determination.",
     keywords: ["Optimism", "Problem Solving", "Innovation", "Confidence"],
   },
+
   {
-    id: 4, number: "04",
+    id: 4,
+    number: "04",
     tag: "Precision and Reliability",
     title: "Be Diligent, Get It Right",
-    description: "To be diligent means to be very thorough and accurate when it comes to deploying mission critical networks. Hence to get it right.",
+    description:
+      "To be diligent means to be very thorough and accurate when it comes to deploying mission critical networks. Hence to get it right. We focus on maintaining the highest standards of quality, consistency, and reliability in every stage of execution. Attention to detail, careful planning, and strict quality checks ensure that our solutions perform seamlessly and meet client expectations. Our commitment to precision allows us to deliver dependable systems that businesses can trust for long term operations.",
     keywords: ["Accuracy", "Quality", "Reliability", "Excellence"],
   },
 ];
-
 export default function CoreValues() {
   const [activeId, setActiveId] = useState(1);
   const activeTab = tabs.find(t => t.id === activeId);
@@ -82,7 +122,7 @@ export default function CoreValues() {
                 <button
                   key={tab.id}
                   onClick={() => setActiveId(tab.id)}
-                  className="text-left px-7 py-6 transition-all duration-250 flex items-center gap-4"
+                  className="text-left px-7 py-6 transition-all duration-250 flex flex-1 items-center gap-4 cursor-pointer"
                   style={{
                     borderBottom: "1px solid var(--border-light)",
                     borderLeft: on ? `3px solid var(--secondary)` : "3px solid transparent",
@@ -185,7 +225,7 @@ export default function CoreValues() {
 
                 {/* Watermark number */}
                 <span
-                  className="absolute bottom-4 right-6 text-[120px] font-black leading-none select-none pointer-events-none"
+                  className="hidden md:block absolute bottom-4 right-6 text-[120px] font-black leading-none select-none pointer-events-none"
                   style={{ color: "var(--surface-muted)" }}
                 >
                   {activeTab.number}

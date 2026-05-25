@@ -8,6 +8,95 @@ import { FiArrowRight } from "react-icons/fi";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// const data = {
+//   tag: "Metro Rail",
+
+//   heading:
+//     "Advanced Communication Infrastructure for Modern Metro Rail Networks",
+
+//   intro:
+//     "We deliver reliable and secure communication systems that support safe, efficient, and uninterrupted metro rail operations. Our solutions are engineered to enable real time coordination, passenger safety, and seamless connectivity across stations, tunnels, depots, and control centers.",
+
+//   solutions: [
+//     {
+//       title: "Station Systems",
+
+//       image: "/Metro Rail/Station Systems.png",
+
+//       paragraphs: [
+//         "At station level, we provide integrated communication and surveillance systems that enhance passenger safety and Operational control. Our solutions include CCTV, Public Address (PA) systems, Passenger Information Systems (PIS), and structured network infrastructure.",
+
+//         "Designed for high footfall environments, these systems enable real time monitoring, effective crowd management, and clear communication during both normal and emergency conditions.",
+//       ],
+
+//       points: [
+//         "CCTV surveillance systems",
+//         "Public Address (PA) systems",
+//         "Passenger Information Systems (PIS)",
+//         "Structured network infrastructure",
+//       ],
+//     },
+
+//     {
+//       title: "Line & Tunnel Systems",
+
+//       image: "/Metro Rail/Line & Tunnel Systems.png",
+
+//       paragraphs: [
+//         "For trackside and tunnel environments, we deploy robust communication networks built on Optical Fiber Cable (OFC) backbones, ensuring high speed, low latency connectivity across the corridor.",
+
+//         "Our solutions include OFC based intrusion detection systems for trackside security and Distributed Temperature Sensing (DTS) applications for tunnel safety, enabling early detection of abnormal conditions such as unauthorized access or fire incidents.",
+
+//         "We also implement leaky coaxial and wireless communication systems to ensure continuous connectivity between moving trains and control centers, even in confined underground environments.",
+//       ],
+
+//       points: [
+//         "Optical Fiber Cable (OFC) backbone",
+//         "Distributed Temperature Sensing (DTS)",
+//         "Trackside intrusion detection systems",
+//         "Leaky coaxial communication systems",
+//       ],
+//     },
+
+//     {
+//       title: "Control & Operations",
+
+//       image: "/Metro Rail/Control & Operations.jpg",
+
+//       paragraphs: [
+//         "At the core of metro operations, we enable centralized monitoring and control through integrated communication platforms. Our solutions support Operations Control Centers (OCC), enabling real time coordination across stations, trains, and field assets.",
+
+//         "We provide OFC based communication backbones for seamless integration with signaling systems, SCADA, and network management platforms ensuring efficient operations, rapid incident response, and overall system reliability.",
+//       ],
+
+//       points: [
+//         "Operations Control Center (OCC)",
+//         "SCADA integration",
+//         "Centralized communication platforms",
+//         "Real time operational coordination",
+//       ],
+//     },
+
+//     {
+//       title: "Depot & Support Infrastructure",
+
+//       image: "/Metro Rail/Depot & Support Infrastructure.jpg",
+
+//       paragraphs: [
+//         "For depots and maintenance facilities, we deliver communication systems that support operational efficiency, safety, and asset management. This includes surveillance systems, internal communication networks, and connectivity infrastructure aligned with the mainline network.",
+
+//         "Our solutions ensure seamless integration between depot operations and the broader metro ecosystem, enabling coordinated functioning and efficient maintenance workflows.",
+//       ],
+
+//       points: [
+//         "Depot surveillance systems",
+//         "Internal communication networks",
+//         "Maintenance facility connectivity",
+//         "Integrated metro ecosystem",
+//       ],
+//     },
+//   ],
+// };
 const data = {
   tag: "Metro Rail",
 
@@ -15,7 +104,7 @@ const data = {
     "Advanced Communication Infrastructure for Modern Metro Rail Networks",
 
   intro:
-    "We deliver reliable and secure communication systems that support safe, efficient, and uninterrupted metro rail operations. Our solutions are engineered to enable real time coordination, passenger safety, and seamless connectivity across stations, tunnels, depots, and control centers.",
+    "We deliver reliable and secure communication systems that support safe, efficient, and uninterrupted metro rail operations. Our solutions are engineered to enable real time coordination, passenger safety, and seamless connectivity across stations, tunnels, depots, and control centers. We also help metro authorities improve operational efficiency, monitoring capabilities, and system reliability across the entire rail network.",
 
   solutions: [
     {
@@ -24,9 +113,9 @@ const data = {
       image: "/Metro Rail/Station Systems.png",
 
       paragraphs: [
-        "At station level, we provide integrated communication and surveillance systems that enhance passenger safety and Operational control. Our solutions include CCTV, Public Address (PA) systems, Passenger Information Systems (PIS), and structured network infrastructure.",
+        "At station level, we provide integrated communication and surveillance systems that enhance passenger safety and Operational control. Our solutions include CCTV, Public Address (PA) systems, Passenger Information Systems (PIS), and structured network infrastructure. These systems improve communication efficiency and ensure smooth station operations.",
 
-        "Designed for high footfall environments, these systems enable real time monitoring, effective crowd management, and clear communication during both normal and emergency conditions.",
+        "Designed for high footfall environments, these systems enable real time monitoring, effective crowd management, and clear communication during both normal and emergency conditions. Our infrastructure is built to support reliable performance and seamless passenger experiences.",
       ],
 
       points: [
@@ -43,11 +132,11 @@ const data = {
       image: "/Metro Rail/Line & Tunnel Systems.png",
 
       paragraphs: [
-        "For trackside and tunnel environments, we deploy robust communication networks built on Optical Fiber Cable (OFC) backbones, ensuring high speed, low latency connectivity across the corridor.",
+        "For trackside and tunnel environments, we deploy robust communication networks built on Optical Fiber Cable (OFC) backbones, ensuring high speed, low latency connectivity across the corridor. These systems support continuous communication and efficient operational coordination.",
 
-        "Our solutions include OFC based intrusion detection systems for trackside security and Distributed Temperature Sensing (DTS) applications for tunnel safety, enabling early detection of abnormal conditions such as unauthorized access or fire incidents.",
+        "Our solutions include OFC based intrusion detection systems for trackside security and Distributed Temperature Sensing (DTS) applications for tunnel safety, enabling early detection of abnormal conditions such as unauthorized access or fire incidents. This helps improve safety, reliability, and rapid incident response.",
 
-        "We also implement leaky coaxial and wireless communication systems to ensure continuous connectivity between moving trains and control centers, even in confined underground environments.",
+        "We also implement leaky coaxial and wireless communication systems to ensure continuous connectivity between moving trains and control centers, even in confined underground environments. Our solutions are designed for uninterrupted communication in challenging rail conditions.",
       ],
 
       points: [
@@ -64,9 +153,9 @@ const data = {
       image: "/Metro Rail/Control & Operations.jpg",
 
       paragraphs: [
-        "At the core of metro operations, we enable centralized monitoring and control through integrated communication platforms. Our solutions support Operations Control Centers (OCC), enabling real time coordination across stations, trains, and field assets.",
+        "At the core of metro operations, we enable centralized monitoring and control through integrated communication platforms. Our solutions support Operations Control Centers (OCC), enabling real time coordination across stations, trains, and field assets. These systems improve operational visibility and faster decision making.",
 
-        "We provide OFC based communication backbones for seamless integration with signaling systems, SCADA, and network management platforms ensuring efficient operations, rapid incident response, and overall system reliability.",
+        "We provide OFC based communication backbones for seamless integration with signaling systems, SCADA, and network management platforms ensuring efficient operations, rapid incident response, and overall system reliability. Our infrastructure is designed to support secure and scalable metro communication networks.",
       ],
 
       points: [
@@ -83,9 +172,9 @@ const data = {
       image: "/Metro Rail/Depot & Support Infrastructure.jpg",
 
       paragraphs: [
-        "For depots and maintenance facilities, we deliver communication systems that support operational efficiency, safety, and asset management. This includes surveillance systems, internal communication networks, and connectivity infrastructure aligned with the mainline network.",
+        "For depots and maintenance facilities, we deliver communication systems that support operational efficiency, safety, and asset management. This includes surveillance systems, internal communication networks, and connectivity infrastructure aligned with the mainline network. These systems help ensure smooth maintenance and operational workflows.",
 
-        "Our solutions ensure seamless integration between depot operations and the broader metro ecosystem, enabling coordinated functioning and efficient maintenance workflows.",
+        "Our solutions ensure seamless integration between depot operations and the broader metro ecosystem, enabling coordinated functioning and efficient maintenance workflows. We focus on delivering reliable and future ready communication infrastructure for long term metro operations.",
       ],
 
       points: [
@@ -97,7 +186,6 @@ const data = {
     },
   ],
 };
-
 function SolutionRow({ solution, index, isLast }) {
   const rowRef = useRef(null);
 

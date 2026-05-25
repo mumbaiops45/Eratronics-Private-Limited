@@ -95,7 +95,7 @@ export default function HomeIndustries() {
                 <button
                   key={i}
                   onClick={() => setActiveIdx(i)}
-                  className="group text-left px-8 py-8 transition-all duration-300 flex items-start gap-5"
+                  className="group text-left px-8 py-8 transition-all duration-300 flex items-start gap-5 cursor-pointer"
                   style={{
                     borderBottom: i < industries.length - 1 ? "1px solid var(--border-dark)" : "none",
                     background: on ? "rgba(33,150,243,0.08)" : "transparent",

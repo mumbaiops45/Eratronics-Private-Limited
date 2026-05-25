@@ -11,25 +11,31 @@ const culturePoints = [
   {
     Icon: FiUsers,
     title: "United Across Locations",
-    text: "With teams working from offices, project sites, and remote environments, maintaining collaboration and unity is one of our highest priorities.",
+    text:
+      "With teams working from offices, project sites, and remote environments, maintaining collaboration and unity is one of our highest priorities. We encourage transparent communication, active participation, and regular interaction across departments to ensure every team member feels connected and aligned with our shared vision. By fostering a culture of inclusion and teamwork, we strengthen relationships and improve overall productivity across all locations.",
   },
+
   {
     Icon: FiStar,
     title: "Annual Team Gatherings",
-    text: "We organize annual employee gatherings where team members from different departments and locations celebrate, interact, and reconnect beyond daily work responsibilities.",
+    text:
+      "We organize annual employee gatherings where team members from different departments and locations celebrate, interact, and reconnect beyond daily work responsibilities. These events create opportunities for stronger personal connections, open conversations, and team bonding in a relaxed environment. Through celebrations, activities, and recognition programs, we reinforce our appreciation for the people who contribute to the growth and success of the organization.",
   },
+
   {
     Icon: FiZap,
     title: "Innovation Through People",
-    text: "Stronger interpersonal relationships lead to better communication, improved teamwork, and a sense of belonging that drives innovation from the ground up.",
+    text:
+      "Stronger interpersonal relationships lead to better communication, improved teamwork, and a sense of belonging that drives innovation from the ground up. We believe that when employees feel supported and valued, they are more confident in sharing ideas, solving challenges, and contributing creatively. This collaborative culture enables us to continuously improve processes, deliver smarter solutions, and build a forward thinking organization driven by people.",
   },
+
   {
     Icon: FiHeart,
     title: "People First Philosophy",
-    text: "A healthy work culture leads to better innovation, stronger teamwork, and long term success, for both our people and our company.",
+    text:
+      "A healthy work culture leads to better innovation, stronger teamwork, and long term success, for both our people and our company. We prioritize employee wellbeing, professional development, and work life balance to create an environment where individuals can grow personally and professionally. By investing in our people and encouraging mutual respect, we build a positive workplace culture that supports sustainable success and long lasting relationships.",
   },
 ];
-
 export default function OurCulture() {
   const headerRef = useRef(null);
   const quoteRef  = useRef(null);

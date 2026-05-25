@@ -8,32 +8,78 @@ import { FiArrowRight } from "react-icons/fi";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// const data = {
+//   tag: "Oil & Gas Industry",
+//   heading: "Reliable Telecom Solutions for Critical Energy Operations",
+//   intro: "We deliver advanced communication and monitoring solutions designed to support the full spectrum of upstream, midstream, and downstream operations. Our systems are engineered to enhance safety, ensure operational continuity, and enable seamless, real time connectivity across critical energy infrastructure.",
+//   solutions: [
+//     {
+//       title: "Upstream Solutions",
+//       image: "/Oil & Gas Industry/Upstream Solutions.png",
+//       paragraphs: [
+//         "In upstream environments, where operations are often remote and hazardous, reliable communication is essential. Eratronics provides robust data transmission systems that support control room operations, enabling secure wireless communication and real time remote surveillance.",
+//         "Our solutions are designed for both offshore and onshore deployments, with high availability architectures and backup power integration to ensure uninterrupted operation even during power outages.",
+//       ],
+//       points: ["Remote surveillance systems", "Secure wireless communication", "Backup power integration", "High availability architecture"],
+//     },
+//     {
+//       title: "Midstream Solutions",
+//       image: "/Oil & Gas Industry/Midstream Solutions.png",
+//       paragraphs: [
+//         "For midstream operations, we deliver integrated communication infrastructure that supports pipeline monitoring and control. Our expertise includes deployment of unified communication systems, along with reliable backbones for SCADA, CCTV, and other critical applications.",
+//         "We also design and implement communication networks for crude oil and gas pipelines, both intrastate and cross country ensuring scalability and future readiness.",
+//       ],
+//       points: ["Pipeline monitoring networks", "SCADA & CCTV integration", "Cross country communication systems", "Future ready infrastructure"],
+//     },
+//   ],
+// };
 const data = {
   tag: "Oil & Gas Industry",
   heading: "Reliable Telecom Solutions for Critical Energy Operations",
-  intro: "We deliver advanced communication and monitoring solutions designed to support the full spectrum of upstream, midstream, and downstream operations. Our systems are engineered to enhance safety, ensure operational continuity, and enable seamless, real time connectivity across critical energy infrastructure.",
+
+  intro:
+    "We deliver advanced communication and monitoring solutions designed to support the full spectrum of upstream, midstream, and downstream operations. Our systems are engineered to enhance safety, ensure operational continuity, and enable seamless, real time connectivity across critical energy infrastructure. We also focus on improving efficiency and maintaining secure communication across demanding operational environments.",
+
   solutions: [
     {
       title: "Upstream Solutions",
+
       image: "/Oil & Gas Industry/Upstream Solutions.png",
+
       paragraphs: [
-        "In upstream environments, where operations are often remote and hazardous, reliable communication is essential. Eratronics provides robust data transmission systems that support control room operations, enabling secure wireless communication and real time remote surveillance.",
-        "Our solutions are designed for both offshore and onshore deployments, with high availability architectures and backup power integration to ensure uninterrupted operation even during power outages.",
+        "In upstream environments, where operations are often remote and hazardous, reliable communication is essential. Eratronics provides robust data transmission systems that support control room operations, enabling secure wireless communication and real time remote surveillance. Our solutions help improve operational visibility and field coordination in critical environments.",
+
+        "Our solutions are designed for both offshore and onshore deployments, with high availability architectures and backup power integration to ensure uninterrupted operation even during power outages. We also ensure stable connectivity and dependable performance across challenging project locations.",
       ],
-      points: ["Remote surveillance systems", "Secure wireless communication", "Backup power integration", "High availability architecture"],
+
+      points: [
+        "Remote surveillance systems",
+        "Secure wireless communication",
+        "Backup power integration",
+        "High availability architecture",
+      ],
     },
+
     {
       title: "Midstream Solutions",
+
       image: "/Oil & Gas Industry/Midstream Solutions.png",
+
       paragraphs: [
-        "For midstream operations, we deliver integrated communication infrastructure that supports pipeline monitoring and control. Our expertise includes deployment of unified communication systems, along with reliable backbones for SCADA, CCTV, and other critical applications.",
-        "We also design and implement communication networks for crude oil and gas pipelines, both intrastate and cross country ensuring scalability and future readiness.",
+        "For midstream operations, we deliver integrated communication infrastructure that supports pipeline monitoring and control. Our expertise includes deployment of unified communication systems, along with reliable backbones for SCADA, CCTV, and other critical applications. These systems enable better monitoring and efficient operational management.",
+
+        "We also design and implement communication networks for crude oil and gas pipelines, both intrastate and cross country ensuring scalability and future readiness. Our infrastructure is designed to support long term reliability, secure data transmission, and continuous operational performance.",
       ],
-      points: ["Pipeline monitoring networks", "SCADA & CCTV integration", "Cross country communication systems", "Future ready infrastructure"],
+
+      points: [
+        "Pipeline monitoring networks",
+        "SCADA & CCTV integration",
+        "Cross country communication systems",
+        "Future ready infrastructure",
+      ],
     },
   ],
 };
-
 function SolutionRow({ solution, index, isLast }) {
   const rowRef = useRef(null);
 
