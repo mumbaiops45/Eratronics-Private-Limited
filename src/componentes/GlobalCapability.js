@@ -49,21 +49,25 @@ const capabilities = [
 
 export default function GlobalCapability() {
   const headerRef = useRef(null);
-  const rowRefs   = useRef([]);
+  const rowRefs = useRef([]);
 
   useEffect(() => {
     gsap.fromTo(headerRef.current,
       { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.8, ease: "power3.out",
-        scrollTrigger: { trigger: headerRef.current, start: "top 88%", once: true } }
+      {
+        opacity: 1, y: 0, duration: 0.8, ease: "power3.out",
+        scrollTrigger: { trigger: headerRef.current, start: "top 88%", once: true }
+      }
     );
 
     rowRefs.current.forEach((el, i) => {
       if (!el) return;
       gsap.fromTo(el,
         { opacity: 0, y: 40 },
-        { opacity: 1, y: 0, duration: 0.7, ease: "power3.out", delay: i * 0.08,
-          scrollTrigger: { trigger: el, start: "top 90%", once: true } }
+        {
+          opacity: 1, y: 0, duration: 0.7, ease: "power3.out", delay: i * 0.08,
+          scrollTrigger: { trigger: el, start: "top 90%", once: true }
+        }
       );
     });
 
@@ -89,7 +93,14 @@ export default function GlobalCapability() {
                 letterSpacing: "-0.02em",
               }}
             >
-              Global Capability &amp; Mission Critical Engineering
+              Global{" "}
+              <span style={{ color: "var(--secondary)" }}>
+                Capability
+              </span>{" "}
+              &amp; Mission{" "}
+              <span style={{ color: "var(--secondary)" }}>
+                Critical Engineering
+              </span>
             </h2>
           </div>
           <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted-l)" }}>
@@ -125,8 +136,10 @@ export default function GlobalCapability() {
                 <div className="lg:col-span-1 flex items-start pt-1">
                   <span
                     className="text-3xl font-black tabular-nums leading-none"
-                    style={{ color: "var(--secondary)", opacity: 0.25,
-                      transition: "opacity 0.3s" }}
+                    style={{
+                      color: "var(--secondary)", opacity: 0.25,
+                      transition: "opacity 0.3s"
+                    }}
                     ref={el => {
                       if (el) {
                         el.closest("a")?.addEventListener("mouseenter", () => { el.style.opacity = "1"; });

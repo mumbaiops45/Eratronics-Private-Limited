@@ -62,7 +62,7 @@ export default function HomeSystemsTeaser() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
         style={{
           backgroundImage: "url('/system-we-offer.png')",
-          filter: "brightness(0.48)",
+          filter: "brightness(0.40)",
         }}
       />
 
@@ -71,7 +71,7 @@ export default function HomeSystemsTeaser() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(8,15,28,0.18) 0%, rgba(10,20,40,0.70) 45%, rgba(8,15,30,0.62) 100%)",
+            "linear-gradient(180deg, rgba(8,15,28,0.18) 0%, rgba(10,20,40,0.76) 45%, rgba(8,15,30,0.72) 100%)",
         }}
       />
 

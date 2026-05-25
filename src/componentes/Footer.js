@@ -68,7 +68,8 @@ export default function Footer() {
           {/* Brand column */}
           <div>
             {/* Logo mark */}
-            <div className="flex items-center gap-3 mb-6">
+           <Link href="/" className="flex items-center gap-3 mb-6">
+              {/* Monogram badge */}
               <div
                 className="w-9 h-9 flex items-center justify-center text-white font-black text-sm shrink-0"
                 style={{
@@ -79,16 +80,17 @@ export default function Footer() {
                 E
               </div>
               <div>
-                <div className="text-white font-extrabold text-[14px] tracking-[0.06em] uppercase leading-none">
+                <div className="text-white font-extrabold text-[15px] tracking-[0.06em] leading-none uppercase">
                   Eratronics
                 </div>
-                <div className="text-[8px] font-semibold tracking-[0.18em] uppercase leading-none mt-0.5"
-                  style={{ color: "var(--secondary)" }}>
+                <div
+                  className="text-[8px] font-semibold tracking-[0.18em] uppercase leading-none mt-0.5"
+                  style={{ color: "var(--secondary)" }}
+                >
                   Private Limited
                 </div>
               </div>
-            </div>
-
+            </Link>
             <p
               className="text-sm leading-relaxed mb-7 max-w-xs"
               style={{ color: "rgba(255,255,255,0.50)" }}

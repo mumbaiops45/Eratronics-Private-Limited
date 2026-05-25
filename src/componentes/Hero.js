@@ -160,7 +160,10 @@ export default function Hero() {
               </Link>
             </div>
 
-            {/* Stats strip */}
+           
+
+          </div>
+           {/* Stats strip */}
             <div
               ref={statsRef}
               className="grid grid-cols-2 md:grid-cols-4 gap-0 pt-8 pb-16"
@@ -174,7 +177,7 @@ export default function Hero() {
               ].map((s, i) => (
                 <div
                   key={i}
-                  className="stat-item pr-8 mr-8"
+                  className="start-item pr-8 mr-8"
                   style={{ borderRight: i < 3 ? "1px solid rgba(255,255,255,0.08)" : "none" }}
                 >
                   <div
@@ -190,8 +193,6 @@ export default function Hero() {
                 </div>
               ))}
             </div>
-
-          </div>
         </div>
       </div>
 
